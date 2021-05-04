@@ -1,19 +1,15 @@
-﻿using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
-namespace BookMS
-{
-    class Dao
-    {
+namespace BookMS {
+    class Dao {
         SqlConnection sc;
-        public SqlConnection connect()
-        {
+        public SqlConnection connect() {
             string str = @"Data Source = DESKTOP-37DE95U;Initial Catalog=BookDB;Integrated Security = True";//数据库链接字符串
             sc = new SqlConnection(str);//创建数据库连接对象
             sc.Open();//打开数据库
             return sc;//返回数据库连接对象
         }
-        public SqlCommand command(string sql)
-        {
+        public SqlCommand command(string sql) {
             SqlCommand cmd = new SqlCommand(sql, connect());
             return cmd;
         }
