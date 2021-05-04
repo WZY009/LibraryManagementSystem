@@ -46,18 +46,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="admin1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="admin1.Designer.cs">
+      <DependentUpon>admin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin2.Designer.cs">
+      <DependentUpon>admin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin2_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin2_1.Designer.cs">
+      <DependentUpon>admin2_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminVerify.Designer.cs">
+      <DependentUpon>adminVerify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bookCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bookCheck.Designer.cs">
+      <DependentUpon>bookCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="borrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="borrow.Designer.cs">
+      <DependentUpon>borrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dao.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="user1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user1.Designer.cs">
+      <DependentUpon>user1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin1.resx">
+      <DependentUpon>admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin2.resx">
+      <DependentUpon>admin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin2_1.resx">
+      <DependentUpon>admin2_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminVerify.resx">
+      <DependentUpon>adminVerify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookCheck.resx">
+      <DependentUpon>bookCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="borrow.resx">
+      <DependentUpon>borrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="user1.resx">
+      <DependentUpon>user1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
