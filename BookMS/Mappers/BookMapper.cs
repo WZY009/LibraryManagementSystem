@@ -13,6 +13,6 @@ namespace BookMS.Mappers {
         public IEnumerable<Book> GetByPress(string press) => from b in _context.Books
                                                              where b.Press == press
                                                              select b;
-
+        public IEnumerable<Book> GetAllBooks() => _context.Books.AsEnumerable();
     }
 }

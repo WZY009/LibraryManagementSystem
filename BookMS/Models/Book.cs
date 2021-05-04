@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace BookMS.Models {
-    class Book {
+    public class Book {
         [Key]
         public string Id { get; set; }
         public string Name { get; set; }

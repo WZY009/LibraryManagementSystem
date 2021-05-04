@@ -1,3 +1,5 @@
+using BookMS.Mappers;
+using BookMS.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,17 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookMS
-{
-    public partial class admin2 : Form
-    {
-        public admin2()
-        {
+namespace BookMS {
+    public partial class admin2 : Form {
+        public admin2() {
             InitializeComponent();
         }
 
-        private void admin2_Load(object sender, EventArgs e)
-        {
+        private void admin2_Load(object sender, EventArgs e) {
             Table();//放在这里和放在上面其实差不多，放在这里表示的是当整个窗体构建完成以后开始显示table表格
             //label2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString()+" "+ dataGridView1.SelectedRows[0].Cells[1].Value.ToString();//注意这里默认选用第一行
         }
@@ -26,107 +24,108 @@ namespace BookMS
         public void Table()//显示表格
         {
             dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = $"select  * from t_book";
-            IDataReader dc = dao.read(sql);
-            string a0, a1, a2, a3, a4;
-            while(dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
-            {
-                //这样更容易对数据进行操作
-                a0 = dc[0].ToString();
-                a1 = dc[1].ToString();
-                a2 = dc[2].ToString();
-                a3 = dc[3].ToString();
-                a4 = dc[4].ToString();
-                string[] table = { a0, a1, a2, a3, a4 };
-                //将数据库内的数据显示在grid中      
-                dataGridView1.Rows.Add(table);
-            }
-            dc.Close();
-            dao.DaoClose();
+            using BookMapper bookMapper = new BookMapper();
+            foreach (Book book in bookMapper.GetAllBooks())
+                dataGridView1.Rows.Add(book.ToStringArray());
+
+            //Dao dao = new Dao();
+            //string sql = $"select  * from t_book";
+            //IDataReader dc = dao.read(sql);
+            //string a0, a1, a2, a3, a4;
+            //while(dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
+            //{
+            //    //这样更容易对数据进行操作
+            //    a0 = dc[0].ToString();
+            //    a1 = dc[1].ToString();
+            //    a2 = dc[2].ToString();
+            //    a3 = dc[3].ToString();
+            //    a4 = dc[4].ToString();
+            //    string[] table = { a0, a1, a2, a3, a4 };
+            //    //将数据库内的数据显示在grid中      
+            //    dataGridView1.Rows.Add(table);
+            //}
+            //dc.Close();
+            //dao.DaoClose();
         }
         public void TableID()//根据书号显示数据
         {
             dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = $"select  * from t_book where id = '{textBoxIDCheck.Text}'";//通过where语句进行查询
-            IDataReader dc = dao.read(sql);
-            string a0, a1, a2, a3, a4;
-            while (dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
-            {
-                //这样更容易对数据进行操作
-                a0 = dc[0].ToString();
-                a1 = dc[1].ToString();
-                a2 = dc[2].ToString();
-                a3 = dc[3].ToString();
-                a4 = dc[4].ToString();
-                string[] table = { a0, a1, a2, a3, a4 };
-                //将数据库内的数据显示在grid中      
-                dataGridView1.Rows.Add(table);
-            }
-            dc.Close();
-            dao.DaoClose();
+            using BookMapper bookMapper = new BookMapper();
+            dataGridView1.Rows.Add(bookMapper.GetById(textBoxIDCheck.Text).ToStringArray());
+
+            //Dao dao = new Dao();
+            //string sql = $"select  * from t_book where id = '{textBoxIDCheck.Text}'";//通过where语句进行查询
+            //IDataReader dc = dao.read(sql);
+            //string a0, a1, a2, a3, a4;
+            //while (dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
+            //{
+            //    //这样更容易对数据进行操作
+            //    a0 = dc[0].ToString();
+            //    a1 = dc[1].ToString();
+            //    a2 = dc[2].ToString();
+            //    a3 = dc[3].ToString();
+            //    a4 = dc[4].ToString();
+            //    string[] table = { a0, a1, a2, a3, a4 };
+            //    //将数据库内的数据显示在grid中      
+            //    dataGridView1.Rows.Add(table);
+            //}
+            //dc.Close();
+            //dao.DaoClose();
         }
         public void TableName()//根据书名进行模糊查询
         {
             dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = $"select  * from t_book where name like '%{textBoxNameCheck.Text}'";//通过where语句进行查询
-            IDataReader dc = dao.read(sql);
-            string a0, a1, a2, a3, a4;
-            while (dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
-            {
-                //这样更容易对数据进行操作
-                a0 = dc[0].ToString();
-                a1 = dc[1].ToString();
-                a2 = dc[2].ToString();
-                a3 = dc[3].ToString();
-                a4 = dc[4].ToString();
-                string[] table = { a0, a1, a2, a3, a4 };
-                //将数据库内的数据显示在grid中      
-                dataGridView1.Rows.Add(table);
-            }
-            dc.Close();
-            dao.DaoClose();
+            using BookMapper bookMapper = new BookMapper();
+            foreach (Book book in bookMapper.GetByName(textBoxNameCheck.Text))
+                dataGridView1.Rows.Add(book.ToStringArray());
+
+            //Dao dao = new Dao();
+            //string sql = $"select  * from t_book where name like '%{textBoxNameCheck.Text}'";//通过where语句进行查询
+            //IDataReader dc = dao.read(sql);
+            //string a0, a1, a2, a3, a4;
+            //while (dc.Read())//Read()函数是一个boolean型函数，如果读不到了就会返回false退出该循环
+            //{
+            //    //这样更容易对数据进行操作
+            //    a0 = dc[0].ToString();
+            //    a1 = dc[1].ToString();
+            //    a2 = dc[2].ToString();
+            //    a3 = dc[3].ToString();
+            //    a4 = dc[4].ToString();
+            //    string[] table = { a0, a1, a2, a3, a4 };
+            //    //将数据库内的数据显示在grid中      
+            //    dataGridView1.Rows.Add(table);
+            //}
+            //dc.Close();
+            //dao.DaoClose();
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult dr = MessageBox.Show("确认删除吗？","信息提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-                if(dr==DialogResult.OK)//假如它选的是ok
+        private void button2_Click(object sender, EventArgs e) {
+            try {
+                DialogResult dr = MessageBox.Show("确认删除吗？", "信息提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)//假如它选的是ok
                 {
                     string sql = $"delete from t_book where id='{id}'";//sql的删除语句
                     Dao dao = new Dao();
-                    if(dao.Execute(sql)>0)
-                    {
+                    if (dao.Execute(sql) > 0) {
                         MessageBox.Show("删除成功");
                         Table();
                     }
-                    else
-                    {
+                    else {
                         MessageBox.Show("删除失败" + sql);
                     }
                     dao.DaoClose();
                 }
             }
-            catch
-            {
-                MessageBox.Show("请现在表格中选择要删除的图书记录" ,"信息提示",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            catch {
+                MessageBox.Show("请现在表格中选择要删除的图书记录", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void button1_Click(object sender, EventArgs e) {
             admin2_1 admin = new admin2_1();
             admin.ShowDialog();
             Table();//刷新数据
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            //艹，怎么把这玩意删掉啊！
-        }
 
         private void dataGridView1_Click(object sender, EventArgs e)//点击表格元素进行选择的函数
         {
@@ -137,21 +136,19 @@ namespace BookMS
             press = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();//获取出版社
             number = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();//获取库存量
         }
-        public string id,name,author,press,number;
+        public string id, name, author, press, number;
 
         private void buttonMultiDelete_Click(object sender, EventArgs e)//多行删除
         {
             int n = dataGridView1.SelectedRows.Count;//获取当前选中的行数
             string sql = $"delete from t_book where id in(";
-            for (int i=0;i<n;i++)
-            {
+            for (int i = 0; i < n; i++) {
                 sql += $"'{dataGridView1.SelectedRows[i].Cells[0].Value.ToString()}',";
             }
             sql = sql.Remove(sql.Length - 1);//删除最后一个字符
             sql += ")";
             Dao dao = new Dao();
-            if(dao.Execute(sql)>n-1)
-            {
+            if (dao.Execute(sql) > n - 1) {
                 MessageBox.Show($"成功删除{n}条图书信息");
                 Table();//刷新
             }
@@ -178,14 +175,12 @@ namespace BookMS
 
         private void button3_Click(object sender, EventArgs e)//修改
         {
-            try
-            {
-                adminVerify adminverify = new adminVerify(id,name,author,press,number);//将当前选中的值传过去修改界面，注意这里的构造函数进行了重载
+            try {
+                adminVerify adminverify = new adminVerify(id, name, author, press, number);//将当前选中的值传过去修改界面，注意这里的构造函数进行了重载
                 adminverify.ShowDialog();
                 Table();//刷新数据
             }
-            catch
-            {
+            catch {
                 MessageBox.Show("错误！");
             }
 

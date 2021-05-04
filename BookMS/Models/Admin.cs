@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace BookMS.Models {
-    class Admin {
+    public class Admin {
         [Key]
         public string Id { get; set; }
         public string Password { get; set; }

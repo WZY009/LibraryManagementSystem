@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace BookMS.Models {
-    class Lend {
+    public class Lend {
         [Key]
         public int No { get; set; }
         public string Uid { get; set; }

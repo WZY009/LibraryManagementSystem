@@ -29,15 +29,12 @@ namespace BookMS {
         public void Login() {
             //用户
             if (radioButtonUser.Checked == true) {
-                Dao dao = new Dao();
-                string sql = "select * from t_user where id='" + textBox1.Text + "' and password='" + textBox2.Text + "' ";
-                //MessageBox.Show(sql);  //中间的某次检验
-                IDataReader dc = dao.read(sql);
-                if (dc.Read())//读取数据,返回的是一个布尔型变量，如果读到了匹配的就返回一个真
+                User usr = Login_User(id: textBox1.Text, password: textBox2.Text);
+                if (usr != null)//读取数据,返回的是一个布尔型变量，如果读到了匹配的就返回一个真
                 {
                     MessageBox.Show("用户登陆成功");
-                    Data.Uid = dc["id"].ToString();//将数据库的id赋给data
-                    Data.UName = dc["name"].ToString();
+                    Data.Uid = usr.Id;
+                    Data.UName = usr.Name;
 
                     user1 user = new user1();
                     this.Hide();//隐藏掉登录窗体
@@ -66,5 +63,6 @@ namespace BookMS {
             }
         }
         private Admin Login_Admin(string id, string password) => new AdminMapper().Get(id, password);
+        private User Login_User(string id, string password) => new UserMapper().Get(id, password);
     }
 }

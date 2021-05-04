@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace BookMS.Models {
-    class User {
+    public class User {
         public const bool MALE = true;
         public const bool FEMALE = false;
 
