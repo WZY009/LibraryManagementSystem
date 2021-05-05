@@ -1,3 +1,5 @@
+using BookMS.Mappers;
+using BookMS.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,17 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookMS
-{
-    public partial class adminVerify : Form
-    {
+namespace BookMS {
+    public partial class adminVerify : Form {
         string ID = "";
-        public adminVerify()
-        {
+        public adminVerify() {
             InitializeComponent();
         }
-        public adminVerify(string id, string name, string author, string press, string number)
-        {
+        public adminVerify(string id, string name, string author, string press, string number) {
             InitializeComponent();
             ID = textBoxId.Text = id;
             textBoxName.Text = name;
@@ -27,19 +25,24 @@ namespace BookMS
             textBoxStore.Text = number;
         }
 
-        private void buttonVerify_Click(object sender, EventArgs e)
-        {
-            string sql = $"update t_book set id='{textBoxId.Text}',[name]='{textBoxName.Text}',author='{textBoxAuthor.Text}',press='{textBoxPress.Text}',number='{textBoxStore.Text}' where id='{ID}'";
-            Dao dao = new Dao();
-            if(dao.Execute(sql)>0)
-            {
+        private void buttonVerify_Click(object sender, EventArgs e) {
+            //string sql = $"update t_book set id='{textBoxId.Text}',[name]='{textBoxName.Text}',author='{textBoxAuthor.Text}',press='{textBoxPress.Text}',number='{textBoxStore.Text}' where id='{ID}'";
+            //Dao dao = new Dao();
+            Book book = new Book() {
+                Id = ID,
+                Name = textBoxName.Text,
+                Author = textBoxAuthor.Text,
+                Press = textBoxPress.Text,
+                Number = Convert.ToInt32(textBoxStore.Text),
+            };
+            using BookMapper bookMapper = new BookMapper();
+            if (bookMapper.UpdateBook(book) != null) {
                 MessageBox.Show("修改成功");
                 this.Close();
             }
         }
 
-        private void buttonFlush_Click(object sender, EventArgs e)
-        {
+        private void buttonFlush_Click(object sender, EventArgs e) {
             textBoxId.Text = "";
             textBoxName.Text = "";
             textBoxAuthor.Text = "";

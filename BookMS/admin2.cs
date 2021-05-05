@@ -103,16 +103,17 @@ namespace BookMS {
                 DialogResult dr = MessageBox.Show("确认删除吗？", "信息提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)//假如它选的是ok
                 {
-                    string sql = $"delete from t_book where id='{id}'";//sql的删除语句
-                    Dao dao = new Dao();
-                    if (dao.Execute(sql) > 0) {
+                    //string sql = $"delete from t_book where id='{id}'";//sql的删除语句
+                    //Dao dao = new Dao();
+                    using BookMapper bookMapper = new BookMapper();
+                    //if (dao.Execute(sql) > 0) 
+                    if (bookMapper.DeleteById(id) != null) {
                         MessageBox.Show("删除成功");
                         Table();
                     }
                     else {
-                        MessageBox.Show("删除失败" + sql);
+                        MessageBox.Show("删除失败");
                     }
-                    dao.DaoClose();
                 }
             }
             catch {
@@ -120,6 +121,11 @@ namespace BookMS {
             }
         }
 
+        /// <summary>
+        /// 添加图书
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e) {
             admin2_1 admin = new admin2_1();
             admin.ShowDialog();
@@ -141,17 +147,22 @@ namespace BookMS {
         private void buttonMultiDelete_Click(object sender, EventArgs e)//多行删除
         {
             int n = dataGridView1.SelectedRows.Count;//获取当前选中的行数
-            string sql = $"delete from t_book where id in(";
-            for (int i = 0; i < n; i++) {
-                sql += $"'{dataGridView1.SelectedRows[i].Cells[0].Value.ToString()}',";
-            }
-            sql = sql.Remove(sql.Length - 1);//删除最后一个字符
-            sql += ")";
-            Dao dao = new Dao();
-            if (dao.Execute(sql) > n - 1) {
-                MessageBox.Show($"成功删除{n}条图书信息");
-                Table();//刷新
-            }
+            //string sql = $"delete from t_book where id in(";
+            //for (int i = 0; i < n; i++) {
+            //    sql += $"'{dataGridView1.SelectedRows[i].Cells[0].Value.ToString()}',";
+            //}
+            //sql = sql.Remove(sql.Length - 1);//删除最后一个字符
+            //sql += ")";
+            //Dao dao = new Dao();
+            using BookMapper bookMapper = new BookMapper();
+            int deleteNum = 0;
+            for (int i = 0; i < n; ++i)
+                if (bookMapper.DeleteById(dataGridView1.SelectedRows[i].Cells[0].Value.ToString()) != null)
+                    ++deleteNum;
+            //if (dao.Execute(sql) > n - 1) {
+            MessageBox.Show($"成功删除{deleteNum}条图书信息");
+            Table();//刷新
+            //}
         }
 
         private void button6_Click(object sender, EventArgs e)//书名查询
