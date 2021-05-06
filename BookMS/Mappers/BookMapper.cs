@@ -30,9 +30,15 @@ namespace BookMS.Mappers {
             _context.SaveChanges();
             return book;
         }
-        public Book UpdateStore(string id) {
+        public Book LendBook(string id) {
             var book = _context.Books.FirstOrDefault(b => b.Id == id);
             book.Number--;
+            _context.SaveChanges();
+            return book;
+        }
+        public Book ReturnBook(string id) {
+            var book = _context.Books.FirstOrDefault(b => b.Id == id);
+            book.Number++;
             _context.SaveChanges();
             return book;
         }

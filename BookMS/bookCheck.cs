@@ -56,9 +56,12 @@ namespace BookMS {
                 MessageBox.Show("库存不足，请等待其他用户归还图书后再借书");
             }
             else {
-                string sql = $"insert into t_lend([uid], bid, [datetime]) values('{Data.Uid}','{id}', getdate()); update t_book set number = number - 1 where id ='{id}'";
-                Dao dao = new Dao();
-                if (dao.Execute(sql) > 1)//这里的意思指的是如果执行成功将会返回sql语句成功的数量，大于一才是都执行成功
+                //string sql = $"insert into t_lend([uid], bid, [datetime]) values('{Data.Uid}','{id}', getdate()); update t_book set number = number - 1 where id ='{id}'";
+                //Dao dao = new Dao();
+                using LendMapper lendMapper = new LendMapper();
+                lendMapper.Add(Data.Uid, id);
+                using BookMapper bookMapper = new BookMapper();
+                if (bookMapper.LendBook(id) != null)//这里的意思指的是如果执行成功将会返回sql语句成功的数量，大于一才是都执行成功
                 {
                     MessageBox.Show($"用户{Data.UName}借出了图书{id}");
                     Table();

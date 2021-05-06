@@ -8,8 +8,14 @@ namespace BookMS.Models {
     public class Lend {
         [Key]
         public int No { get; set; }
+        [ForeignKey("User")]
         public string Uid { get; set; }
+        [ForeignKey("Book")]
         public string Bid { get; set; }
-        public DateTime Datetime { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime LendTime { get; set; }
+
+        public User User { get; set; }
+        public Book Book { get; set; }
     }
 }
