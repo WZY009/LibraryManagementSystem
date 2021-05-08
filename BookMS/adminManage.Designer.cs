@@ -1,6 +1,6 @@
 namespace BookMS
 {
-    partial class admin2
+    partial class adminManage
     {
         /// <summary>
         /// Required designer variable.
@@ -63,13 +63,12 @@ namespace BookMS
             this.Column5});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 92;
-            this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(906, 854);
+            this.dataGridView1.Size = new System.Drawing.Size(1450, 1207);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -106,10 +105,10 @@ namespace BookMS
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(961, 173);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Location = new System.Drawing.Point(1538, 242);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 90);
+            this.button1.Size = new System.Drawing.Size(274, 126);
             this.button1.TabIndex = 1;
             this.button1.Text = "添加图书";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,10 +117,10 @@ namespace BookMS
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(961, 338);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button2.Location = new System.Drawing.Point(1538, 473);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 90);
+            this.button2.Size = new System.Drawing.Size(274, 126);
             this.button2.TabIndex = 2;
             this.button2.Text = "删除图书";
             this.button2.UseVisualStyleBackColor = true;
@@ -130,10 +129,10 @@ namespace BookMS
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1200, 173);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button3.Location = new System.Drawing.Point(1920, 242);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 90);
+            this.button3.Size = new System.Drawing.Size(274, 126);
             this.button3.TabIndex = 3;
             this.button3.Text = "修改图书";
             this.button3.UseVisualStyleBackColor = true;
@@ -142,10 +141,10 @@ namespace BookMS
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(1200, 338);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button4.Location = new System.Drawing.Point(1920, 473);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 90);
+            this.button4.Size = new System.Drawing.Size(274, 126);
             this.button4.TabIndex = 4;
             this.button4.Text = "刷新";
             this.button4.UseVisualStyleBackColor = true;
@@ -154,10 +153,10 @@ namespace BookMS
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(1200, 469);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button5.Location = new System.Drawing.Point(1920, 657);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(171, 90);
+            this.button5.Size = new System.Drawing.Size(274, 126);
             this.button5.TabIndex = 5;
             this.button5.Text = "书号查询";
             this.button5.UseVisualStyleBackColor = true;
@@ -166,10 +165,10 @@ namespace BookMS
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(1200, 624);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button6.Location = new System.Drawing.Point(1920, 874);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(171, 90);
+            this.button6.Size = new System.Drawing.Size(274, 126);
             this.button6.TabIndex = 6;
             this.button6.Text = "书名查询";
             this.button6.UseVisualStyleBackColor = true;
@@ -177,28 +176,27 @@ namespace BookMS
             // 
             // textBoxIDCheck
             // 
-            this.textBoxIDCheck.Location = new System.Drawing.Point(961, 493);
-            this.textBoxIDCheck.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxIDCheck.Location = new System.Drawing.Point(1538, 690);
+            this.textBoxIDCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxIDCheck.Name = "textBoxIDCheck";
-            this.textBoxIDCheck.Size = new System.Drawing.Size(173, 31);
+            this.textBoxIDCheck.Size = new System.Drawing.Size(274, 42);
             this.textBoxIDCheck.TabIndex = 7;
             // 
             // textBoxNameCheck
             // 
-            this.textBoxNameCheck.Location = new System.Drawing.Point(961, 649);
-            this.textBoxNameCheck.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxNameCheck.Location = new System.Drawing.Point(1538, 909);
+            this.textBoxNameCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNameCheck.Name = "textBoxNameCheck";
-            this.textBoxNameCheck.Size = new System.Drawing.Size(173, 31);
+            this.textBoxNameCheck.Size = new System.Drawing.Size(274, 42);
             this.textBoxNameCheck.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(961, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1538, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 21);
+            this.label1.Size = new System.Drawing.Size(230, 31);
             this.label1.TabIndex = 9;
             this.label1.Text = "当前选中的图书是：";
             // 
@@ -206,20 +204,18 @@ namespace BookMS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(1130, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(1765, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 21);
+            this.label2.Size = new System.Drawing.Size(0, 31);
             this.label2.TabIndex = 10;
-            this.label2.Text = "null";
             // 
             // buttonMultiDelete
             // 
             this.buttonMultiDelete.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonMultiDelete.Location = new System.Drawing.Point(961, 735);
-            this.buttonMultiDelete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonMultiDelete.Location = new System.Drawing.Point(1538, 1029);
+            this.buttonMultiDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonMultiDelete.Name = "buttonMultiDelete";
-            this.buttonMultiDelete.Size = new System.Drawing.Size(171, 90);
+            this.buttonMultiDelete.Size = new System.Drawing.Size(274, 126);
             this.buttonMultiDelete.TabIndex = 11;
             this.buttonMultiDelete.Text = "多行删除";
             this.buttonMultiDelete.UseVisualStyleBackColor = true;
@@ -228,18 +224,17 @@ namespace BookMS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1137, 773);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(1819, 1082);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 25);
+            this.label3.Size = new System.Drawing.Size(299, 35);
             this.label3.TabIndex = 12;
             this.label3.Text = "使用ctrl键进行多行选择";
             // 
             // admin2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 854);
+            this.ClientSize = new System.Drawing.Size(2309, 1207);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonMultiDelete);
             this.Controls.Add(this.label2);
@@ -253,7 +248,7 @@ namespace BookMS
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "admin2";
             this.Text = " ";
             this.Load += new System.EventHandler(this.admin2_Load);

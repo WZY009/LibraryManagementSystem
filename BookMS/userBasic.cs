@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookMS
 {
-    public partial class user1 : Form
+    public partial class userBasic : Form
     {
-        public user1()
+        public userBasic()
         {
             InitializeComponent();
         }

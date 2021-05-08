@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookMS {
-    public partial class admin2 : Form {
-        public admin2() {
+    public partial class adminManage : Form {
+        public adminManage() {
             InitializeComponent();
         }
 
@@ -127,7 +127,7 @@ namespace BookMS {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e) {
-            admin2_1 admin = new admin2_1();
+            adminAddBooks admin = new adminAddBooks();
             admin.ShowDialog();
             Table();//刷新数据
         }

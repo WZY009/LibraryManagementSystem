@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace BookMS
 {
-    public partial class admin1 : Form
+    public partial class adminBasic : Form
     {
-        public admin1()
+        public adminBasic()
         {
             InitializeComponent();
         }
 
         private void 图书管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            admin2 admin = new admin2();
+            adminManage admin = new adminManage();
             admin.ShowDialog();
         }
     }

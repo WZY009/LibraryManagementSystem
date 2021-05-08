@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookMS {
-    public partial class admin2_1 : Form {
-        public admin2_1() {
+    public partial class adminAddBooks : Form {
+        public adminAddBooks() {
             InitializeComponent();
         }
 

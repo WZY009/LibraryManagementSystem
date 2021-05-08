@@ -28,126 +28,351 @@ namespace BookMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.radioButtonUser = new System.Windows.Forms.RadioButton();
-            this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uiRadioButtonUser = new Sunny.UI.UIRadioButton();
+            this.uiRadioButtonAdmin = new Sunny.UI.UIRadioButton();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonForget = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.panelPassword = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.textBoxUserNum = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panelPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
+            this.panelUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 33F);
-            this.label1.Location = new System.Drawing.Point(187, 68);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(574, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "欢迎使用图书管理系统";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(600, 1060);
+            this.panel1.TabIndex = 0;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(425, 214);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "账户：";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(391, 895);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 33);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Develop By";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(425, 279);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(218, 558);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "密码：";
+            this.label3.Size = new System.Drawing.Size(184, 58);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "System";
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Location = new System.Drawing.Point(588, 209);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(312, 38);
-            this.textBox1.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(48, 470);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(511, 58);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Library Management";
             // 
-            // textBox2
+            // label1
             // 
-            this.textBox2.Location = new System.Drawing.Point(588, 274);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(312, 38);
-            this.textBox2.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(117, 391);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(409, 58);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Welcome To The";
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(471, 506);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 41);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "登录";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(189, 141);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(213, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // panel2
             // 
-            this.button2.Location = new System.Drawing.Point(726, 506);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 41);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.uiRadioButtonUser);
+            this.panel2.Controls.Add(this.uiRadioButtonAdmin);
+            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.buttonForget);
+            this.panel2.Controls.Add(this.buttonLogin);
+            this.panel2.Controls.Add(this.panelPassword);
+            this.panel2.Controls.Add(this.panelUser);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.buttonClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel2.Location = new System.Drawing.Point(600, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(900, 1060);
+            this.panel2.TabIndex = 1;
             // 
-            // radioButtonUser
+            // uiRadioButtonUser
             // 
-            this.radioButtonUser.AutoSize = true;
-            this.radioButtonUser.Checked = true;
-            this.radioButtonUser.Location = new System.Drawing.Point(438, 385);
-            this.radioButtonUser.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.radioButtonUser.Name = "radioButtonUser";
-            this.radioButtonUser.Size = new System.Drawing.Size(89, 32);
-            this.radioButtonUser.TabIndex = 7;
-            this.radioButtonUser.TabStop = true;
-            this.radioButtonUser.Text = "用户";
-            this.radioButtonUser.UseVisualStyleBackColor = true;
+            this.uiRadioButtonUser.Checked = true;
+            this.uiRadioButtonUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiRadioButtonUser.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiRadioButtonUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.uiRadioButtonUser.ImageInterval = 2;
+            this.uiRadioButtonUser.Location = new System.Drawing.Point(240, 636);
+            this.uiRadioButtonUser.Margin = new System.Windows.Forms.Padding(0);
+            this.uiRadioButtonUser.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRadioButtonUser.Name = "uiRadioButtonUser";
+            this.uiRadioButtonUser.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.uiRadioButtonUser.Radius = 3;
+            this.uiRadioButtonUser.Size = new System.Drawing.Size(158, 43);
+            this.uiRadioButtonUser.Style = Sunny.UI.UIStyle.Custom;
+            this.uiRadioButtonUser.TabIndex = 6;
+            this.uiRadioButtonUser.Text = "User Login";
             // 
-            // radioButtonAdmin
+            // uiRadioButtonAdmin
             // 
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Location = new System.Drawing.Point(775, 385);
-            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(117, 32);
-            this.radioButtonAdmin.TabIndex = 8;
-            this.radioButtonAdmin.Text = "管理员";
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
+            this.uiRadioButtonAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiRadioButtonAdmin.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiRadioButtonAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.uiRadioButtonAdmin.Location = new System.Drawing.Point(398, 636);
+            this.uiRadioButtonAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.uiRadioButtonAdmin.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRadioButtonAdmin.Name = "uiRadioButtonAdmin";
+            this.uiRadioButtonAdmin.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.uiRadioButtonAdmin.Size = new System.Drawing.Size(269, 43);
+            this.uiRadioButtonAdmin.Style = Sunny.UI.UIStyle.Custom;
+            this.uiRadioButtonAdmin.TabIndex = 6;
+            this.uiRadioButtonAdmin.Text = "Administrator Login";
             // 
-            // Form1
+            // linkLabel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.linkLabel1.Location = new System.Drawing.Point(437, 969);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(344, 30);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "wanzhaoyi2647@gmail.com";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(88, 969);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(354, 30);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "submit an email meaage to ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(88, 936);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(525, 30);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "To obtain this App or any questions about it";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(88, 903);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 29);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Support";
+            // 
+            // buttonForget
+            // 
+            this.buttonForget.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonForget.FlatAppearance.BorderSize = 0;
+            this.buttonForget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonForget.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonForget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonForget.Location = new System.Drawing.Point(403, 755);
+            this.buttonForget.Name = "buttonForget";
+            this.buttonForget.Size = new System.Drawing.Size(240, 50);
+            this.buttonForget.TabIndex = 3;
+            this.buttonForget.Text = "Forget Password?";
+            this.buttonForget.UseVisualStyleBackColor = false;
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Location = new System.Drawing.Point(30, 742);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(300, 70);
+            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.Text = "LOGIN";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // panelPassword
+            // 
+            this.panelPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.panelPassword.Controls.Add(this.textBoxPassword);
+            this.panelPassword.Controls.Add(this.pictureBoxPassword);
+            this.panelPassword.Location = new System.Drawing.Point(0, 503);
+            this.panelPassword.Name = "panelPassword";
+            this.panelPassword.Size = new System.Drawing.Size(900, 90);
+            this.panelPassword.TabIndex = 2;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxPassword.Location = new System.Drawing.Point(112, 28);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(740, 37);
+            this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
+            // 
+            // pictureBoxPassword
+            // 
+            this.pictureBoxPassword.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPassword.Image")));
+            this.pictureBoxPassword.Location = new System.Drawing.Point(30, 24);
+            this.pictureBoxPassword.Name = "pictureBoxPassword";
+            this.pictureBoxPassword.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxPassword.TabIndex = 0;
+            this.pictureBoxPassword.TabStop = false;
+            this.pictureBoxPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxPassword_MouseDown);
+            // 
+            // panelUser
+            // 
+            this.panelUser.BackColor = System.Drawing.SystemColors.Control;
+            this.panelUser.Controls.Add(this.textBoxUserNum);
+            this.panelUser.Controls.Add(this.pictureBox2);
+            this.panelUser.Location = new System.Drawing.Point(0, 382);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(900, 90);
+            this.panelUser.TabIndex = 2;
+            // 
+            // textBoxUserNum
+            // 
+            this.textBoxUserNum.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxUserNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUserNum.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxUserNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxUserNum.Location = new System.Drawing.Point(112, 26);
+            this.textBoxUserNum.Name = "textBoxUserNum";
+            this.textBoxUserNum.Size = new System.Drawing.Size(740, 37);
+            this.textBoxUserNum.TabIndex = 1;
+            this.textBoxUserNum.Click += new System.EventHandler(this.textBoxUserNum_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(30, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label5.Location = new System.Drawing.Point(72, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(531, 58);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Login to your account";
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonClose.Location = new System.Drawing.Point(820, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(80, 80);
+            this.buttonClose.TabIndex = 0;
+            this.buttonClose.Text = "X";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // login
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 810);
-            this.Controls.Add(this.radioButtonAdmin);
-            this.Controls.Add(this.radioButtonUser);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1500, 1060);
+            this.ControlBox = false;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "login";
+            this.Text = "Library management system";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panelPassword.ResumeLayout(false);
+            this.panelPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
+            this.panelUser.ResumeLayout(false);
+            this.panelUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,15 +380,29 @@ namespace BookMS
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButtonUser;
-        private System.Windows.Forms.RadioButton radioButtonAdmin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Panel panelPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.PictureBox pictureBoxPassword;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.TextBox textBoxUserNum;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonForget;
+        private Sunny.UI.UIRadioButton uiRadioButtonAdmin;
+        private Sunny.UI.UIRadioButton uiRadioButtonUser;
     }
 }
 

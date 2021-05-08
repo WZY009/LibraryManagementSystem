@@ -1,6 +1,6 @@
 namespace BookMS
 {
-    partial class admin2_1
+    partial class adminAddBooks
     {
         /// <summary>
         /// Required designer variable.
