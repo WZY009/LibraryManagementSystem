@@ -1,0 +1,10 @@
+C:\Users\long\Source\Repos\returnBook\bin\Debug\returnBook.exe.config
+C:\Users\long\Source\Repos\returnBook\bin\Debug\returnBook.exe
+C:\Users\long\Source\Repos\returnBook\bin\Debug\returnBook.pdb
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.csprojAssemblyReference.cache
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.Form1.resources
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.Properties.Resources.resources
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.csproj.GenerateResource.cache
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.csproj.CoreCompileInputs.cache
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.exe
+C:\Users\long\Source\Repos\returnBook\obj\Debug\returnBook.pdb
