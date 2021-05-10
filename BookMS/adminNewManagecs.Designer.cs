@@ -29,42 +29,46 @@ namespace BookMS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminNewManagecs));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminNewManagecs));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCheckName = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel1 = new Sunny.UI.UILabel();
-            this.buttonCheckID = new System.Windows.Forms.Button();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonVerify = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonACSecurity = new System.Windows.Forms.Button();
+            this.buttonOverview = new System.Windows.Forms.Button();
+            this.buttonCommunication = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uiPanelGrid = new Sunny.UI.UIPanel();
-            this.uiImageButton3 = new Sunny.UI.UIImageButton();
-            this.uiImageButton2 = new Sunny.UI.UIImageButton();
-            this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new Sunny.UI.UIImageButton();
+            this.buttonAdd = new Sunny.UI.UIImageButton();
+            this.buttonVerify = new Sunny.UI.UIImageButton();
+            this.buttonDelete = new Sunny.UI.UIImageButton();
             this.uiPanelCheck = new Sunny.UI.UIPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCheckCond = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.uiTextBox2 = new Sunny.UI.UITextBox();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.uiTextBoxName = new Sunny.UI.UITextBox();
+            this.uiTextboxID = new Sunny.UI.UITextBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +79,12 @@ namespace BookMS
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.uiPanelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonVerify)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonDelete)).BeginInit();
             this.uiPanelCheck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -86,15 +92,17 @@ namespace BookMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel1.Controls.Add(this.buttonCheckName);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.buttonHelp);
             this.panel1.Controls.Add(this.uiLabel2);
             this.panel1.Controls.Add(this.uiLabel1);
-            this.panel1.Controls.Add(this.buttonCheckID);
+            this.panel1.Controls.Add(this.buttonLogOut);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.buttonVerify);
-            this.panel1.Controls.Add(this.buttonRefresh);
-            this.panel1.Controls.Add(this.buttonDelete);
-            this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Controls.Add(this.buttonACSecurity);
+            this.panel1.Controls.Add(this.buttonOverview);
+            this.panel1.Controls.Add(this.buttonCommunication);
+            this.panel1.Controls.Add(this.buttonProfile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -102,22 +110,45 @@ namespace BookMS
             this.panel1.Size = new System.Drawing.Size(350, 982);
             this.panel1.TabIndex = 0;
             // 
-            // buttonCheckName
+            // label6
             // 
-            this.buttonCheckName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
-            this.buttonCheckName.FlatAppearance.BorderSize = 0;
-            this.buttonCheckName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCheckName.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCheckName.Location = new System.Drawing.Point(0, 681);
-            this.buttonCheckName.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCheckName.Name = "buttonCheckName";
-            this.buttonCheckName.Size = new System.Drawing.Size(350, 70);
-            this.buttonCheckName.TabIndex = 9;
-            this.buttonCheckName.Text = "CHECK NAME";
-            this.buttonCheckName.UseVisualStyleBackColor = false;
-            this.buttonCheckName.MouseEnter += new System.EventHandler(this.buttonCheckName_MouseEnter);
-            this.buttonCheckName.MouseLeave += new System.EventHandler(this.buttonCheckName_MouseLeave);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(275, 922);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 33);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "2.0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(240, 889);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 33);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Version";
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
+            this.buttonHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHelp.FlatAppearance.BorderSize = 0;
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHelp.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonHelp.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonHelp.Location = new System.Drawing.Point(0, 681);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(350, 70);
+            this.buttonHelp.TabIndex = 9;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.MouseEnter += new System.EventHandler(this.buttonCheckName_MouseEnter);
+            this.buttonHelp.MouseLeave += new System.EventHandler(this.buttonCheckName_MouseLeave);
             // 
             // uiLabel2
             // 
@@ -143,22 +174,23 @@ namespace BookMS
             this.uiLabel1.Text = "Welcome";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonCheckID
+            // buttonLogOut
             // 
-            this.buttonCheckID.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCheckID.FlatAppearance.BorderSize = 0;
-            this.buttonCheckID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckID.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCheckID.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCheckID.Location = new System.Drawing.Point(0, 754);
-            this.buttonCheckID.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCheckID.Name = "buttonCheckID";
-            this.buttonCheckID.Size = new System.Drawing.Size(350, 70);
-            this.buttonCheckID.TabIndex = 8;
-            this.buttonCheckID.Text = "CHECK ISBN";
-            this.buttonCheckID.UseVisualStyleBackColor = false;
-            this.buttonCheckID.MouseEnter += new System.EventHandler(this.buttonCheckID_MouseEnter);
-            this.buttonCheckID.MouseLeave += new System.EventHandler(this.buttonCheckID_MouseLeave);
+            this.buttonLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogOut.FlatAppearance.BorderSize = 0;
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogOut.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 754);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(350, 70);
+            this.buttonLogOut.TabIndex = 8;
+            this.buttonLogOut.Text = "Log Out";
+            this.buttonLogOut.UseVisualStyleBackColor = false;
+            this.buttonLogOut.MouseEnter += new System.EventHandler(this.buttonCheckID_MouseEnter);
+            this.buttonLogOut.MouseLeave += new System.EventHandler(this.buttonCheckID_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -169,73 +201,77 @@ namespace BookMS
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonVerify
+            // buttonACSecurity
             // 
-            this.buttonVerify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
-            this.buttonVerify.FlatAppearance.BorderSize = 0;
-            this.buttonVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVerify.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonVerify.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonVerify.Location = new System.Drawing.Point(0, 532);
-            this.buttonVerify.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonVerify.Name = "buttonVerify";
-            this.buttonVerify.Size = new System.Drawing.Size(350, 70);
-            this.buttonVerify.TabIndex = 5;
-            this.buttonVerify.Text = "VERIFY";
-            this.buttonVerify.UseVisualStyleBackColor = false;
-            this.buttonVerify.MouseEnter += new System.EventHandler(this.buttonVerify_MouseEnter);
-            this.buttonVerify.MouseLeave += new System.EventHandler(this.buttonVerify_MouseLeave);
+            this.buttonACSecurity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
+            this.buttonACSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonACSecurity.FlatAppearance.BorderSize = 0;
+            this.buttonACSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonACSecurity.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonACSecurity.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonACSecurity.Location = new System.Drawing.Point(0, 532);
+            this.buttonACSecurity.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonACSecurity.Name = "buttonACSecurity";
+            this.buttonACSecurity.Size = new System.Drawing.Size(350, 70);
+            this.buttonACSecurity.TabIndex = 5;
+            this.buttonACSecurity.Text = "Account Security";
+            this.buttonACSecurity.UseVisualStyleBackColor = false;
+            this.buttonACSecurity.MouseEnter += new System.EventHandler(this.buttonVerify_MouseEnter);
+            this.buttonACSecurity.MouseLeave += new System.EventHandler(this.buttonVerify_MouseLeave);
             // 
-            // buttonRefresh
+            // buttonOverview
             // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRefresh.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonRefresh.Location = new System.Drawing.Point(0, 383);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(350, 70);
-            this.buttonRefresh.TabIndex = 7;
-            this.buttonRefresh.Text = "REFRESH";
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.MouseEnter += new System.EventHandler(this.buttonRefresh_MouseEnter);
-            this.buttonRefresh.MouseLeave += new System.EventHandler(this.buttonRefresh_MouseLeave);
+            this.buttonOverview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
+            this.buttonOverview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOverview.FlatAppearance.BorderSize = 0;
+            this.buttonOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOverview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonOverview.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonOverview.Location = new System.Drawing.Point(0, 383);
+            this.buttonOverview.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonOverview.Name = "buttonOverview";
+            this.buttonOverview.Size = new System.Drawing.Size(350, 70);
+            this.buttonOverview.TabIndex = 7;
+            this.buttonOverview.Text = "Overview";
+            this.buttonOverview.UseVisualStyleBackColor = false;
+            this.buttonOverview.MouseEnter += new System.EventHandler(this.buttonRefresh_MouseEnter);
+            this.buttonOverview.MouseLeave += new System.EventHandler(this.buttonRefresh_MouseLeave);
             // 
-            // buttonDelete
+            // buttonCommunication
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDelete.FlatAppearance.BorderSize = 0;
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDelete.Location = new System.Drawing.Point(0, 606);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(350, 70);
-            this.buttonDelete.TabIndex = 6;
-            this.buttonDelete.Text = "DELETE";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.MouseEnter += new System.EventHandler(this.buttonDelete_MouseEnter);
-            this.buttonDelete.MouseLeave += new System.EventHandler(this.buttonDelete_MouseLeave);
+            this.buttonCommunication.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCommunication.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCommunication.FlatAppearance.BorderSize = 0;
+            this.buttonCommunication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCommunication.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCommunication.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonCommunication.Location = new System.Drawing.Point(0, 606);
+            this.buttonCommunication.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCommunication.Name = "buttonCommunication";
+            this.buttonCommunication.Size = new System.Drawing.Size(350, 70);
+            this.buttonCommunication.TabIndex = 6;
+            this.buttonCommunication.Text = "Communication";
+            this.buttonCommunication.UseVisualStyleBackColor = false;
+            this.buttonCommunication.MouseEnter += new System.EventHandler(this.buttonDelete_MouseEnter);
+            this.buttonCommunication.MouseLeave += new System.EventHandler(this.buttonDelete_MouseLeave);
             // 
-            // buttonAdd
+            // buttonProfile
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.FlatAppearance.BorderSize = 0;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAdd.Location = new System.Drawing.Point(0, 458);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(350, 70);
-            this.buttonAdd.TabIndex = 4;
-            this.buttonAdd.Text = "ADD ";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.MouseEnter += new System.EventHandler(this.buttonAdd_MouseEnter);
-            this.buttonAdd.MouseLeave += new System.EventHandler(this.buttonAdd_MouseLeave);
+            this.buttonProfile.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonProfile.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonProfile.Location = new System.Drawing.Point(0, 458);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(350, 70);
+            this.buttonProfile.TabIndex = 4;
+            this.buttonProfile.Text = "Profile";
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.MouseEnter += new System.EventHandler(this.buttonAdd_MouseEnter);
+            this.buttonProfile.MouseLeave += new System.EventHandler(this.buttonAdd_MouseLeave);
             // 
             // panel2
             // 
@@ -253,10 +289,8 @@ namespace BookMS
             // uiPanelGrid
             // 
             this.uiPanelGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
-            this.uiPanelGrid.Controls.Add(this.uiImageButton3);
-            this.uiPanelGrid.Controls.Add(this.uiImageButton2);
-            this.uiPanelGrid.Controls.Add(this.uiImageButton1);
             this.uiPanelGrid.Controls.Add(this.uiDataGridView1);
+            this.uiPanelGrid.Controls.Add(this.panel3);
             this.uiPanelGrid.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiPanelGrid.Location = new System.Drawing.Point(0, 243);
             this.uiPanelGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -267,58 +301,17 @@ namespace BookMS
             this.uiPanelGrid.TabIndex = 3;
             this.uiPanelGrid.Text = " ";
             // 
-            // uiImageButton3
-            // 
-            this.uiImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.uiImageButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiImageButton3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiImageButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("uiImageButton3.Image")));
-            this.uiImageButton3.Location = new System.Drawing.Point(35, 34);
-            this.uiImageButton3.Name = "uiImageButton3";
-            this.uiImageButton3.Size = new System.Drawing.Size(153, 36);
-            this.uiImageButton3.TabIndex = 4;
-            this.uiImageButton3.TabStop = false;
-            this.uiImageButton3.Text = "ADD";
-            // 
-            // uiImageButton2
-            // 
-            this.uiImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.uiImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiImageButton2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiImageButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("uiImageButton2.Image")));
-            this.uiImageButton2.Location = new System.Drawing.Point(477, 34);
-            this.uiImageButton2.Name = "uiImageButton2";
-            this.uiImageButton2.Size = new System.Drawing.Size(183, 36);
-            this.uiImageButton2.TabIndex = 3;
-            this.uiImageButton2.TabStop = false;
-            this.uiImageButton2.Text = "VERIFY";
-            // 
-            // uiImageButton1
-            // 
-            this.uiImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.uiImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiImageButton1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiImageButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("uiImageButton1.Image")));
-            this.uiImageButton1.Location = new System.Drawing.Point(226, 34);
-            this.uiImageButton1.Name = "uiImageButton1";
-            this.uiImageButton1.Size = new System.Drawing.Size(193, 36);
-            this.uiImageButton1.TabIndex = 2;
-            this.uiImageButton1.TabStop = false;
-            this.uiImageButton1.Text = "DELETE";
-            // 
             // uiDataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.uiDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.uiDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.uiDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -331,8 +324,8 @@ namespace BookMS
             this.Column7,
             this.Column8,
             this.Column9,
-            this.Column11});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
@@ -343,7 +336,7 @@ namespace BookMS
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(-3, 99);
+            this.uiDataGridView1.Location = new System.Drawing.Point(0, 96);
             this.uiDataGridView1.Name = "uiDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
@@ -359,13 +352,14 @@ namespace BookMS
             this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.uiDataGridView1.RowTemplate.Height = 29;
             this.uiDataGridView1.SelectedIndex = -1;
+            this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
-            this.uiDataGridView1.Size = new System.Drawing.Size(1125, 640);
-            this.uiDataGridView1.TabIndex = 0;
+            this.uiDataGridView1.Size = new System.Drawing.Size(1122, 643);
+            this.uiDataGridView1.TabIndex = 6;
+            this.uiDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellContentClick);
             // 
             // Column6
             // 
-            this.Column6.Frozen = true;
             this.Column6.HeaderText = "ISBN";
             this.Column6.MinimumWidth = 11;
             this.Column6.Name = "Column6";
@@ -373,7 +367,6 @@ namespace BookMS
             // 
             // Column7
             // 
-            this.Column7.Frozen = true;
             this.Column7.HeaderText = "Book Name";
             this.Column7.MinimumWidth = 11;
             this.Column7.Name = "Column7";
@@ -381,7 +374,6 @@ namespace BookMS
             // 
             // Column8
             // 
-            this.Column8.Frozen = true;
             this.Column8.HeaderText = "Author";
             this.Column8.MinimumWidth = 11;
             this.Column8.Name = "Column8";
@@ -389,38 +381,108 @@ namespace BookMS
             // 
             // Column9
             // 
-            this.Column9.Frozen = true;
             this.Column9.HeaderText = "Publish";
             this.Column9.MinimumWidth = 11;
             this.Column9.Name = "Column9";
             this.Column9.Width = 225;
             // 
-            // Column11
+            // Column10
             // 
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "Store";
-            this.Column11.MinimumWidth = 10;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 225;
+            this.Column10.HeaderText = "Store";
+            this.Column10.MinimumWidth = 11;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 225;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.buttonRefresh);
+            this.panel3.Controls.Add(this.buttonAdd);
+            this.panel3.Controls.Add(this.buttonVerify);
+            this.panel3.Controls.Add(this.buttonDelete);
+            this.panel3.Location = new System.Drawing.Point(0, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(785, 85);
+            this.panel3.TabIndex = 5;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefresh.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.Location = new System.Drawing.Point(23, 26);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(183, 36);
+            this.buttonRefresh.TabIndex = 5;
+            this.buttonRefresh.TabStop = false;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
+            this.buttonAdd.Location = new System.Drawing.Point(206, 26);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(153, 36);
+            this.buttonAdd.TabIndex = 4;
+            this.buttonAdd.TabStop = false;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonVerify
+            // 
+            this.buttonVerify.BackColor = System.Drawing.Color.Transparent;
+            this.buttonVerify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVerify.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonVerify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonVerify.Image = ((System.Drawing.Image)(resources.GetObject("buttonVerify.Image")));
+            this.buttonVerify.Location = new System.Drawing.Point(359, 26);
+            this.buttonVerify.Name = "buttonVerify";
+            this.buttonVerify.Size = new System.Drawing.Size(183, 36);
+            this.buttonVerify.TabIndex = 3;
+            this.buttonVerify.TabStop = false;
+            this.buttonVerify.Text = "Verify";
+            this.buttonVerify.Click += new System.EventHandler(this.buttonVerify_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
+            this.buttonDelete.Location = new System.Drawing.Point(542, 26);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(193, 36);
+            this.buttonDelete.TabIndex = 2;
+            this.buttonDelete.TabStop = false;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // uiPanelCheck
             // 
             this.uiPanelCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
             this.uiPanelCheck.Controls.Add(this.label4);
-            this.uiPanelCheck.Controls.Add(this.comboBox1);
+            this.uiPanelCheck.Controls.Add(this.comboBoxCheckCond);
             this.uiPanelCheck.Controls.Add(this.label3);
             this.uiPanelCheck.Controls.Add(this.label2);
             this.uiPanelCheck.Controls.Add(this.label1);
             this.uiPanelCheck.Controls.Add(this.pictureBox2);
-            this.uiPanelCheck.Controls.Add(this.uiTextBox2);
-            this.uiPanelCheck.Controls.Add(this.uiTextBox1);
+            this.uiPanelCheck.Controls.Add(this.uiTextBoxName);
+            this.uiPanelCheck.Controls.Add(this.uiTextboxID);
             this.uiPanelCheck.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiPanelCheck.Location = new System.Drawing.Point(0, 89);
             this.uiPanelCheck.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanelCheck.MinimumSize = new System.Drawing.Size(2, 2);
             this.uiPanelCheck.Name = "uiPanelCheck";
             this.uiPanelCheck.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.uiPanelCheck.Size = new System.Drawing.Size(1122, 163);
+            this.uiPanelCheck.Size = new System.Drawing.Size(1122, 159);
             this.uiPanelCheck.TabIndex = 2;
             this.uiPanelCheck.Text = " ";
             // 
@@ -430,27 +492,27 @@ namespace BookMS
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label4.Location = new System.Drawing.Point(693, 122);
+            this.label4.Location = new System.Drawing.Point(763, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(265, 37);
             this.label4.TabIndex = 11;
             this.label4.Text = "Check Condition";
             // 
-            // comboBox1
+            // comboBoxCheckCond
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCheckCond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.comboBoxCheckCond.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxCheckCond.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxCheckCond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.comboBoxCheckCond.FormattingEnabled = true;
+            this.comboBoxCheckCond.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBoxCheckCond.Items.AddRange(new object[] {
             "Check ID",
             "Check Name"});
-            this.comboBox1.Location = new System.Drawing.Point(773, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 45);
-            this.comboBox1.TabIndex = 10;
+            this.comboBoxCheckCond.Location = new System.Drawing.Point(837, 63);
+            this.comboBoxCheckCond.Name = "comboBoxCheckCond";
+            this.comboBoxCheckCond.Size = new System.Drawing.Size(271, 45);
+            this.comboBoxCheckCond.TabIndex = 10;
             // 
             // label3
             // 
@@ -458,7 +520,7 @@ namespace BookMS
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label3.Location = new System.Drawing.Point(433, 122);
+            this.label3.Location = new System.Drawing.Point(451, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 37);
             this.label3.TabIndex = 9;
@@ -470,7 +532,7 @@ namespace BookMS
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label2.Location = new System.Drawing.Point(209, 122);
+            this.label2.Location = new System.Drawing.Point(159, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 37);
             this.label2.TabIndex = 8;
@@ -491,47 +553,45 @@ namespace BookMS
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(699, 65);
+            this.pictureBox2.Location = new System.Drawing.Point(763, 62);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // uiTextBox2
+            // uiTextBoxName
             // 
-            this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.FillColor = System.Drawing.Color.White;
-            this.uiTextBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiTextBox2.Location = new System.Drawing.Point(365, 63);
-            this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox2.Maximum = 2147483647D;
-            this.uiTextBox2.Minimum = -2147483648D;
-            this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox2.Name = "uiTextBox2";
-            this.uiTextBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox2.Size = new System.Drawing.Size(212, 44);
-            this.uiTextBox2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiTextBox2.TabIndex = 2;
+            this.uiTextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBoxName.FillColor = System.Drawing.Color.White;
+            this.uiTextBoxName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextBoxName.Location = new System.Drawing.Point(359, 63);
+            this.uiTextBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBoxName.Maximum = 2147483647D;
+            this.uiTextBoxName.Minimum = -2147483648D;
+            this.uiTextBoxName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextBoxName.Name = "uiTextBoxName";
+            this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBoxName.Size = new System.Drawing.Size(290, 44);
+            this.uiTextBoxName.TabIndex = 2;
             // 
-            // uiTextBox1
+            // uiTextboxID
             // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.FillColor = System.Drawing.Color.White;
-            this.uiTextBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiTextBox1.Location = new System.Drawing.Point(115, 63);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.Maximum = 2147483647D;
-            this.uiTextBox1.Minimum = -2147483648D;
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox1.Size = new System.Drawing.Size(212, 44);
-            this.uiTextBox1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiTextBox1.TabIndex = 0;
+            this.uiTextboxID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextboxID.FillColor = System.Drawing.Color.White;
+            this.uiTextboxID.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextboxID.Location = new System.Drawing.Point(37, 63);
+            this.uiTextboxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextboxID.Maximum = 2147483647D;
+            this.uiTextboxID.Minimum = -2147483648D;
+            this.uiTextboxID.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextboxID.Name = "uiTextboxID";
+            this.uiTextboxID.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextboxID.Size = new System.Drawing.Size(290, 44);
+            this.uiTextboxID.TabIndex = 0;
             // 
             // buttonClose
             // 
@@ -598,13 +658,16 @@ namespace BookMS
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminNewManagecs";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.uiPanelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonVerify)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonDelete)).EndInit();
             this.uiPanelCheck.ResumeLayout(false);
             this.uiPanelCheck.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -626,30 +689,34 @@ namespace BookMS
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonCheckName;
-        private System.Windows.Forms.Button buttonCheckID;
-        private System.Windows.Forms.Button buttonVerify;
-        private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.Button buttonACSecurity;
+        private System.Windows.Forms.Button buttonOverview;
+        private System.Windows.Forms.Button buttonCommunication;
+        private System.Windows.Forms.Button buttonProfile;
         private Sunny.UI.UIPanel uiPanelGrid;
         private Sunny.UI.UIPanel uiPanelCheck;
-        private Sunny.UI.UITextBox uiTextBox1;
-        private Sunny.UI.UITextBox uiTextBox2;
+        private Sunny.UI.UITextBox uiTextboxID;
+        private Sunny.UI.UITextBox uiTextBoxName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCheckCond;
         private System.Windows.Forms.Label label4;
-        private Sunny.UI.UIImageButton uiImageButton1;
+        private Sunny.UI.UIImageButton buttonDelete;
+        private Sunny.UI.UIImageButton buttonAdd;
+        private Sunny.UI.UIImageButton buttonVerify;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private Sunny.UI.UIImageButton buttonRefresh;
         private Sunny.UI.UIDataGridView uiDataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private Sunny.UI.UIImageButton uiImageButton3;
-        private Sunny.UI.UIImageButton uiImageButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }
