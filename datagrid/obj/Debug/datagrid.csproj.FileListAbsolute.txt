@@ -1,0 +1,10 @@
+D:\软件构造基础\datagrid\bin\Debug\datagrid.exe.config
+D:\软件构造基础\datagrid\bin\Debug\datagrid.exe
+D:\软件构造基础\datagrid\bin\Debug\datagrid.pdb
+D:\软件构造基础\datagrid\obj\Debug\datagrid.csprojAssemblyReference.cache
+D:\软件构造基础\datagrid\obj\Debug\datagrid.Form1.resources
+D:\软件构造基础\datagrid\obj\Debug\datagrid.Properties.Resources.resources
+D:\软件构造基础\datagrid\obj\Debug\datagrid.csproj.GenerateResource.cache
+D:\软件构造基础\datagrid\obj\Debug\datagrid.csproj.CoreCompileInputs.cache
+D:\软件构造基础\datagrid\obj\Debug\datagrid.exe
+D:\软件构造基础\datagrid\obj\Debug\datagrid.pdb
