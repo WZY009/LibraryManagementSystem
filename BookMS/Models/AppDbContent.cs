@@ -22,14 +22,23 @@ namespace BookMS.Models {
                 new User {
                     Id = "wzy",
                     Password = "wzy",
-                    Sex = true,
-                    Name = "万兆奕"
+                    Sex = User.MALE,
+                    Name = "万兆奕",
+                    Major = "计算机科学与技术",
                 },
                 new User {
                     Id = "shr",
                     Password = "shr",
-                    Sex = true,
-                    Name = "宋昊睿"
+                    Sex = User.MALE,
+                    Name = "宋昊睿",
+                    Major = "计科",
+                },
+                new User {
+                    Id = "murasame",
+                    Password = "goshujin",
+                    Sex = User.FEMALE,
+                    Name = "丛雨",
+                    Major = "冷兵器护理",
                 }
                 );
             modelBuilder.Entity<Book>().HasData(
