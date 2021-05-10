@@ -12,7 +12,6 @@ namespace BookMS.Models {
         public string Id { get; set; }
         public string Name { get; set; }
         public bool Sex { get; set; }
-        [Required]
         public string Password { get; set; }
         public string PhotoPath { get; set; }
         public string Major { get; set; }

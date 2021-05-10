@@ -3,14 +3,16 @@ using System;
 using BookMS.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookMS.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    partial class AppDbContentModelSnapshot : ModelSnapshot
+    [Migration("20210510093320_Photo_Major")]
+    partial class Photo_Major
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
