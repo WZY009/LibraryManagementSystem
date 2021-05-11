@@ -7,8 +7,9 @@ using BookMS.Models;
 namespace BookMS.Mappers {
     class BookMapper : AbstractMapper {
         public Book GetById(string id) => _context.Books.FirstOrDefault(b => b.Id == id);
-        public IEnumerable<Book> GetByName(string name) => from b in _context.Books
+        public IOrderedQueryable<Book> GetByName(string name) => from b in _context.Books
                                                            where b.Name.Contains(name)
+                                                           orderby b.Name
                                                            select b;
         public IEnumerable<Book> GetAllBooks() => _context.Books.AsEnumerable();
         public Book DeleteById(string id) {

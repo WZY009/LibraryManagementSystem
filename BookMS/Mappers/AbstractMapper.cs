@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMS.Mappers {
     abstract class AbstractMapper : IDisposable {
-        protected readonly AppDbContent _context;
+        protected readonly AppDbContent _context;  //readonly是只读属性
         public AbstractMapper() {
             _context = new AppDbContent();
         }
