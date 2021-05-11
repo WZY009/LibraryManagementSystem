@@ -8,13 +8,9 @@ using System.Windows.Forms;
 using BookMS.Mappers;
 using BookMS.Models;
 using MySql.Data.MySqlClient;
-using ExcelDataReader;
 using System.IO;
-using Microsoft.Office.Interop.Excel;
-using Syncfusion.XlsIO;
 
-namespace BookMS
-{
+namespace BookMS {
     public partial class adminNewManagecs : Form {
         public string id, name, author, press, number;
         System.Drawing.Color azure = Color.FromArgb(40, 140, 195);
@@ -136,8 +132,8 @@ namespace BookMS
         }
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
 
-            ExportToExcel d = new ExportToExcel();
-            d.OutputAsExcelFile(uiDataGridView1);
+            //ExportToExcel d = new ExportToExcel();
+            //d.OutputAsExcelFile(uiDataGridView1);
 
             //using (excelengine engine = new excelengine()) {
             //    iapplication application = engine.excel;
