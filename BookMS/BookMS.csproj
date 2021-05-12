@@ -24,6 +24,8 @@
     </PackageReference>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="SunnyUI" Version="3.0.3" />
+    </Reference>
+    </Reference>
     <Compile Update="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
