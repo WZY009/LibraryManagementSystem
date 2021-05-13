@@ -103,9 +103,9 @@ namespace BookMS {
             this.panel1.Controls.Add(this.buttonProfile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 701);
+            this.panel1.Size = new System.Drawing.Size(197, 561);
             this.panel1.TabIndex = 0;
             // 
             // label6
@@ -113,10 +113,10 @@ namespace BookMS {
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(172, 659);
+            this.label6.Location = new System.Drawing.Point(155, 527);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 21);
+            this.label6.Size = new System.Drawing.Size(29, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "2.0";
             // 
@@ -125,10 +125,10 @@ namespace BookMS {
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(150, 635);
+            this.label5.Location = new System.Drawing.Point(135, 508);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 21);
+            this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Version";
             // 
@@ -140,10 +140,10 @@ namespace BookMS {
             this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHelp.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonHelp.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonHelp.Location = new System.Drawing.Point(0, 486);
-            this.buttonHelp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonHelp.Location = new System.Drawing.Point(0, 389);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(219, 50);
+            this.buttonHelp.Size = new System.Drawing.Size(197, 40);
             this.buttonHelp.TabIndex = 9;
             this.buttonHelp.Text = "Help";
             this.buttonHelp.UseVisualStyleBackColor = false;
@@ -154,10 +154,10 @@ namespace BookMS {
             // 
             this.uiLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiLabel2.ForeColor = System.Drawing.Color.White;
-            this.uiLabel2.Location = new System.Drawing.Point(11, 223);
+            this.uiLabel2.Location = new System.Drawing.Point(10, 178);
             this.uiLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(203, 37);
+            this.uiLabel2.Size = new System.Drawing.Size(183, 30);
             this.uiLabel2.TabIndex = 2;
             this.uiLabel2.Text = "Administrator name";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,10 +166,10 @@ namespace BookMS {
             // 
             this.uiLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiLabel1.ForeColor = System.Drawing.Color.White;
-            this.uiLabel1.Location = new System.Drawing.Point(38, 186);
+            this.uiLabel1.Location = new System.Drawing.Point(34, 149);
             this.uiLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(141, 37);
+            this.uiLabel1.Size = new System.Drawing.Size(127, 30);
             this.uiLabel1.TabIndex = 1;
             this.uiLabel1.Text = "Welcome";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,10 +182,10 @@ namespace BookMS {
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonLogOut.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 539);
-            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 431);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(219, 50);
+            this.buttonLogOut.Size = new System.Drawing.Size(197, 40);
             this.buttonLogOut.TabIndex = 8;
             this.buttonLogOut.Text = "Log Out";
             this.buttonLogOut.UseVisualStyleBackColor = false;
@@ -194,10 +194,10 @@ namespace BookMS {
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(47, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 101);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -209,10 +209,10 @@ namespace BookMS {
             this.buttonACSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonACSecurity.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonACSecurity.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonACSecurity.Location = new System.Drawing.Point(0, 380);
-            this.buttonACSecurity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonACSecurity.Location = new System.Drawing.Point(0, 304);
+            this.buttonACSecurity.Margin = new System.Windows.Forms.Padding(2);
             this.buttonACSecurity.Name = "buttonACSecurity";
-            this.buttonACSecurity.Size = new System.Drawing.Size(219, 50);
+            this.buttonACSecurity.Size = new System.Drawing.Size(197, 40);
             this.buttonACSecurity.TabIndex = 5;
             this.buttonACSecurity.Text = "Account Security";
             this.buttonACSecurity.UseVisualStyleBackColor = false;
@@ -227,10 +227,10 @@ namespace BookMS {
             this.buttonOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOverview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonOverview.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonOverview.Location = new System.Drawing.Point(0, 274);
-            this.buttonOverview.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonOverview.Location = new System.Drawing.Point(0, 219);
+            this.buttonOverview.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOverview.Name = "buttonOverview";
-            this.buttonOverview.Size = new System.Drawing.Size(219, 50);
+            this.buttonOverview.Size = new System.Drawing.Size(197, 40);
             this.buttonOverview.TabIndex = 7;
             this.buttonOverview.Text = "Overview";
             this.buttonOverview.UseVisualStyleBackColor = false;
@@ -245,10 +245,10 @@ namespace BookMS {
             this.buttonCommunication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCommunication.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCommunication.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCommunication.Location = new System.Drawing.Point(0, 433);
-            this.buttonCommunication.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonCommunication.Location = new System.Drawing.Point(0, 346);
+            this.buttonCommunication.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCommunication.Name = "buttonCommunication";
-            this.buttonCommunication.Size = new System.Drawing.Size(219, 50);
+            this.buttonCommunication.Size = new System.Drawing.Size(197, 40);
             this.buttonCommunication.TabIndex = 6;
             this.buttonCommunication.Text = "Communication";
             this.buttonCommunication.UseVisualStyleBackColor = false;
@@ -263,10 +263,10 @@ namespace BookMS {
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonProfile.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 327);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 262);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(219, 50);
+            this.buttonProfile.Size = new System.Drawing.Size(197, 40);
             this.buttonProfile.TabIndex = 4;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = false;
@@ -280,10 +280,10 @@ namespace BookMS {
             this.panel2.Controls.Add(this.uiPanelCheck);
             this.panel2.Controls.Add(this.buttonClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel2.Location = new System.Drawing.Point(197, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 701);
+            this.panel2.Size = new System.Drawing.Size(1003, 561);
             this.panel2.TabIndex = 1;
             // 
             // uiPanelGrid
@@ -292,12 +292,12 @@ namespace BookMS {
             this.uiPanelGrid.Controls.Add(this.uiDataGridView1);
             this.uiPanelGrid.Controls.Add(this.panel3);
             this.uiPanelGrid.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiPanelGrid.Location = new System.Drawing.Point(0, 174);
-            this.uiPanelGrid.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.uiPanelGrid.Location = new System.Drawing.Point(0, 139);
+            this.uiPanelGrid.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.uiPanelGrid.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanelGrid.Name = "uiPanelGrid";
-            this.uiPanelGrid.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.uiPanelGrid.Size = new System.Drawing.Size(702, 526);
+            this.uiPanelGrid.Padding = new System.Windows.Forms.Padding(6);
+            this.uiPanelGrid.Size = new System.Drawing.Size(1000, 421);
             this.uiPanelGrid.TabIndex = 3;
             this.uiPanelGrid.Text = " ";
             // 
@@ -403,7 +403,7 @@ namespace BookMS {
             this.panel3.Controls.Add(this.buttonDelete);
             this.panel3.Location = new System.Drawing.Point(0, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(990, 85);
+            this.panel3.Size = new System.Drawing.Size(1003, 85);
             this.panel3.TabIndex = 5;
             // 
             // uiImageButtonExport
@@ -493,12 +493,12 @@ namespace BookMS {
             this.uiPanelCheck.Controls.Add(this.uiTextBoxName);
             this.uiPanelCheck.Controls.Add(this.uiTextboxID);
             this.uiPanelCheck.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiPanelCheck.Location = new System.Drawing.Point(0, 64);
+            this.uiPanelCheck.Location = new System.Drawing.Point(0, 51);
             this.uiPanelCheck.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanelCheck.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanelCheck.Name = "uiPanelCheck";
-            this.uiPanelCheck.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.uiPanelCheck.Size = new System.Drawing.Size(701, 114);
+            this.uiPanelCheck.Padding = new System.Windows.Forms.Padding(6);
+            this.uiPanelCheck.Size = new System.Drawing.Size(631, 91);
             this.uiPanelCheck.TabIndex = 2;
             this.uiPanelCheck.Text = " ";
             // 
@@ -510,7 +510,7 @@ namespace BookMS {
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label4.Location = new System.Drawing.Point(763, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 23);
+            this.label4.Size = new System.Drawing.Size(151, 21);
             this.label4.TabIndex = 11;
             this.label4.Text = "Check Condition";
             // 
@@ -527,7 +527,7 @@ namespace BookMS {
             "Check Name"});
             this.comboBoxCheckCond.Location = new System.Drawing.Point(837, 63);
             this.comboBoxCheckCond.Name = "comboBoxCheckCond";
-            this.comboBoxCheckCond.Size = new System.Drawing.Size(271, 31);
+            this.comboBoxCheckCond.Size = new System.Drawing.Size(271, 29);
             this.comboBoxCheckCond.TabIndex = 10;
             // 
             // label3
@@ -538,7 +538,7 @@ namespace BookMS {
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label3.Location = new System.Drawing.Point(451, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 23);
+            this.label3.Size = new System.Drawing.Size(62, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "NAME";
             // 
@@ -550,7 +550,7 @@ namespace BookMS {
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label2.Location = new System.Drawing.Point(159, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 23);
+            this.label2.Size = new System.Drawing.Size(28, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "ID";
             // 
@@ -562,7 +562,7 @@ namespace BookMS {
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label1.Location = new System.Drawing.Point(25, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 30);
+            this.label1.Size = new System.Drawing.Size(135, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Check Books";
             // 
@@ -591,7 +591,7 @@ namespace BookMS {
             this.uiTextBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextBoxName.Name = "uiTextBoxName";
             this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBoxName.Size = new System.Drawing.Size(290, 32);
+            this.uiTextBoxName.Size = new System.Drawing.Size(290, 28);
             this.uiTextBoxName.TabIndex = 2;
             // 
             // uiTextboxID
@@ -606,7 +606,7 @@ namespace BookMS {
             this.uiTextboxID.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextboxID.Name = "uiTextboxID";
             this.uiTextboxID.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextboxID.Size = new System.Drawing.Size(290, 32);
+            this.uiTextboxID.Size = new System.Drawing.Size(290, 28);
             this.uiTextboxID.TabIndex = 0;
             // 
             // buttonClose
@@ -616,10 +616,10 @@ namespace BookMS {
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.buttonClose.Location = new System.Drawing.Point(653, 0);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonClose.Location = new System.Drawing.Point(588, 0);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(50, 57);
+            this.buttonClose.Size = new System.Drawing.Size(45, 46);
             this.buttonClose.TabIndex = 1;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
@@ -662,14 +662,14 @@ namespace BookMS {
             // 
             // adminNewManagecs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 701);
+            this.ClientSize = new System.Drawing.Size(1200, 561);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adminNewManagecs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminNewManagecs";

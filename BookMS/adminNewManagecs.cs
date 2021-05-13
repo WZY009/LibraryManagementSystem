@@ -132,7 +132,7 @@ namespace BookMS {
         }
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
 
-            //ExportToExcel d = new ExportToExcel();
+            ExportToExcel.Export(uiDataGridView1);
             //d.OutputAsExcelFile(uiDataGridView1);
 
             //using (excelengine engine = new excelengine()) {
