@@ -15,6 +15,7 @@ namespace BookMS {
         public string id, name, author, press, number;
         System.Drawing.Color azure = Color.FromArgb(40, 140, 195);
         System.Drawing.Color darkBlue = Color.FromArgb(40, 90, 170);
+        System.Drawing.Color basicColor = Color.FromArgb(41, 128, 185);
         public adminNewManagecs() {
             InitializeComponent();
             Table();
@@ -130,103 +131,51 @@ namespace BookMS {
                 MessageBox.Show("请现在表格中选择要删除的图书记录", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void uiImageButtonExport_Click(object sender, EventArgs e) {
 
-            ExportToExcel.Export(uiDataGridView1);
-            //d.OutputAsExcelFile(uiDataGridView1);
-
-            //using (excelengine engine = new excelengine()) {
-            //    iapplication application = engine.excel;
-            //    application.defaultversion = excelversion.xlsx;
-
-            //    //create a new workbook
-            //    iworkbook workbook = application.workbooks.create(1);
-            //    iworksheet sheet = workbook.worksheetgroup[0];
-
-            //    //create a dataset from xml file 
-            //    dataset dataset = new dataset();
-
-            //    dataset.readxml(path.getfullpath(@"../../data/employees.xml"));
-
-            //    //create a datable from the dataset
-            //    datatable datatable = new datatable();
-            //    datatable = dataset.tables[0];
-
-            //    //import data from the data table
-            //    sheet.importdatatable(datatable, true, 1, 1, true);
-
-            //    //create excel table or list object and apply table style
-            //    ilistobject table = sheet.listobjects.create("employee_personal_details", sheet.usedrange);
-            //    table.builtintablestyle = tablebuiltinstyles.tablestylelight14;
-
-            //    //autofit the columns
-            //    sheet.usedrange.autofitcolumns();
-
-            //    //save the file
-            //    stream excelstream = file.create(path.getfullpath(@"datatable-to-excel.xlsx"));
-            //    workbook.saveas(excelstream);
-            //    excelstream.dispose();
-            //}
-
-            //saveexceldialog.initialdirectory = "c:";
-            //saveexceldialog.title = "save as ecel file";
-            //saveexceldialog.filename = "books table";
-            //saveexceldialog.filter = "excel file(2003）|.xls";
-            //if (saveexceldialog.showdialog() != dialogresult.cancel) {
-            //    object misvalue = system.reflection.missing.value;
-            //    excel.application excellapp = new excel.application();
-            //    excellapp.visible = false;
-            //    excel.workbook wb = excellapp.workbooks.add(excel.xlwbatemplate.xlwbatworksheet);
-            //    excel.worksheet ws = (excel.worksheet)wb.activesheet;
-
-            //    using bookmapper bookmapper = new bookmapper();//using语句的功能为当实例调用完毕后可以自动释放，这个我也不是特别清楚，可能日后还是要重学
-            //    list<book> books = bookmapper.getallbooks() as list<book>;
-            //    //var books = bookmapper.getallbooks();//books已经成为一个迭代器
-
-
-            //    ws = (excel.worksheet)excellapp.worksheets.add(misvalue, misvalue, misvalue, misvalue);
-            //    ws.name = "information";
-            //    for (int j = 0; j < 5; j++) {
-            //        ws.cells[1, j + 1] = "isbn";
-            //        ws.cells[1, j + 1] = "book name";
-            //        ws.cells[1, j + 1] = "author";
-            //        ws.cells[1, j + 1] = "press";
-            //        ws.cells[1, j + 1] = "storage";
-            //    }
-            //    int i = 0;
-            //    foreach (var book in books) {
-            //        for (int j = 0; j < 5; j++) {
-            //            switch (j) {
-            //                case 0:
-            //                    ws.cells[i + 2, j + 1] = book.id;
-            //                    break;
-            //                case 1:
-            //                    ws.cells[i + 2, j + 1] = book.name;
-            //                    break;
-            //                case 2:
-            //                    ws.cells[i + 2, j + 1] = book.author;
-            //                    break;
-            //                case 3:
-            //                    ws.cells[i + 2, j + 1] = book.press;
-            //                    break;
-            //                case 4:
-            //                    ws.cells[i + 2, j + 1] = book.number.tostring();
-            //                    break;
-            //                default:
-            //                    messagebox.show("error");
-            //                    break;
-            //            }
-            //        }
-            //        i++;
-            //    }
-            //    wb.saveas(saveexceldialog.filename, excel.xlfileformat.xlworkbooknormal, misvalue, misvalue, misvalue, misvalue, excel.xlsaveasaccessmode.xlexclusive, misvalue, misvalue, misvalue, misvalue, misvalue);
-            //    wb.close(true, misvalue, misvalue);
-            //    excellapp.quit();
-            //    messagebox.show("successfully export!");
-            //}
-
-
+        private void uiImageButtonExport_MouseEnter(object sender, EventArgs e) {
+            uiImageButtonExport.ForeColor = Color.Red;
         }
+
+        private void uiImageButtonExport_MouseLeave(object sender, EventArgs e) {
+            uiImageButtonExport.ForeColor = basicColor;
+        }
+
+        private void buttonRefresh_MouseEnter_1(object sender, EventArgs e) {
+            buttonRefresh.ForeColor = Color.Red;
+        }
+
+        private void buttonRefresh_MouseLeave_1(object sender, EventArgs e) {
+            buttonRefresh.ForeColor = basicColor;
+        }
+
+        private void buttonAdd_MouseEnter_1(object sender, EventArgs e) {
+            buttonAdd.ForeColor = Color.Red;
+        }
+
+        private void buttonAdd_MouseLeave_1(object sender, EventArgs e) {
+            buttonAdd.ForeColor = basicColor;
+        }
+
+        private void buttonVerify_MouseEnter_1(object sender, EventArgs e) {
+            buttonVerify.ForeColor = Color.Red;
+        }
+
+        private void buttonVerify_MouseLeave_1(object sender, EventArgs e) {
+            buttonVerify.ForeColor = basicColor;
+        }
+
+        private void buttonDelete_MouseEnter_1(object sender, EventArgs e) {
+            buttonDelete.ForeColor = Color.Red;
+        }
+
+        private void buttonDelete_MouseLeave_1(object sender, EventArgs e) {
+            buttonDelete.ForeColor = basicColor;
+        }
+
+        private void uiImageButtonExport_Click_1(object sender, EventArgs e) {
+            ExportToExcel.Export(uiDataGridView1);
+        }
+
 
 
         private void buttonRefresh_Click(object sender, EventArgs e) {
@@ -250,13 +199,6 @@ namespace BookMS {
             catch {
                 MessageBox.Show("Error！");
             }
-        }
-        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-            id = uiDataGridView1.SelectedRows[0].Cells[0].Value.ToString();//transfer the information inside the selected units row's first cell into string, so we get the id
-            name = uiDataGridView1.SelectedRows[0].Cells[1].Value.ToString();//get name
-            author = uiDataGridView1.SelectedRows[0].Cells[2].Value.ToString();//get author
-            press = uiDataGridView1.SelectedRows[0].Cells[3].Value.ToString();//get publish
-            number = uiDataGridView1.SelectedRows[0].Cells[4].Value.ToString();//get store
         }
 
     }
