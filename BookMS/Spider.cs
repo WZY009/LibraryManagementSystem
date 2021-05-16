@@ -14,9 +14,9 @@ namespace BookMS {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
-            public string Rate { get; set; }
+            public string? Rate { get; set; }
             public string Subjects { get; set; }
-            public string Detail { get; set; }
+            public string? Detail { get; set; }
         }
 
         private List<BookHtmlContent> _bookHtmlContents;
@@ -53,10 +53,10 @@ namespace BookMS {
                 string url = titleNode.SelectSingleNode("h3/a").Attributes["href"].Value;
 
                 var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
-                string rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
+                string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
                 string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
 
-                string detail = node.SelectSingleNode("p")?.InnerText;
+                string? detail = node.SelectSingleNode("p")?.InnerText;
 
                 _bookHtmlContents.Add(new BookHtmlContent() {
                     Title = title,
