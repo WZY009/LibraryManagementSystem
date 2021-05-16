@@ -9,10 +9,11 @@ using BookMS.Mappers;
 using BookMS.Models;
 using MySql.Data.MySqlClient;
 using System.IO;
+using Sunny.UI;
 
 namespace BookMS {
     public partial class adminNewManagecs : Form {
-        public string id, name, author, press, number;
+        public static string id, name, author, press, number;
         System.Drawing.Color azure = Color.FromArgb(40, 140, 195);
         System.Drawing.Color darkBlue = Color.FromArgb(40, 90, 170);
         System.Drawing.Color basicColor = Color.FromArgb(41, 128, 185);
@@ -24,56 +25,28 @@ namespace BookMS {
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
         }
-
-        private void buttonRefresh_MouseEnter(object sender, EventArgs e) {
-            buttonOverview.BackColor = darkBlue;//(40, 90, 170)
+        private void changeFontColor_MouseEnter(object sender, EventArgs e) {
+            var currentButton = (UIImageButton)sender;
+            currentButton.ForeColor = Color.Red;
         }
-
-        private void buttonRefresh_MouseLeave(object sender, EventArgs e) {
-            buttonOverview.BackColor = azure;//get back to the (40,140,195)
+        private void changeFontColor_MouseLeave(object sender,EventArgs e) {
+            var currentButton = (UIImageButton)sender;
+            currentButton.ForeColor = basicColor;
         }
-
-        private void buttonAdd_MouseEnter(object sender, EventArgs e) {
-            buttonProfile.BackColor = darkBlue;//(40, 90, 170)
+        private void changeButtonColor_MouseEnter(object sender, EventArgs e) {
+            var currentButton = (Button)sender;
+            currentButton.BackColor = darkBlue;
         }
-
-        private void buttonAdd_MouseLeave(object sender, EventArgs e) {
-            buttonProfile.BackColor = Color.FromArgb(40, 128, 185);//get back to the (40,140,195)
+        private void changeOddButtonColor_MouseLeave(object sender,EventArgs e) {//奇数变成azure
+            var currentButton = (Button)sender;
+            currentButton.BackColor = azure;
         }
-
-        private void buttonVerify_MouseEnter(object sender, EventArgs e) {
-            buttonACSecurity.BackColor = darkBlue;
-        }
-
-        private void buttonVerify_MouseLeave(object sender, EventArgs e) {
-            buttonACSecurity.BackColor = azure;
-        }
-
-        private void buttonDelete_MouseEnter(object sender, EventArgs e) {
-            buttonCommunication.BackColor = darkBlue;
-        }
-
-        private void buttonDelete_MouseLeave(object sender, EventArgs e) {
-            buttonCommunication.BackColor = Color.FromArgb(40, 128, 185);
-        }
-
-        private void buttonCheckName_MouseEnter(object sender, EventArgs e) {
-            buttonHelp.BackColor = darkBlue;
-        }
-
-        private void buttonCheckName_MouseLeave(object sender, EventArgs e) {
-            buttonHelp.BackColor = azure;
-        }
-
-        private void buttonCheckID_MouseEnter(object sender, EventArgs e) {
-            buttonLogOut.BackColor = darkBlue;
-        }
-
-        private void buttonCheckID_MouseLeave(object sender, EventArgs e) {
-            buttonLogOut.BackColor = Color.Transparent;
+        private void changeEvenButtonColor_MouseLeave(object sender, EventArgs e) {//偶数变透明
+            var currentButton = (Button)sender;
+            currentButton.BackColor = Color.Transparent;
         }
         public void Table()//display the table
-{
+        {
             uiDataGridView1.Rows.Clear();//flush the old data
             using BookMapper bookMapper = new BookMapper();
             foreach (Book book in bookMapper.GetAllBooks())
@@ -92,7 +65,6 @@ namespace BookMS {
             foreach (Book book in bookMapper.GetByName(uiTextBoxName.Text))
                 uiDataGridView1.Rows.Add(book.ToStringArray());
         }
-
         private void pictureBox2_Click(object sender, EventArgs e) {
             switch (comboBoxCheckCond.Text) {
                 case "Check ID":
@@ -132,74 +104,46 @@ namespace BookMS {
             }
         }
 
-        private void uiImageButtonExport_MouseEnter(object sender, EventArgs e) {
-            uiImageButtonExport.ForeColor = Color.Red;
+        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {//我也很绝望啊，为啥会出现这样的bug！
+            id = uiDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            name = uiDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            author = uiDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            press = uiDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            number = uiDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
 
-        private void uiImageButtonExport_MouseLeave(object sender, EventArgs e) {
-            uiImageButtonExport.ForeColor = basicColor;
+        private void buttonLogOut_Click(object sender, EventArgs e) {
+            this.Close();
         }
 
-        private void buttonRefresh_MouseEnter_1(object sender, EventArgs e) {
-            buttonRefresh.ForeColor = Color.Red;
-        }
-
-        private void buttonRefresh_MouseLeave_1(object sender, EventArgs e) {
-            buttonRefresh.ForeColor = basicColor;
-        }
-
-        private void buttonAdd_MouseEnter_1(object sender, EventArgs e) {
-            buttonAdd.ForeColor = Color.Red;
-        }
-
-        private void buttonAdd_MouseLeave_1(object sender, EventArgs e) {
-            buttonAdd.ForeColor = basicColor;
-        }
-
-        private void buttonVerify_MouseEnter_1(object sender, EventArgs e) {
-            buttonVerify.ForeColor = Color.Red;
-        }
-
-        private void buttonVerify_MouseLeave_1(object sender, EventArgs e) {
-            buttonVerify.ForeColor = basicColor;
-        }
-
-        private void buttonDelete_MouseEnter_1(object sender, EventArgs e) {
-            buttonDelete.ForeColor = Color.Red;
-        }
-
-        private void buttonDelete_MouseLeave_1(object sender, EventArgs e) {
-            buttonDelete.ForeColor = basicColor;
-        }
-
-        private void uiImageButtonExport_Click_1(object sender, EventArgs e) {
+        private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1);
         }
-
-
-
         private void buttonRefresh_Click(object sender, EventArgs e) {
             Table();
             uiTextboxID.Text = null;
             uiTextBoxName.Text = null;
         }
-
         private void buttonAdd_Click(object sender, EventArgs e) {
-            adminAddBooks admin = new adminAddBooks();
+            adminNewAddBooks admin = new adminNewAddBooks();
             admin.ShowDialog();
             Table();//update the data
         }
+        private void buttonVerify_Click(object sender,EventArgs e) {
+            if(id=="") {
+                MessageBox.Show("opps! you did not choose a valid book!");
+            }
+            else {
+                try {
+                    adminNewVerify adminverify = new adminNewVerify(id, name, author, press, number);//将当前选中的值传过去修改界面，注意这里的构造函数进行了重载
+                    adminverify.ShowDialog();
+                    Table();//刷新数据
+                }
+                catch {
+                    MessageBox.Show("Error！");
+                }
+            }
 
-        private void buttonVerify_Click(object sender, EventArgs e) {
-            try {
-                adminVerify adminverify = new adminVerify(id, name, author, press, number);
-                adminverify.ShowDialog();
-                Table();
-            }
-            catch {
-                MessageBox.Show("Error！");
-            }
         }
-
     }
 }

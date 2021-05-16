@@ -52,6 +52,7 @@ namespace BookMS
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -133,6 +134,7 @@ namespace BookMS
             // panel2
             // 
             this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.buttonRegister);
             this.panel2.Controls.Add(this.uiRadioButtonUser);
             this.panel2.Controls.Add(this.uiRadioButtonAdmin);
             this.panel2.Controls.Add(this.linkLabel1);
@@ -159,7 +161,7 @@ namespace BookMS
             this.uiRadioButtonUser.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiRadioButtonUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.uiRadioButtonUser.ImageInterval = 2;
-            this.uiRadioButtonUser.Location = new System.Drawing.Point(240, 636);
+            this.uiRadioButtonUser.Location = new System.Drawing.Point(237, 636);
             this.uiRadioButtonUser.Margin = new System.Windows.Forms.Padding(0);
             this.uiRadioButtonUser.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButtonUser.Name = "uiRadioButtonUser";
@@ -175,7 +177,7 @@ namespace BookMS
             this.uiRadioButtonAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiRadioButtonAdmin.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiRadioButtonAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiRadioButtonAdmin.Location = new System.Drawing.Point(398, 636);
+            this.uiRadioButtonAdmin.Location = new System.Drawing.Point(395, 636);
             this.uiRadioButtonAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.uiRadioButtonAdmin.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButtonAdmin.Name = "uiRadioButtonAdmin";
@@ -237,7 +239,7 @@ namespace BookMS
             this.buttonForget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForget.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonForget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.buttonForget.Location = new System.Drawing.Point(403, 755);
+            this.buttonForget.Location = new System.Drawing.Point(330, 830);
             this.buttonForget.Name = "buttonForget";
             this.buttonForget.Size = new System.Drawing.Size(240, 50);
             this.buttonForget.TabIndex = 3;
@@ -250,7 +252,7 @@ namespace BookMS
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(30, 742);
+            this.buttonLogin.Location = new System.Drawing.Point(55, 742);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(300, 70);
             this.buttonLogin.TabIndex = 3;
@@ -350,6 +352,20 @@ namespace BookMS
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRegister.ForeColor = System.Drawing.Color.White;
+            this.buttonRegister.Location = new System.Drawing.Point(545, 742);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(300, 70);
+            this.buttonRegister.TabIndex = 7;
+            this.buttonRegister.Text = "REGISTER";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 35F);
@@ -403,6 +419,7 @@ namespace BookMS
         private System.Windows.Forms.Button buttonForget;
         private Sunny.UI.UIRadioButton uiRadioButtonAdmin;
         private Sunny.UI.UIRadioButton uiRadioButtonUser;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }
 

@@ -19,11 +19,12 @@ namespace BookMS {
         }
         public adminNewVerify(string id, string name, string author, string press, string number) {//重构构造函数
             InitializeComponent();
-            ID = textBoxISBN.Text = id;
+            textBoxISBN.Text = id;
+            ID = id;
             textBoxName.Text = name;
             textBoxAuthor.Text = author;
             textBoxPublish.Text = press;
-            textBoxStorage.Text = number;
+            textBoxStorage.Text = number;            
         }
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
@@ -83,7 +84,6 @@ namespace BookMS {
         
         //有没有一种更加艺术的方式实现这个功能啊啊啊啊啊！！！！！！！
         private void changeColor(TextBox changeBox, TextBox a0, TextBox a1, TextBox a2,
-
                          TextBox a3, Panel changePanel, Panel p0, Panel p1, Panel p2, Panel p3) {
             changeBox.BackColor = Color.White;
             changePanel.BackColor = Color.White;

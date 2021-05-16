@@ -15,8 +15,8 @@ namespace BookMS {
 
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new adminNewManagecs());//表示从login开始运行
-            //Application.Run(new login());
+            //System.Windows.Forms.Application.Run(new adminNewManagecs());
+            Application.Run(new register());
         }
     }
 }

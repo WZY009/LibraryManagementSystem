@@ -82,8 +82,6 @@ namespace BookMS {
                         panelStorage, panelISBN, panelAuthor, panelName, panelPulish);
         }
 
-
-
         private void buttonClose_Click(object sender, EventArgs e) {
             //发现一个bug？不知道原理在哪里，当我从其他地方复制一个代码过来的时候，此时不会发生时间关联，必须
             //要自己动手双击button，然而此时生成的函数却要在末尾加一个_1，然而，不能够在designer.cs文件中解绑事件，否则仍然会报错！必须要重启以后，删掉原来的代码才行

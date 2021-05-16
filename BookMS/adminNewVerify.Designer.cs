@@ -116,9 +116,8 @@ namespace BookMS {
             this.textBoxISBN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxISBN.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxISBN.Location = new System.Drawing.Point(167, 33);
+            this.textBoxISBN.Location = new System.Drawing.Point(199, 28);
             this.textBoxISBN.Name = "textBoxISBN";
-            this.textBoxISBN.ReadOnly = true;
             this.textBoxISBN.Size = new System.Drawing.Size(700, 37);
             this.textBoxISBN.TabIndex = 1;
             this.textBoxISBN.Click += new System.EventHandler(this.textBoxISBN_Click);
@@ -160,7 +159,7 @@ namespace BookMS {
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxName.Location = new System.Drawing.Point(188, 37);
+            this.textBoxName.Location = new System.Drawing.Point(202, 32);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(700, 37);
             this.textBoxName.TabIndex = 1;
@@ -203,7 +202,7 @@ namespace BookMS {
             this.textBoxAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAuthor.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxAuthor.Location = new System.Drawing.Point(199, 33);
+            this.textBoxAuthor.Location = new System.Drawing.Point(202, 32);
             this.textBoxAuthor.Name = "textBoxAuthor";
             this.textBoxAuthor.Size = new System.Drawing.Size(700, 37);
             this.textBoxAuthor.TabIndex = 1;
@@ -246,7 +245,7 @@ namespace BookMS {
             this.textBoxPublish.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPublish.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPublish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxPublish.Location = new System.Drawing.Point(188, 32);
+            this.textBoxPublish.Location = new System.Drawing.Point(202, 31);
             this.textBoxPublish.Name = "textBoxPublish";
             this.textBoxPublish.Size = new System.Drawing.Size(700, 37);
             this.textBoxPublish.TabIndex = 1;
@@ -289,7 +288,7 @@ namespace BookMS {
             this.textBoxStorage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxStorage.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxStorage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxStorage.Location = new System.Drawing.Point(188, 29);
+            this.textBoxStorage.Location = new System.Drawing.Point(197, 28);
             this.textBoxStorage.Name = "textBoxStorage";
             this.textBoxStorage.Size = new System.Drawing.Size(700, 37);
             this.textBoxStorage.TabIndex = 1;

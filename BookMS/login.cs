@@ -31,7 +31,7 @@ namespace BookMS
                 User usr = Login_User(id: textBoxUserNum.Text, password: textBoxPassword.Text);
                 if (usr != null)//读取数据,返回的是一个布尔型变量，如果读到了匹配的就返回一个真
                 {
-                    MessageBox.Show("用户登陆成功");
+                    MessageBox.Show("you are successful to log in a user account");
                     Data.Uid = usr.Id;
                     Data.UName = usr.Name;
 
@@ -42,7 +42,7 @@ namespace BookMS
                 }
                 else
                 {
-                    MessageBox.Show("用户登陆失败");
+                    MessageBox.Show("you are failed to log in");
                 }
             }
 
@@ -51,8 +51,8 @@ namespace BookMS
             {
                 if (Login_Admin(id: textBoxUserNum.Text, password: textBoxPassword.Text) != null)
                 {
-                    MessageBox.Show("管理员登陆成功");
-                    adminBasic administrator = new adminBasic();
+                    MessageBox.Show("you are successful to log in an administrator account");
+                    adminNewManagecs administrator = new adminNewManagecs();
                     this.Hide();
                     administrator.ShowDialog();
                     this.Show();
@@ -60,7 +60,7 @@ namespace BookMS
                 }
                 else
                 {
-                    MessageBox.Show("管理员登陆失败");
+                    MessageBox.Show("you are failed to log in");
 
                 }
             }
@@ -110,6 +110,13 @@ namespace BookMS
             else
                 textBoxPassword.UseSystemPasswordChar = true;
 
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e) {
+            register newUser = new register();
+            this.Hide();
+            newUser.ShowDialog();
+            this.Show();
         }
     }
 }
