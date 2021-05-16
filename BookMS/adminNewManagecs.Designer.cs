@@ -299,7 +299,7 @@ namespace BookMS {
             this.uiPanelGrid.MinimumSize = new System.Drawing.Size(2, 2);
             this.uiPanelGrid.Name = "uiPanelGrid";
             this.uiPanelGrid.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.uiPanelGrid.Size = new System.Drawing.Size(1150, 808);
+            this.uiPanelGrid.Size = new System.Drawing.Size(1150, 822);
             this.uiPanelGrid.TabIndex = 3;
             this.uiPanelGrid.Text = " ";
             // 
@@ -409,7 +409,7 @@ namespace BookMS {
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(29, 50);
+            this.uiDataGridView1.Location = new System.Drawing.Point(14, 50);
             this.uiDataGridView1.Name = "uiDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
@@ -429,7 +429,7 @@ namespace BookMS {
             this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
             this.uiDataGridView1.ShowRect = false;
-            this.uiDataGridView1.Size = new System.Drawing.Size(1071, 730);
+            this.uiDataGridView1.Size = new System.Drawing.Size(1122, 759);
             this.uiDataGridView1.TabIndex = 6;
             // 
             // Column6
