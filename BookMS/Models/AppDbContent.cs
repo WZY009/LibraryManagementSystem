@@ -9,6 +9,7 @@ namespace BookMS.Models {
         public DbSet<Book> Books { get; set; }
         public DbSet<Lend> Lends { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<VerifyQuestion> VerifyQuesions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseMySQL(@"server=localhost;database=BookDB;uid=root;pwd=root;CharSet=utf8");
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -25,6 +26,8 @@ namespace BookMS.Models {
                     Sex = User.MALE,
                     Name = "万兆奕",
                     Major = "计算机科学与技术",
+                    Question_id = 1,
+                    Question_answer = "野兽仙贝",
                 },
                 new User {
                     Id = "shr",
@@ -32,6 +35,8 @@ namespace BookMS.Models {
                     Sex = User.MALE,
                     Name = "宋昊睿",
                     Major = "计科",
+                    Question_id = 3,
+                    Question_answer = "红色",
                 },
                 new User {
                     Id = "murasame",
@@ -39,6 +44,8 @@ namespace BookMS.Models {
                     Sex = User.FEMALE,
                     Name = "丛雨",
                     Major = "冷兵器护理",
+                    Question_id = 2,
+                    Question_answer = "有地将臣",
                 }
                 );
             modelBuilder.Entity<Book>().HasData(
@@ -55,6 +62,28 @@ namespace BookMS.Models {
                     Author = "David A. Patterson",
                     Press = "机械工业出版社",
                     Number = 10,
+                }
+                );
+            modelBuilder.Entity<VerifyQuestion>().HasData(
+                new VerifyQuestion {
+                    ID = 1,
+                    Question = "你最喜欢的食物是什么？",
+                },
+                new VerifyQuestion {
+                    ID = 2,
+                    Question = "你的第一任老师是谁？",
+                },
+                new VerifyQuestion {
+                    ID = 3,
+                    Question = "你最喜欢的颜色是什么？",
+                },
+                new VerifyQuestion {
+                    ID = 4,
+                    Question = "你养的第一个宠物名字叫什么？",
+                },
+                new VerifyQuestion {
+                    ID = 5,
+                    Question = "你的第一个同桌是谁？",
                 }
                 );
         }

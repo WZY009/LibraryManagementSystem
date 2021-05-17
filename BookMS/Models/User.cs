@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace BookMS.Models {
@@ -21,8 +22,11 @@ namespace BookMS.Models {
         public string PhotoPath { get; set; }
         public string Major { get; set; }
         [Required]
-        public int VerifyQuestion { get; set; }
+        [ForeignKey("Question")]
+        public int Question_id { get; set; }
         [Required]
-        public string VerifyAnswer { get; set; }
+        public string Question_answer { get; set; }
+
+        public VerifyQuestion Question { get; set; }
     }
 }
