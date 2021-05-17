@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookMS.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    [Migration("20210510093320_Photo_Major")]
-    partial class Photo_Major
+    [Migration("20210517103005_AddQuestions")]
+    partial class AddQuestions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,9 +25,7 @@ namespace BookMS.Migrations
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhotoPath")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -51,6 +49,7 @@ namespace BookMS.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Number")
@@ -89,6 +88,7 @@ namespace BookMS.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Bid")
+                        .IsRequired()
                         .HasColumnType("varchar(767)");
 
                     b.Property<DateTime>("LendTime")
@@ -96,6 +96,7 @@ namespace BookMS.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Uid")
+                        .IsRequired()
                         .HasColumnType("varchar(767)");
 
                     b.HasKey("No");
@@ -116,18 +117,30 @@ namespace BookMS.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("PhotoPath")
                         .HasColumnType("text");
+
+                    b.Property<string>("Question_answer")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Question_id")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Sex")
                         .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Question_id");
 
                     b.ToTable("Users");
 
@@ -138,6 +151,8 @@ namespace BookMS.Migrations
                             Major = "计算机科学与技术",
                             Name = "万兆奕",
                             Password = "wzy",
+                            Question_answer = "野兽仙贝",
+                            Question_id = 1,
                             Sex = true
                         },
                         new
@@ -146,6 +161,8 @@ namespace BookMS.Migrations
                             Major = "计科",
                             Name = "宋昊睿",
                             Password = "shr",
+                            Question_answer = "红色",
+                            Question_id = 3,
                             Sex = true
                         },
                         new
@@ -154,7 +171,51 @@ namespace BookMS.Migrations
                             Major = "冷兵器护理",
                             Name = "丛雨",
                             Password = "goshujin",
+                            Question_answer = "有地将臣",
+                            Question_id = 2,
                             Sex = false
+                        });
+                });
+
+            modelBuilder.Entity("BookMS.Models.VerifyQuestion", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("VerifyQuesions");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Question = "你最喜欢的食物是什么？"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Question = "你的第一任老师是谁？"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Question = "你最喜欢的颜色是什么？"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Question = "你养的第一个宠物名字叫什么？"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Question = "你的第一个同桌是谁？"
                         });
                 });
 
@@ -162,15 +223,30 @@ namespace BookMS.Migrations
                 {
                     b.HasOne("BookMS.Models.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("Bid");
+                        .HasForeignKey("Bid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BookMS.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("Uid");
+                        .HasForeignKey("Uid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Book");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BookMS.Models.User", b =>
+                {
+                    b.HasOne("BookMS.Models.VerifyQuestion", "Question")
+                        .WithMany()
+                        .HasForeignKey("Question_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
                 });
 #pragma warning restore 612, 618
         }

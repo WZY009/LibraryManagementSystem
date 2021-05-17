@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace BookMS.Migrations
 {
-    public partial class InitialDatabase : Migration
+    public partial class AddQuestions : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace BookMS.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Password = table.Column<string>(type: "text", nullable: true)
+                    Password = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,7 +25,7 @@ namespace BookMS.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: true),
+                    Name = table.Column<string>(type: "text", nullable: false),
                     Author = table.Column<string>(type: "text", nullable: true),
                     Press = table.Column<string>(type: "text", nullable: true),
                     Number = table.Column<int>(type: "int", nullable: false)
@@ -36,17 +36,40 @@ namespace BookMS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "VerifyQuesions",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Question = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VerifyQuesions", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: true),
+                    Name = table.Column<string>(type: "text", nullable: false),
                     Sex = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    Password = table.Column<string>(type: "text", nullable: true)
+                    Password = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false),
+                    PhotoPath = table.Column<string>(type: "text", nullable: true),
+                    Major = table.Column<string>(type: "text", nullable: true),
+                    Question_id = table.Column<int>(type: "int", nullable: false),
+                    Question_answer = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_VerifyQuesions_Question_id",
+                        column: x => x.Question_id,
+                        principalTable: "VerifyQuesions",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,8 +78,8 @@ namespace BookMS.Migrations
                 {
                     No = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Uid = table.Column<string>(type: "varchar(767)", nullable: true),
-                    Bid = table.Column<string>(type: "varchar(767)", nullable: true),
+                    Uid = table.Column<string>(type: "varchar(767)", nullable: false),
+                    Bid = table.Column<string>(type: "varchar(767)", nullable: false),
                     LendTime = table.Column<DateTime>(type: "datetime", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn)
                 },
@@ -68,13 +91,13 @@ namespace BookMS.Migrations
                         column: x => x.Bid,
                         principalTable: "Books",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Lends_Users_Uid",
                         column: x => x.Uid,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -92,13 +115,31 @@ namespace BookMS.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "Name", "Password", "Sex" },
+                table: "VerifyQuesions",
+                columns: new[] { "ID", "Question" },
                 values: new object[,]
                 {
-                    { "wzy", "万兆奕", "wzy", true },
-                    { "shr", "宋昊睿", "shr", true }
+                    { 1, "你最喜欢的食物是什么？" },
+                    { 2, "你的第一任老师是谁？" },
+                    { 3, "你最喜欢的颜色是什么？" },
+                    { 4, "你养的第一个宠物名字叫什么？" },
+                    { 5, "你的第一个同桌是谁？" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Major", "Name", "Password", "PhotoPath", "Question_answer", "Question_id", "Sex" },
+                values: new object[] { "wzy", "计算机科学与技术", "万兆奕", "wzy", null, "野兽仙贝", 1, true });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Major", "Name", "Password", "PhotoPath", "Question_answer", "Question_id", "Sex" },
+                values: new object[] { "murasame", "冷兵器护理", "丛雨", "goshujin", null, "有地将臣", 2, false });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Major", "Name", "Password", "PhotoPath", "Question_answer", "Question_id", "Sex" },
+                values: new object[] { "shr", "计科", "宋昊睿", "shr", null, "红色", 3, true });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lends_Bid",
@@ -109,6 +150,11 @@ namespace BookMS.Migrations
                 name: "IX_Lends_Uid",
                 table: "Lends",
                 column: "Uid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Question_id",
+                table: "Users",
+                column: "Question_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -124,6 +170,9 @@ namespace BookMS.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "VerifyQuesions");
         }
     }
 }
