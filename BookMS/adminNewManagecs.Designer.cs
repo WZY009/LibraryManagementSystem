@@ -334,6 +334,7 @@ namespace BookMS {
             this.buttonRefresh.TabIndex = 10;
             this.buttonRefresh.TabStop = false;
             this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             this.buttonRefresh.MouseEnter += new System.EventHandler(this.changeFontColor_MouseEnter);
             this.buttonRefresh.MouseLeave += new System.EventHandler(this.changeFontColor_MouseLeave);
             // 

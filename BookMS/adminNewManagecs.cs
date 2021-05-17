@@ -53,10 +53,14 @@ namespace BookMS {
                 uiDataGridView1.Rows.Add(book.ToStringArray());
         }
         public void TableID()//show data based on ID
-{
+        {
             uiDataGridView1.Rows.Clear();//flush old data
             using BookMapper bookMapper = new BookMapper();
-            uiDataGridView1.Rows.Add(bookMapper.GetById(uiTextboxID.Text).ToStringArray());
+            if (bookMapper.GetById(uiTextboxID.Text)==null) //如果返回的是一个空对象，那么就证明没有找到，在这里发现了调用堆栈查看错误的办法！shr，牛逼！
+                MessageBox.Show("Sorry, we can not find what you want!");           
+            else 
+                uiDataGridView1.Rows.Add(bookMapper.GetById(uiTextboxID.Text).ToStringArray());
+
         }
         public void TableName()//check the books according to the name
         {
@@ -115,6 +119,7 @@ namespace BookMS {
         private void buttonLogOut_Click(object sender, EventArgs e) {
             this.Close();
         }
+
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1);
