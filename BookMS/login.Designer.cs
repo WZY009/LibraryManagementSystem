@@ -134,6 +134,7 @@ namespace BookMS
             // panel2
             // 
             this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.buttonRegister);
             this.panel2.Controls.Add(this.uiRadioButtonUser);
             this.panel2.Controls.Add(this.uiRadioButtonAdmin);
@@ -248,7 +249,7 @@ namespace BookMS
             // 
             // buttonForget
             // 
-            this.buttonForget.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonForget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.buttonForget.FlatAppearance.BorderSize = 0;
             this.buttonForget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForget.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -278,7 +279,7 @@ namespace BookMS
             // 
             // panelPassword
             // 
-            this.panelPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.panelPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.panelPassword.Controls.Add(this.textBoxPassword);
             this.panelPassword.Controls.Add(this.pictureBoxPassword);
             this.panelPassword.Location = new System.Drawing.Point(0, 503);
@@ -288,7 +289,7 @@ namespace BookMS
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -312,7 +313,7 @@ namespace BookMS
             // 
             // panelUser
             // 
-            this.panelUser.BackColor = System.Drawing.SystemColors.Control;
+            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.panelUser.Controls.Add(this.textBoxUserNum);
             this.panelUser.Controls.Add(this.pictureBox2);
             this.panelUser.Location = new System.Drawing.Point(0, 382);
@@ -322,7 +323,7 @@ namespace BookMS
             // 
             // textBoxUserNum
             // 
-            this.textBoxUserNum.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxUserNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.textBoxUserNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserNum.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxUserNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));

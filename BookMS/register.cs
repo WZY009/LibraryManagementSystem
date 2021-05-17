@@ -52,7 +52,7 @@ namespace BookMS {
         }
 
         private void buttonFlush_Click(object sender, EventArgs e) {
-            textBoxID = textBoxName = textBoxPassword = textBoxRepeat = textBoxAnswer = null;
+            textBoxID.Text = textBoxName.Text = textBoxPassword.Text = textBoxRepeat.Text = textBoxAnswer.Text = null;
             comboBox1.Text = null;
         }
 
