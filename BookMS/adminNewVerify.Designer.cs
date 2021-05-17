@@ -118,6 +118,7 @@ namespace BookMS {
             this.textBoxISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxISBN.Location = new System.Drawing.Point(199, 28);
             this.textBoxISBN.Name = "textBoxISBN";
+            this.textBoxISBN.ReadOnly = true;
             this.textBoxISBN.Size = new System.Drawing.Size(700, 37);
             this.textBoxISBN.TabIndex = 1;
             this.textBoxISBN.Click += new System.EventHandler(this.textBoxISBN_Click);

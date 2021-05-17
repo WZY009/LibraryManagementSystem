@@ -36,6 +36,7 @@ namespace BookMS
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.uiRadioButtonUser = new Sunny.UI.UIRadioButton();
             this.uiRadioButtonAdmin = new Sunny.UI.UIRadioButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -52,7 +53,6 @@ namespace BookMS
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -154,6 +154,20 @@ namespace BookMS
             this.panel2.Size = new System.Drawing.Size(900, 1060);
             this.panel2.TabIndex = 1;
             // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRegister.ForeColor = System.Drawing.Color.White;
+            this.buttonRegister.Location = new System.Drawing.Point(545, 742);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(300, 70);
+            this.buttonRegister.TabIndex = 7;
+            this.buttonRegister.Text = "REGISTER";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
             // uiRadioButtonUser
             // 
             this.uiRadioButtonUser.Checked = true;
@@ -245,6 +259,8 @@ namespace BookMS
             this.buttonForget.TabIndex = 3;
             this.buttonForget.Text = "Forget Password?";
             this.buttonForget.UseVisualStyleBackColor = false;
+            this.buttonForget.MouseEnter += new System.EventHandler(this.buttonForget_MouseEnter);
+            this.buttonForget.MouseLeave += new System.EventHandler(this.buttonForget_MouseLeave);
             // 
             // buttonLogin
             // 
@@ -322,7 +338,7 @@ namespace BookMS
             this.pictureBox2.Location = new System.Drawing.Point(30, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -351,20 +367,6 @@ namespace BookMS
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(545, 742);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(300, 70);
-            this.buttonRegister.TabIndex = 7;
-            this.buttonRegister.Text = "REGISTER";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // login
             // 

@@ -27,38 +27,40 @@ namespace BookMS {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(register));
             this.buttonFlush = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
-            this.panelStorage = new System.Windows.Forms.Panel();
+            this.panelRepeat = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxRepeat = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panelPulish = new System.Windows.Forms.Panel();
+            this.panelPassword = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panelAuthor = new System.Windows.Forms.Panel();
+            this.panelID = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxAdmin = new System.Windows.Forms.PictureBox();
-            this.panelISBN = new System.Windows.Forms.Panel();
+            this.panelName = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panelStorage.SuspendLayout();
+            this.panelRepeat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panelPulish.SuspendLayout();
+            this.panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panelAuthor.SuspendLayout();
+            this.panelID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).BeginInit();
-            this.panelISBN.SuspendLayout();
+            this.panelName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonFlush
@@ -74,6 +76,7 @@ namespace BookMS {
             this.buttonFlush.TabIndex = 31;
             this.buttonFlush.Text = "Flush";
             this.buttonFlush.UseVisualStyleBackColor = false;
+            this.buttonFlush.Click += new System.EventHandler(this.buttonFlush_Click);
             // 
             // buttonConfirm
             // 
@@ -88,17 +91,18 @@ namespace BookMS {
             this.buttonConfirm.TabIndex = 30;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // panelStorage
+            // panelRepeat
             // 
-            this.panelStorage.BackColor = System.Drawing.Color.Transparent;
-            this.panelStorage.Controls.Add(this.label6);
-            this.panelStorage.Controls.Add(this.textBoxRepeat);
-            this.panelStorage.Controls.Add(this.pictureBox5);
-            this.panelStorage.Location = new System.Drawing.Point(2, 755);
-            this.panelStorage.Name = "panelStorage";
-            this.panelStorage.Size = new System.Drawing.Size(900, 90);
-            this.panelStorage.TabIndex = 27;
+            this.panelRepeat.BackColor = System.Drawing.Color.Transparent;
+            this.panelRepeat.Controls.Add(this.label6);
+            this.panelRepeat.Controls.Add(this.textBoxRepeat);
+            this.panelRepeat.Controls.Add(this.pictureBox5);
+            this.panelRepeat.Location = new System.Drawing.Point(2, 755);
+            this.panelRepeat.Name = "panelRepeat";
+            this.panelRepeat.Size = new System.Drawing.Size(900, 90);
+            this.panelRepeat.TabIndex = 27;
             // 
             // label6
             // 
@@ -120,6 +124,7 @@ namespace BookMS {
             this.textBoxRepeat.Name = "textBoxRepeat";
             this.textBoxRepeat.Size = new System.Drawing.Size(700, 37);
             this.textBoxRepeat.TabIndex = 1;
+            this.textBoxRepeat.Click += new System.EventHandler(this.textBoxRepeat_Click);
             // 
             // pictureBox5
             // 
@@ -131,16 +136,16 @@ namespace BookMS {
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // panelPulish
+            // panelPassword
             // 
-            this.panelPulish.BackColor = System.Drawing.Color.Transparent;
-            this.panelPulish.Controls.Add(this.label5);
-            this.panelPulish.Controls.Add(this.textBoxPassword);
-            this.panelPulish.Controls.Add(this.pictureBox4);
-            this.panelPulish.Location = new System.Drawing.Point(0, 623);
-            this.panelPulish.Name = "panelPulish";
-            this.panelPulish.Size = new System.Drawing.Size(900, 90);
-            this.panelPulish.TabIndex = 28;
+            this.panelPassword.BackColor = System.Drawing.Color.Transparent;
+            this.panelPassword.Controls.Add(this.label5);
+            this.panelPassword.Controls.Add(this.textBoxPassword);
+            this.panelPassword.Controls.Add(this.pictureBox4);
+            this.panelPassword.Location = new System.Drawing.Point(0, 623);
+            this.panelPassword.Name = "panelPassword";
+            this.panelPassword.Size = new System.Drawing.Size(900, 90);
+            this.panelPassword.TabIndex = 28;
             // 
             // label5
             // 
@@ -158,10 +163,11 @@ namespace BookMS {
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(207, 33);
+            this.textBoxPassword.Location = new System.Drawing.Point(228, 33);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(700, 37);
+            this.textBoxPassword.Size = new System.Drawing.Size(662, 37);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             // 
             // pictureBox4
             // 
@@ -173,16 +179,16 @@ namespace BookMS {
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // panelAuthor
+            // panelID
             // 
-            this.panelAuthor.BackColor = System.Drawing.Color.Transparent;
-            this.panelAuthor.Controls.Add(this.label4);
-            this.panelAuthor.Controls.Add(this.textBoxID);
-            this.panelAuthor.Controls.Add(this.pictureBox3);
-            this.panelAuthor.Location = new System.Drawing.Point(0, 491);
-            this.panelAuthor.Name = "panelAuthor";
-            this.panelAuthor.Size = new System.Drawing.Size(900, 90);
-            this.panelAuthor.TabIndex = 29;
+            this.panelID.BackColor = System.Drawing.Color.Transparent;
+            this.panelID.Controls.Add(this.label4);
+            this.panelID.Controls.Add(this.textBoxID);
+            this.panelID.Controls.Add(this.pictureBox3);
+            this.panelID.Location = new System.Drawing.Point(0, 491);
+            this.panelID.Name = "panelID";
+            this.panelID.Size = new System.Drawing.Size(900, 90);
+            this.panelID.TabIndex = 29;
             // 
             // label4
             // 
@@ -204,6 +210,7 @@ namespace BookMS {
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(700, 37);
             this.textBoxID.TabIndex = 1;
+            this.textBoxID.Click += new System.EventHandler(this.textBoxID_Click);
             // 
             // pictureBox3
             // 
@@ -218,22 +225,22 @@ namespace BookMS {
             // pictureBoxAdmin
             // 
             this.pictureBoxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdmin.Image")));
-            this.pictureBoxAdmin.Location = new System.Drawing.Point(386, 67);
+            this.pictureBoxAdmin.Location = new System.Drawing.Point(382, 67);
             this.pictureBoxAdmin.Name = "pictureBoxAdmin";
-            this.pictureBoxAdmin.Size = new System.Drawing.Size(128, 128);
+            this.pictureBoxAdmin.Size = new System.Drawing.Size(137, 140);
             this.pictureBoxAdmin.TabIndex = 32;
             this.pictureBoxAdmin.TabStop = false;
             // 
-            // panelISBN
+            // panelName
             // 
-            this.panelISBN.BackColor = System.Drawing.Color.Transparent;
-            this.panelISBN.Controls.Add(this.label2);
-            this.panelISBN.Controls.Add(this.textBoxName);
-            this.panelISBN.Controls.Add(this.pictureBox2);
-            this.panelISBN.Location = new System.Drawing.Point(0, 371);
-            this.panelISBN.Name = "panelISBN";
-            this.panelISBN.Size = new System.Drawing.Size(900, 90);
-            this.panelISBN.TabIndex = 25;
+            this.panelName.BackColor = System.Drawing.Color.Transparent;
+            this.panelName.Controls.Add(this.label2);
+            this.panelName.Controls.Add(this.textBoxName);
+            this.panelName.Controls.Add(this.pictureBox2);
+            this.panelName.Location = new System.Drawing.Point(0, 371);
+            this.panelName.Name = "panelName";
+            this.panelName.Size = new System.Drawing.Size(900, 90);
+            this.panelName.TabIndex = 25;
             // 
             // label2
             // 
@@ -255,6 +262,7 @@ namespace BookMS {
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(700, 37);
             this.textBoxName.TabIndex = 1;
+            this.textBoxName.Click += new System.EventHandler(this.textBoxName_Click);
             // 
             // pictureBox2
             // 
@@ -290,50 +298,67 @@ namespace BookMS {
             this.buttonClose.TabIndex = 23;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "What is your favorite food?",
             "Who is your first teacher?"});
-            this.comboBox1.Location = new System.Drawing.Point(2, 888);
+            this.comboBox1.Location = new System.Drawing.Point(144, 922);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(900, 41);
+            this.comboBox1.Size = new System.Drawing.Size(628, 41);
             this.comboBox1.TabIndex = 33;
-            this.comboBox1.Text = "Chose one question as key question";
             // 
-            // textBox1
+            // textBoxAnswer
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBox1.Location = new System.Drawing.Point(110, 962);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(789, 41);
-            this.textBox1.TabIndex = 34;
+            this.textBoxAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxAnswer.Location = new System.Drawing.Point(144, 1006);
+            this.textBoxAnswer.Multiline = true;
+            this.textBoxAnswer.Name = "textBoxAnswer";
+            this.textBoxAnswer.Size = new System.Drawing.Size(628, 41);
+            this.textBoxAnswer.TabIndex = 34;
+            this.textBoxAnswer.Click += new System.EventHandler(this.textBoxAnswer_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-2, 962);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(382, 966);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 33);
+            this.label3.Size = new System.Drawing.Size(120, 37);
             this.label3.TabIndex = 35;
             this.label3.Text = "Answer";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(487, 175);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(349, 210);
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(250, 882);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 33);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "upload image";
+            this.label7.Size = new System.Drawing.Size(362, 37);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Select a security answer";
             // 
             // register
             // 
@@ -342,16 +367,17 @@ namespace BookMS {
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(900, 1200);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonFlush);
             this.Controls.Add(this.buttonConfirm);
-            this.Controls.Add(this.panelStorage);
-            this.Controls.Add(this.panelPulish);
-            this.Controls.Add(this.panelAuthor);
+            this.Controls.Add(this.panelRepeat);
+            this.Controls.Add(this.panelPassword);
+            this.Controls.Add(this.panelID);
             this.Controls.Add(this.pictureBoxAdmin);
-            this.Controls.Add(this.panelISBN);
+            this.Controls.Add(this.panelName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClose);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -359,19 +385,20 @@ namespace BookMS {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "register";
             this.Text = "register";
-            this.panelStorage.ResumeLayout(false);
-            this.panelStorage.PerformLayout();
+            this.panelRepeat.ResumeLayout(false);
+            this.panelRepeat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panelPulish.ResumeLayout(false);
-            this.panelPulish.PerformLayout();
+            this.panelPassword.ResumeLayout(false);
+            this.panelPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panelAuthor.ResumeLayout(false);
-            this.panelAuthor.PerformLayout();
+            this.panelID.ResumeLayout(false);
+            this.panelID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).EndInit();
-            this.panelISBN.ResumeLayout(false);
-            this.panelISBN.PerformLayout();
+            this.panelName.ResumeLayout(false);
+            this.panelName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,28 +407,29 @@ namespace BookMS {
         #endregion
         private System.Windows.Forms.Button buttonFlush;
         private System.Windows.Forms.Button buttonConfirm;
-        private System.Windows.Forms.Panel panelStorage;
+        private System.Windows.Forms.Panel panelRepeat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxRepeat;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panelPulish;
+        private System.Windows.Forms.Panel panelPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panelAuthor;
+        private System.Windows.Forms.Panel panelID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBoxAdmin;
-        private System.Windows.Forms.Panel panelISBN;
+        private System.Windows.Forms.Panel panelName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
     }
 }

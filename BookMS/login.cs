@@ -118,6 +118,14 @@ namespace BookMS
             newUser.ShowDialog();
             this.Show();
         }
+
+        private void buttonForget_MouseEnter(object sender, EventArgs e) {
+            buttonForget.ForeColor = Color.Red;
+        }
+
+        private void buttonForget_MouseLeave(object sender, EventArgs e) {
+            buttonForget.ForeColor = Color.FromArgb(41, 128, 185);
+        }
     }
 }
 
