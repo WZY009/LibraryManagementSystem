@@ -36,7 +36,7 @@ namespace BookMS {
         }
 
         /// <summary>
-        /// 生成实例之后调用此方法
+        /// 异步方法，调用时需要使用await等待。此函数是一个异步的构造函数，接受一本书作为关键字，调用这个函数后可以获取BookHtmlContents的属性内容，否则为空
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
@@ -45,6 +45,7 @@ namespace BookMS {
             string result = await GetResponse(book);
             document.LoadHtml(result);
             var bookNodes = document.DocumentNode.SelectNodes("//div[@class=\"result-list\"]/div[@class=\"result\"]/div[@class=\"content\"]");
+            if (bookNodes == null) throw new Exception("未查询到关键词所对应的书");
 
             foreach (var node in bookNodes) {
                 if (node == null) throw new Exception("结点为空");
