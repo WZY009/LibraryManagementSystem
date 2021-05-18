@@ -12,6 +12,7 @@ namespace TestProject1 {
 
         [Test]
         public void Test1() {
+            spider.ParseHtml("高等数学");
             Assert.DoesNotThrowAsync(async () => await spider.ParseHtml("高等数学"));
         }
     }
