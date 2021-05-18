@@ -7,13 +7,13 @@ namespace TestProject1 {
 
         [SetUp]
         public void Setup() {
-            spider = new Spider();
+            spider = new Spider("高等数学");
         }
 
         [Test]
         public void Test1() {
-            spider.ParseHtml("高等数学");
-            Assert.DoesNotThrowAsync(async () => await spider.ParseHtml("高等数学"));
+            Assert.DoesNotThrowAsync(async () => await spider.ReadNext());
+            Assert.AreEqual(spider.HasNext, true);
         }
     }
 }

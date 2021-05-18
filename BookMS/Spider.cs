@@ -1,6 +1,7 @@
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -12,6 +13,7 @@ namespace BookMS {
 
 
     public class Spider {
+        #region 辅助类
         private struct DoubanJson {
             public string[] items;
             public int total;
@@ -26,43 +28,64 @@ namespace BookMS {
             public string Subjects { get; set; }
             public string? Detail { get; set; }
         }
+        #endregion
+
+        private readonly string _url;
+        private int _currentNumber = 0;
+        private readonly List<BookHtmlContent> _bookHtmlContents;
+
+        /// <summary>
+        /// 所要查询的书目
+        /// </summary>
+        public string Book { get; private set; }
         /// <summary>
         /// 是否含有更多条目
         /// </summary>
-        public bool HasMore { get; private set; }
+        public bool HasNext { get; private set; }
+        /// <summary>
+        /// 本页所含有的所有书目信息
+        /// </summary>
         public IEnumerable<BookHtmlContent> BookHtmlContents { get => _bookHtmlContents; }
 
-        public Spider() => _bookHtmlContents = new List<BookHtmlContent>();
-
-        private readonly List<BookHtmlContent> _bookHtmlContents;
-
-
-        private async static Task<string> GetResponse(string book) {
+        /// <summary>
+        /// 对于每一本所要查询的书，创建一个Spider类
+        /// </summary>
+        /// <param name="book"></param>
+        public Spider(string book) {
+            Book = book;
+            HasNext = true;
             book = HttpUtility.UrlEncode(book);
-            string doubanUrl = $"https://www.douban.com/j/search?q={book}&start=0&cat=1001";
+            _url = $"https://www.douban.com/j/search?q={book}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
+            _bookHtmlContents = new List<BookHtmlContent>();
+        }
+
+        private async Task<string> GetResponse() {
             using HttpClient client = new HttpClient();
             // 火狐
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
-            HttpResponseMessage response = await client.GetAsync(doubanUrl);
+            HttpResponseMessage response = await client.GetAsync(string.Format(_url, _currentNumber));
 
             return response.IsSuccessStatusCode ? await response.Content.ReadAsStringAsync() : throw new Exception("请求http未成功");
         }
 
         /// <summary>
-        /// 异步方法，调用时需要使用await等待。此函数是一个异步的构造函数，接受一本书作为关键字，调用这个函数后可以获取BookHtmlContents的属性内容，否则为空
+        /// 获取下一页的内容
         /// </summary>
-        /// <param name="book"></param>
         /// <returns></returns>
-        public async Task ParseHtml(string book) {
-            string result = await GetResponse(book);
+        public async Task ReadNext() {
+            if (!HasNext) throw new Exception("已读到头");
+
+            string result = await GetResponse();
             DoubanJson doubanJson = JsonConvert.DeserializeObject<DoubanJson>(result);
-            // 是否有更多
-            HasMore = doubanJson.more;
+            HasNext = doubanJson.more;  // 是否到头
+            _currentNumber += doubanJson.limit; // 下一次搜索位置
+
             // 获取所有查询到的书目进行Html解码
             List<string> items = new List<string>();
             foreach (string item in doubanJson.items)
                 items.Add(HttpUtility.HtmlDecode(item));
 
+            // 获取本页的所有书目
             foreach (string item in items) {
                 HtmlDocument itemDocument = new HtmlDocument();
                 itemDocument.LoadHtml(item);
