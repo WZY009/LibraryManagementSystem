@@ -25,5 +25,10 @@ namespace BookMS.Mappers {
                                                          select question.Question).First();
 
         public IEnumerable<VerifyQuestion> GetAllQuestions() => _context.VerifyQuesions.AsEnumerable();
+        public int UpdatePassword(string id, string newPassword) {
+            User user = _context.Users.FirstOrDefault(a => a.Id == id);
+            user.Password = newPassword;
+            return _context.SaveChanges();
+        }
     }
 }
