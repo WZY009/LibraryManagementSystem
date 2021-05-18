@@ -110,32 +110,6 @@ namespace BookMS {
                     Detail = detail,
                 });
             }
-
-            //HtmlDocument document = new HtmlDocument();
-            //document.LoadHtml(result);
-            //var bookNodes = document.DocumentNode.SelectNodes("//div[@class=\"result-list\"]/div[@class=\"result\"]/div[@class=\"content\"]");
-            //if (bookNodes == null) throw new Exception("未查询到关键词所对应的书");
-
-            //foreach (var node in bookNodes) {
-            //    if (node == null) throw new Exception("结点为空");
-            //    var titleNode = node.SelectSingleNode("div[@class=\"title\"]");
-            //    string title = titleNode.SelectSingleNode("h3/a").InnerText;
-            //    string url = titleNode.SelectSingleNode("h3/a").Attributes["href"].Value;
-
-            //    var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
-            //    string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
-            //    string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
-
-            //    string? detail = node.SelectSingleNode("p")?.InnerText;
-
-            //    _bookHtmlContents.Add(new BookHtmlContent() {
-            //        Title = title,
-            //        Url = url,
-            //        Rate = rating,
-            //        Subjects = subjects,
-            //        Detail = detail,
-            //    });
-            //}
         }
     }
 }
