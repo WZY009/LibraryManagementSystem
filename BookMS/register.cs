@@ -1,6 +1,7 @@
 using BookMS.Mappers;
 using BookMS.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,17 @@ namespace BookMS {
             InitializeComponent();
             textbox = new TextBox[] {textBoxName, textBoxID, textBoxPassword, textBoxRepeat, textBoxMajor};//注意，以下这两个数组的顺序绝对不可以颠倒！
             panel = new Panel[] { panelName, panelID, panelPassword, panelRepeat, panelMajor };
+            comboBox1.Items.AddRange(strQuestionList());
         }
-
+        private string[] strQuestionList() {
+            UserMapper newUser = new UserMapper();
+            ArrayList arrQuestionList = new ArrayList();
+            foreach (var question in newUser.GetAllQuestions()) {
+                arrQuestionList.Add(question.Question.ToString());
+            }
+            string[] questionList = (string[])arrQuestionList.ToArray(typeof(string));
+            return questionList;
+        }
         private void changeColor_MouseClick(TextBox changeBox, TextBox a0, TextBox a1, TextBox a2, Panel changePanel, Panel p0, Panel p1, Panel p2) {
             changeBox.BackColor = Color.White;
             changePanel.BackColor = Color.White;

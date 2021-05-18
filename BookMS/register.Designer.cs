@@ -120,7 +120,7 @@ namespace BookMS {
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(77, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 32);
+            this.label6.Size = new System.Drawing.Size(73, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Repeat";
             // 
@@ -132,7 +132,7 @@ namespace BookMS {
             this.textBoxRepeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxRepeat.Location = new System.Drawing.Point(188, 29);
             this.textBoxRepeat.Name = "textBoxRepeat";
-            this.textBoxRepeat.Size = new System.Drawing.Size(700, 37);
+            this.textBoxRepeat.Size = new System.Drawing.Size(700, 25);
             this.textBoxRepeat.TabIndex = 1;
             this.textBoxRepeat.Click += new System.EventHandler(this.textBoxRepeat_Click);
             // 
@@ -163,7 +163,7 @@ namespace BookMS {
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(79, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 32);
+            this.label5.Size = new System.Drawing.Size(92, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Password";
             // 
@@ -175,7 +175,7 @@ namespace BookMS {
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxPassword.Location = new System.Drawing.Point(228, 33);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(662, 37);
+            this.textBoxPassword.Size = new System.Drawing.Size(662, 25);
             this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             // 
@@ -206,7 +206,7 @@ namespace BookMS {
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(79, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 32);
+            this.label4.Size = new System.Drawing.Size(58, 22);
             this.label4.TabIndex = 4;
             this.label4.Text = "Stu.ID";
             // 
@@ -218,7 +218,7 @@ namespace BookMS {
             this.textBoxID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxID.Location = new System.Drawing.Point(188, 33);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(700, 37);
+            this.textBoxID.Size = new System.Drawing.Size(700, 25);
             this.textBoxID.TabIndex = 1;
             this.textBoxID.Click += new System.EventHandler(this.textBoxID_Click);
             // 
@@ -258,7 +258,7 @@ namespace BookMS {
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(79, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 32);
+            this.label2.Size = new System.Drawing.Size(64, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Name";
             // 
@@ -270,7 +270,7 @@ namespace BookMS {
             this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxName.Location = new System.Drawing.Point(188, 24);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(700, 37);
+            this.textBoxName.Size = new System.Drawing.Size(700, 25);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.Click += new System.EventHandler(this.textBoxName_Click);
             // 
@@ -290,7 +290,7 @@ namespace BookMS {
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(104, 234);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(700, 56);
+            this.label1.Size = new System.Drawing.Size(465, 38);
             this.label1.TabIndex = 24;
             this.label1.Text = "Register A New User Account";
             // 
@@ -320,7 +320,7 @@ namespace BookMS {
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(144, 955);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(628, 41);
+            this.comboBox1.Size = new System.Drawing.Size(628, 29);
             this.comboBox1.TabIndex = 33;
             // 
             // textBoxAnswer
@@ -355,7 +355,7 @@ namespace BookMS {
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(247, 915);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(362, 37);
+            this.label7.Size = new System.Drawing.Size(247, 23);
             this.label7.TabIndex = 38;
             this.label7.Text = "Select a security answer";
             // 
@@ -409,7 +409,7 @@ namespace BookMS {
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(79, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 32);
+            this.label8.Size = new System.Drawing.Size(61, 22);
             this.label8.TabIndex = 2;
             this.label8.Text = "Major";
             // 
@@ -421,7 +421,7 @@ namespace BookMS {
             this.textBoxMajor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxMajor.Location = new System.Drawing.Point(188, 24);
             this.textBoxMajor.Name = "textBoxMajor";
-            this.textBoxMajor.Size = new System.Drawing.Size(700, 37);
+            this.textBoxMajor.Size = new System.Drawing.Size(700, 25);
             this.textBoxMajor.TabIndex = 1;
             this.textBoxMajor.Click += new System.EventHandler(this.textBoxMajor_Click);
             // 
@@ -437,7 +437,7 @@ namespace BookMS {
             // 
             // register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(900, 1200);
@@ -484,17 +484,19 @@ namespace BookMS {
             this.PerformLayout();
 
         }
-        private string[] strQuestionList() {
-            UserMapper newUser = new UserMapper();
-            ArrayList arrQuestionList = new ArrayList();
-            foreach (var question in newUser.GetAllQuestions()) {
-                arrQuestionList.Add(question.Question.ToString());
-            }
-            string[] questionList = (string[])arrQuestionList.ToArray(typeof(string));
-            return questionList;
-        }
+        //private string[] strQuestionList() {
+        //    UserMapper newUser = new UserMapper();
+        //    ArrayList arrQuestionList = new ArrayList();
+        //    foreach (var question in newUser.GetAllQuestions()) {
+        //        arrQuestionList.Add(question.Question.ToString());
+        //    }
+        //    string[] questionList = (string[])arrQuestionList.ToArray(typeof(string));
+        //    return questionList;
+        //}
 
         #endregion
+
+        
         private System.Windows.Forms.Button buttonFlush;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Panel panelRepeat;
