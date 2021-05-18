@@ -31,8 +31,10 @@ namespace BookMS {
         private void buttonConfirm_Click(object sender, EventArgs e) {
             if (isEqual(textBoxPassword.Text, textBoxRepeat.Text)) {
                 UserMapper userVerify = new UserMapper();
-                userVerify.GetById(textBoxID.Text).Password = textBoxPassword.Text;
-                MessageBox.Show("Successful!");
+                User fogetter = userVerify.GetById(textBoxID.Text);
+                fogetter.Password = textBoxPassword.Text;
+                if(userVerify.ChangePassword(fogetter)!=null)
+                    MessageBox.Show("Successful!");
             }
             else
                 MessageBox.Show("Two inputs are inconsistent", "Error tips", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -72,17 +74,22 @@ namespace BookMS {
         }
 
         private void textBoxAnswer_Click(object sender, EventArgs e) {//显示问题
+            textBoxAnswer.ReadOnly = true;
             if (textBoxID.Text != "" && textBoxName.Text != "") {
                 UserMapper usermap = new UserMapper();
                 User forgetter = usermap.GetById(textBoxID.Text);               
-                if(forgetter.Name == textBoxName.Text) {
+                if(forgetter != null && forgetter.Name == textBoxName.Text) {//前面一个是没有找到Id对应的user，后一个是虽然找到了，但是对不上
                     foreach (VerifyQuestion question in usermap.GetAllQuestions()) {
                         if (question.ID == forgetter.Question_id)
                             textBoxQuestion.Text = question.Question;
                     }
+                    textBoxAnswer.ReadOnly = false;
                 }
-                else
-                    MessageBox.Show("your Name and Id do not match!","Error!");
+                else {
+                    MessageBox.Show("your Name and Id do not match!", "Error!");
+                    return;
+                }
+
             }
             else
                 MessageBox.Show("Please input your Name and Id before answering question");

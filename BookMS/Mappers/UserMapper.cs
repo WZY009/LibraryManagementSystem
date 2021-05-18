@@ -29,5 +29,12 @@ namespace BookMS.Mappers {
                                                          select question.Question).First();
 
         public IEnumerable<VerifyQuestion> GetAllQuestions() => _context.VerifyQuesions.AsEnumerable();
+
+        public User ChangePassword(User user) {
+            var forgetter = _context.Users.Attach(user);
+            forgetter.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return user;
+        }
     }
 }
