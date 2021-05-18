@@ -109,7 +109,6 @@ namespace BookMS
                 textBoxPassword.UseSystemPasswordChar = false;
             else
                 textBoxPassword.UseSystemPasswordChar = true;
-
         }
 
         private void buttonRegister_Click(object sender, EventArgs e) {
@@ -125,6 +124,12 @@ namespace BookMS
 
         private void buttonForget_MouseLeave(object sender, EventArgs e) {
             buttonForget.ForeColor = Color.FromArgb(41, 128, 185);
+        }
+
+        private void buttonForget_Click(object sender, EventArgs e) {
+            forget user = new forget();
+            user.ShowDialog();
+            this.Hide();
         }
     }
 }

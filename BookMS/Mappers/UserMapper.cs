@@ -13,9 +13,13 @@ namespace BookMS.Mappers {
             user.PhotoPath = path;
             return _context.SaveChanges();
         }
-        public int AddUser(User user) {
+        public User AddUser(User user) {
             _context.Add(user);
-            return _context.SaveChanges();
+            //下面这两行是根据bookmapper的写法来写的，这样方便后面注册成功的校验
+            _context.SaveChanges();
+            return user;
+            //原先是这么写的，只有一行,同时返回值为int
+            //return _context.SaveChanges();
         }
         public User GetById(string id) => _context.Users.FirstOrDefault(a => a.Id == id);
         public string GetSelectedQuestion(string id) => (from user in _context.Users

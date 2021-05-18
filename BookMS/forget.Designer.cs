@@ -41,16 +41,16 @@ namespace BookMS {
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelPassword = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.buttonFlush = new System.Windows.Forms.Button();
             this.buttonVerify = new System.Windows.Forms.Button();
             this.panelRepeat = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxRepeat = new System.Windows.Forms.TextBox();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonFlush2 = new System.Windows.Forms.Button();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxRepeat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,11 +86,12 @@ namespace BookMS {
             this.textBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxAnswer.Location = new System.Drawing.Point(128, 572);
+            this.textBoxAnswer.Location = new System.Drawing.Point(55, 572);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
-            this.textBoxAnswer.Size = new System.Drawing.Size(628, 41);
+            this.textBoxAnswer.Size = new System.Drawing.Size(772, 41);
             this.textBoxAnswer.TabIndex = 49;
+            this.textBoxAnswer.Click += new System.EventHandler(this.textBoxAnswer_Click);
             // 
             // label1
             // 
@@ -228,11 +229,22 @@ namespace BookMS {
             this.panelPassword.Controls.Add(this.textBoxPassword);
             this.panelPassword.Controls.Add(this.label5);
             this.panelPassword.Controls.Add(this.pictureBox4);
-            this.panelPassword.Enabled = false;
             this.panelPassword.Location = new System.Drawing.Point(-1, 783);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(900, 90);
             this.panelPassword.TabIndex = 43;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxPassword.Location = new System.Drawing.Point(237, 33);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.ReadOnly = true;
+            this.textBoxPassword.Size = new System.Drawing.Size(600, 37);
+            this.textBoxPassword.TabIndex = 7;
             // 
             // label6
             // 
@@ -290,23 +302,34 @@ namespace BookMS {
             this.panelRepeat.Controls.Add(this.textBoxRepeat);
             this.panelRepeat.Controls.Add(this.label6);
             this.panelRepeat.Controls.Add(this.pictureBox5);
-            this.panelRepeat.Enabled = false;
             this.panelRepeat.Location = new System.Drawing.Point(1, 915);
             this.panelRepeat.Name = "panelRepeat";
             this.panelRepeat.Size = new System.Drawing.Size(900, 90);
             this.panelRepeat.TabIndex = 42;
             // 
-            // textBox1
+            // textBoxRepeat
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBox1.Location = new System.Drawing.Point(128, 500);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(628, 41);
-            this.textBox1.TabIndex = 53;
+            this.textBoxRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxRepeat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRepeat.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxRepeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxRepeat.Location = new System.Drawing.Point(235, 29);
+            this.textBoxRepeat.Name = "textBoxRepeat";
+            this.textBoxRepeat.ReadOnly = true;
+            this.textBoxRepeat.Size = new System.Drawing.Size(600, 37);
+            this.textBoxRepeat.TabIndex = 8;
+            // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxQuestion.Location = new System.Drawing.Point(55, 500);
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(772, 41);
+            this.textBoxQuestion.TabIndex = 53;
+            this.textBoxQuestion.Text = "Please complete Name and Stu.ID before click below";
             // 
             // buttonConfirm
             // 
@@ -322,6 +345,7 @@ namespace BookMS {
             this.buttonConfirm.TabIndex = 54;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonFlush2
             // 
@@ -337,30 +361,7 @@ namespace BookMS {
             this.buttonFlush2.TabIndex = 55;
             this.buttonFlush2.Text = "Flush";
             this.buttonFlush2.UseVisualStyleBackColor = false;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Enabled = false;
-            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(237, 33);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(600, 37);
-            this.textBoxPassword.TabIndex = 7;
-            // 
-            // textBoxRepeat
-            // 
-            this.textBoxRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.textBoxRepeat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRepeat.Enabled = false;
-            this.textBoxRepeat.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxRepeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxRepeat.Location = new System.Drawing.Point(235, 29);
-            this.textBoxRepeat.Name = "textBoxRepeat";
-            this.textBoxRepeat.Size = new System.Drawing.Size(600, 37);
-            this.textBoxRepeat.TabIndex = 8;
+            this.buttonFlush2.Click += new System.EventHandler(this.buttonFlush2_Click);
             // 
             // forget
             // 
@@ -370,7 +371,7 @@ namespace BookMS {
             this.ClientSize = new System.Drawing.Size(900, 1200);
             this.Controls.Add(this.buttonFlush2);
             this.Controls.Add(this.buttonConfirm);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxAnswer);
@@ -427,7 +428,7 @@ namespace BookMS {
         private System.Windows.Forms.Button buttonFlush;
         private System.Windows.Forms.Button buttonVerify;
         private System.Windows.Forms.Panel panelRepeat;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxQuestion;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Button buttonFlush2;
         private System.Windows.Forms.TextBox textBoxPassword;

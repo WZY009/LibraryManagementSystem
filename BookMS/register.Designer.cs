@@ -1,4 +1,7 @@
 
+using BookMS.Mappers;
+using System.Collections;
+
 namespace BookMS {
     partial class register {
         /// <summary>
@@ -48,9 +51,14 @@ namespace BookMS {
             this.buttonClose = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAltImg = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.uiRadioButtonMale = new Sunny.UI.UIRadioButton();
+            this.uiRadioButtonFemale = new Sunny.UI.UIRadioButton();
+            this.panelMajor = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxMajor = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRepeat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelPassword.SuspendLayout();
@@ -60,6 +68,8 @@ namespace BookMS {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).BeginInit();
             this.panelName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAltImg)).BeginInit();
+            this.panelMajor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +80,7 @@ namespace BookMS {
             this.buttonFlush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFlush.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFlush.ForeColor = System.Drawing.Color.White;
-            this.buttonFlush.Location = new System.Drawing.Point(469, 1103);
+            this.buttonFlush.Location = new System.Drawing.Point(470, 1092);
             this.buttonFlush.Name = "buttonFlush";
             this.buttonFlush.Size = new System.Drawing.Size(187, 70);
             this.buttonFlush.TabIndex = 31;
@@ -85,7 +95,7 @@ namespace BookMS {
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirm.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonConfirm.ForeColor = System.Drawing.Color.White;
-            this.buttonConfirm.Location = new System.Drawing.Point(217, 1103);
+            this.buttonConfirm.Location = new System.Drawing.Point(218, 1092);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(187, 70);
             this.buttonConfirm.TabIndex = 30;
@@ -99,7 +109,7 @@ namespace BookMS {
             this.panelRepeat.Controls.Add(this.label6);
             this.panelRepeat.Controls.Add(this.textBoxRepeat);
             this.panelRepeat.Controls.Add(this.pictureBox5);
-            this.panelRepeat.Location = new System.Drawing.Point(2, 755);
+            this.panelRepeat.Location = new System.Drawing.Point(1, 697);
             this.panelRepeat.Name = "panelRepeat";
             this.panelRepeat.Size = new System.Drawing.Size(900, 90);
             this.panelRepeat.TabIndex = 27;
@@ -142,7 +152,7 @@ namespace BookMS {
             this.panelPassword.Controls.Add(this.label5);
             this.panelPassword.Controls.Add(this.textBoxPassword);
             this.panelPassword.Controls.Add(this.pictureBox4);
-            this.panelPassword.Location = new System.Drawing.Point(0, 623);
+            this.panelPassword.Location = new System.Drawing.Point(-1, 565);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(900, 90);
             this.panelPassword.TabIndex = 28;
@@ -185,7 +195,7 @@ namespace BookMS {
             this.panelID.Controls.Add(this.label4);
             this.panelID.Controls.Add(this.textBoxID);
             this.panelID.Controls.Add(this.pictureBox3);
-            this.panelID.Location = new System.Drawing.Point(0, 491);
+            this.panelID.Location = new System.Drawing.Point(-1, 433);
             this.panelID.Name = "panelID";
             this.panelID.Size = new System.Drawing.Size(900, 90);
             this.panelID.TabIndex = 29;
@@ -227,7 +237,7 @@ namespace BookMS {
             this.pictureBoxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdmin.Image")));
             this.pictureBoxAdmin.Location = new System.Drawing.Point(382, 67);
             this.pictureBoxAdmin.Name = "pictureBoxAdmin";
-            this.pictureBoxAdmin.Size = new System.Drawing.Size(137, 140);
+            this.pictureBoxAdmin.Size = new System.Drawing.Size(128, 128);
             this.pictureBoxAdmin.TabIndex = 32;
             this.pictureBoxAdmin.TabStop = false;
             // 
@@ -237,7 +247,7 @@ namespace BookMS {
             this.panelName.Controls.Add(this.label2);
             this.panelName.Controls.Add(this.textBoxName);
             this.panelName.Controls.Add(this.pictureBox2);
-            this.panelName.Location = new System.Drawing.Point(0, 371);
+            this.panelName.Location = new System.Drawing.Point(-1, 313);
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(900, 90);
             this.panelName.TabIndex = 25;
@@ -278,7 +288,7 @@ namespace BookMS {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(100, 262);
+            this.label1.Location = new System.Drawing.Point(104, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(700, 56);
             this.label1.TabIndex = 24;
@@ -308,10 +318,7 @@ namespace BookMS {
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "What is your favorite food?",
-            "Who is your first teacher?"});
-            this.comboBox1.Location = new System.Drawing.Point(144, 922);
+            this.comboBox1.Location = new System.Drawing.Point(144, 955);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(628, 41);
             this.comboBox1.TabIndex = 33;
@@ -322,43 +329,111 @@ namespace BookMS {
             this.textBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxAnswer.Location = new System.Drawing.Point(144, 1006);
+            this.textBoxAnswer.Location = new System.Drawing.Point(144, 1002);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(628, 41);
             this.textBoxAnswer.TabIndex = 34;
+            this.textBoxAnswer.Text = "Answer";
             this.textBoxAnswer.Click += new System.EventHandler(this.textBoxAnswer_Click);
             // 
-            // label3
+            // pictureBoxAltImg
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(382, 966);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 37);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Answer";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(487, 175);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            this.pictureBoxAltImg.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAltImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxAltImg.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAltImg.Image")));
+            this.pictureBoxAltImg.Location = new System.Drawing.Point(432, 199);
+            this.pictureBoxAltImg.Name = "pictureBoxAltImg";
+            this.pictureBoxAltImg.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxAltImg.TabIndex = 37;
+            this.pictureBoxAltImg.TabStop = false;
+            this.pictureBoxAltImg.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(250, 882);
+            this.label7.Location = new System.Drawing.Point(247, 915);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(362, 37);
             this.label7.TabIndex = 38;
             this.label7.Text = "Select a security answer";
+            // 
+            // uiRadioButtonMale
+            // 
+            this.uiRadioButtonMale.Checked = true;
+            this.uiRadioButtonMale.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiRadioButtonMale.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiRadioButtonMale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.uiRadioButtonMale.ImageInterval = 2;
+            this.uiRadioButtonMale.Location = new System.Drawing.Point(247, 1046);
+            this.uiRadioButtonMale.Margin = new System.Windows.Forms.Padding(0);
+            this.uiRadioButtonMale.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRadioButtonMale.Name = "uiRadioButtonMale";
+            this.uiRadioButtonMale.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.uiRadioButtonMale.Radius = 3;
+            this.uiRadioButtonMale.Size = new System.Drawing.Size(103, 43);
+            this.uiRadioButtonMale.Style = Sunny.UI.UIStyle.Custom;
+            this.uiRadioButtonMale.TabIndex = 39;
+            this.uiRadioButtonMale.Text = "Male";
+            // 
+            // uiRadioButtonFemale
+            // 
+            this.uiRadioButtonFemale.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiRadioButtonFemale.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiRadioButtonFemale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.uiRadioButtonFemale.Location = new System.Drawing.Point(487, 1046);
+            this.uiRadioButtonFemale.Margin = new System.Windows.Forms.Padding(0);
+            this.uiRadioButtonFemale.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRadioButtonFemale.Name = "uiRadioButtonFemale";
+            this.uiRadioButtonFemale.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.uiRadioButtonFemale.Size = new System.Drawing.Size(136, 43);
+            this.uiRadioButtonFemale.Style = Sunny.UI.UIStyle.Custom;
+            this.uiRadioButtonFemale.TabIndex = 40;
+            this.uiRadioButtonFemale.Text = "Female";
+            // 
+            // panelMajor
+            // 
+            this.panelMajor.BackColor = System.Drawing.Color.Transparent;
+            this.panelMajor.Controls.Add(this.label8);
+            this.panelMajor.Controls.Add(this.textBoxMajor);
+            this.panelMajor.Controls.Add(this.pictureBox1);
+            this.panelMajor.Location = new System.Drawing.Point(1, 822);
+            this.panelMajor.Name = "panelMajor";
+            this.panelMajor.Size = new System.Drawing.Size(900, 90);
+            this.panelMajor.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(79, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 32);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Major";
+            // 
+            // textBoxMajor
+            // 
+            this.textBoxMajor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxMajor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMajor.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMajor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxMajor.Location = new System.Drawing.Point(188, 24);
+            this.textBoxMajor.Name = "textBoxMajor";
+            this.textBoxMajor.Size = new System.Drawing.Size(700, 37);
+            this.textBoxMajor.TabIndex = 1;
+            this.textBoxMajor.Click += new System.EventHandler(this.textBoxMajor_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // register
             // 
@@ -366,9 +441,11 @@ namespace BookMS {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(900, 1200);
+            this.Controls.Add(this.panelMajor);
+            this.Controls.Add(this.uiRadioButtonMale);
+            this.Controls.Add(this.uiRadioButtonFemale);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBoxAltImg);
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonFlush);
@@ -384,6 +461,7 @@ namespace BookMS {
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "register";
             this.panelRepeat.ResumeLayout(false);
             this.panelRepeat.PerformLayout();
@@ -398,10 +476,22 @@ namespace BookMS {
             this.panelName.ResumeLayout(false);
             this.panelName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAltImg)).EndInit();
+            this.panelMajor.ResumeLayout(false);
+            this.panelMajor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+        private string[] strQuestionList() {
+            UserMapper newUser = new UserMapper();
+            ArrayList arrQuestionList = new ArrayList();
+            foreach (var question in newUser.GetAllQuestions()) {
+                arrQuestionList.Add(question.Question.ToString());
+            }
+            string[] questionList = (string[])arrQuestionList.ToArray(typeof(string));
+            return questionList;
         }
 
         #endregion
@@ -428,8 +518,13 @@ namespace BookMS {
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBoxAnswer;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxAltImg;
         private System.Windows.Forms.Label label7;
+        private Sunny.UI.UIRadioButton uiRadioButtonMale;
+        private Sunny.UI.UIRadioButton uiRadioButtonFemale;
+        private System.Windows.Forms.Panel panelMajor;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxMajor;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

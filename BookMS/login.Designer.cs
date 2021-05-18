@@ -260,6 +260,7 @@ namespace BookMS
             this.buttonForget.TabIndex = 3;
             this.buttonForget.Text = "Forget Password?";
             this.buttonForget.UseVisualStyleBackColor = false;
+            this.buttonForget.Click += new System.EventHandler(this.buttonForget_Click);
             this.buttonForget.MouseEnter += new System.EventHandler(this.buttonForget_MouseEnter);
             this.buttonForget.MouseLeave += new System.EventHandler(this.buttonForget_MouseLeave);
             // 
