@@ -12,11 +12,15 @@ namespace BookMS.Mappers {
         }
         public IEnumerable<Lend> GetLendsByUid(string uid) =>
             from l in _context.Lends where l.Uid == uid select l;
-        public Lend DeleteLend(int no) {
+        /// <summary>
+        /// 删除借阅记录
+        /// </summary>
+        /// <param name="no">借阅记录编号</param>
+        /// <returns>是否删除成功</returns>
+        public int DeleteLend(int no) {
             Lend lend = _context.Lends.Find(no);
             _context.Lends.Remove(lend);
-            _context.SaveChanges();
-            return lend;
+            return _context.SaveChanges();
         }
     }
 }

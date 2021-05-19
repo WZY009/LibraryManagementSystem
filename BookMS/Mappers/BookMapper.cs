@@ -8,34 +8,43 @@ namespace BookMS.Mappers {
     class BookMapper : AbstractMapper {
         public Book GetById(string id) => _context.Books.FirstOrDefault(b => b.Id == id);
         public IOrderedQueryable<Book> GetByName(string name) => from b in _context.Books
-                                                           where b.Name.Contains(name)
-                                                           orderby b.Name
-                                                           select b;
+                                                                 where b.Name.Contains(name)
+                                                                 orderby b.Name
+                                                                 select b;
         public IEnumerable<Book> GetAllBooks() => _context.Books.AsEnumerable();
-        public Book DeleteById(string id) {
+        public int DeleteById(string id) {
             var book = _context.Books.Find(id);
-            if (book != null) {
-                _context.Books.Remove(book);
-                _context.SaveChanges();
-            }
-            return book;
+            _context.Books.Remove(book);
+            return _context.SaveChanges();
         }
-        public Book UpdateBook(Book updateBook) {
+        /// <summary>
+        /// 修改图书
+        /// </summary>
+        /// <param name="updateBook">所需修改的图书，按id匹配</param>
+        /// <returns>数据库更改的条数</returns>
+        public int UpdateBook(Book updateBook) {
             var book = _context.Books.Attach(updateBook);
             book.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _context.SaveChanges();
-            return updateBook;
+            return _context.SaveChanges();
         }
-        public Book AddBook(Book book) {
+        /// <summary>
+        /// 添加图书
+        /// </summary>
+        /// <param name="book">所需添加的图书</param>
+        /// <returns>数据库变更的条数，若添加的图书id相同则会返回0</returns>
+        public int AddBook(Book book) {
             _context.Books.Add(book);
-            _context.SaveChanges();
-            return book;
+            return _context.SaveChanges();
         }
-        public Book LendBook(string id) {
+        /// <summary>
+        /// 借书
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int LendBook(string id) {
             var book = _context.Books.FirstOrDefault(b => b.Id == id);
             book.Number--;
-            _context.SaveChanges();
-            return book;
+            return _context.SaveChanges();
         }
         public Book ReturnBook(string id) {
             var book = _context.Books.FirstOrDefault(b => b.Id == id);
