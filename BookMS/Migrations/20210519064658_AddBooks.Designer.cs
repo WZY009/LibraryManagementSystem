@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookMS.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    [Migration("20210517103005_AddQuestions")]
-    partial class AddQuestions
+    [Migration("20210519064658_AddBooks")]
+    partial class AddBooks
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,6 +78,37 @@ namespace BookMS.Migrations
                             Name = "计算机组成与设计",
                             Number = 10,
                             Press = "机械工业出版社"
+                        },
+                        new
+                        {
+                            Id = "114514",
+                            Author = "野兽先辈",
+                            Name = "真夏夜之淫梦",
+                            Number = 30,
+                            Press = "真夏夜之淫梦出版社"
+                        },
+                        new
+                        {
+                            Id = "114514514",
+                            Author = "目力先辈",
+                            Name = "恶臭的传说",
+                            Number = 100
+                        },
+                        new
+                        {
+                            Id = "70-123456",
+                            Author = "HARUKAZE",
+                            Name = "野良与皇女与流浪猫之心",
+                            Number = 3,
+                            Press = "不是柚子社"
+                        },
+                        new
+                        {
+                            Id = "96123",
+                            Author = "柚子社",
+                            Name = "千恋万花",
+                            Number = 12,
+                            Press = "hikari field"
                         });
                 });
 

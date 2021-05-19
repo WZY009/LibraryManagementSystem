@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookMS.Mappers {
-    abstract class AbstractMapper : IDisposable {
+namespace BookMS.Controllers {
+    abstract class AbstractController : IDisposable {
         protected readonly AppDbContent _context;  //readonly是只读属性
-        public AbstractMapper() {
+        public AbstractController() {
             _context = new AppDbContent();
         }
 

@@ -4,8 +4,8 @@ using System.Text;
 using System.Linq;
 using BookMS.Models;
 
-namespace BookMS.Mappers {
-    class BookMapper : AbstractMapper {
+namespace BookMS.Controllers {
+    class BookController : AbstractController {
         public Book GetById(string id) => _context.Books.FirstOrDefault(b => b.Id == id);
         public IOrderedQueryable<Book> GetByName(string name) => from b in _context.Books
                                                                  where b.Name.Contains(name)
@@ -35,22 +35,6 @@ namespace BookMS.Mappers {
         public int AddBook(Book book) {
             _context.Books.Add(book);
             return _context.SaveChanges();
-        }
-        /// <summary>
-        /// 借书
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public int LendBook(string id) {
-            var book = _context.Books.FirstOrDefault(b => b.Id == id);
-            book.Number--;
-            return _context.SaveChanges();
-        }
-        public Book ReturnBook(string id) {
-            var book = _context.Books.FirstOrDefault(b => b.Id == id);
-            book.Number++;
-            _context.SaveChanges();
-            return book;
         }
     }
 }

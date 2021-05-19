@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using MySql.Data.MySqlClient;
 using System.IO;
@@ -29,7 +29,7 @@ namespace BookMS {
             var currentButton = (UIImageButton)sender;
             currentButton.ForeColor = Color.Red;
         }
-        private void changeFontColor_MouseLeave(object sender,EventArgs e) {
+        private void changeFontColor_MouseLeave(object sender, EventArgs e) {
             var currentButton = (UIImageButton)sender;
             currentButton.ForeColor = basicColor;
         }
@@ -37,7 +37,7 @@ namespace BookMS {
             var currentButton = (Button)sender;
             currentButton.BackColor = darkBlue;
         }
-        private void changeOddButtonColor_MouseLeave(object sender,EventArgs e) {//奇数变成azure
+        private void changeOddButtonColor_MouseLeave(object sender, EventArgs e) {//奇数变成azure
             var currentButton = (Button)sender;
             currentButton.BackColor = azure;
         }
@@ -48,24 +48,24 @@ namespace BookMS {
         public void Table()//display the table
         {
             uiDataGridView1.Rows.Clear();//flush the old data
-            using BookMapper bookMapper = new BookMapper();
+            using BookController bookMapper = new BookController();
             foreach (Book book in bookMapper.GetAllBooks())
                 uiDataGridView1.Rows.Add(book.ToStringArray());
         }
         public void TableID()//show data based on ID
         {
             uiDataGridView1.Rows.Clear();//flush old data
-            using BookMapper bookMapper = new BookMapper();
-            if (bookMapper.GetById(uiTextboxID.Text)==null) //如果返回的是一个空对象，那么就证明没有找到，在这里发现了调用堆栈查看错误的办法！shr，牛逼！
-                MessageBox.Show("Sorry, we can not find what you want!");           
-            else 
+            using BookController bookMapper = new BookController();
+            if (bookMapper.GetById(uiTextboxID.Text) == null) //如果返回的是一个空对象，那么就证明没有找到，在这里发现了调用堆栈查看错误的办法！shr，牛逼！
+                MessageBox.Show("Sorry, we can not find what you want!");
+            else
                 uiDataGridView1.Rows.Add(bookMapper.GetById(uiTextboxID.Text).ToStringArray());
 
         }
         public void TableName()//check the books according to the name
         {
             uiDataGridView1.Rows.Clear();//清空旧数据
-            using BookMapper bookMapper = new BookMapper();
+            using BookController bookMapper = new BookController();
             foreach (Book book in bookMapper.GetByName(uiTextBoxName.Text))
                 uiDataGridView1.Rows.Add(book.ToStringArray());
         }
@@ -93,8 +93,8 @@ namespace BookMS {
             try {
                 DialogResult dr = MessageBox.Show("Confirm to delete?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK) {
-                    using BookMapper bookMapper = new BookMapper();
-                    if (bookMapper.DeleteById(id) != null) {
+                    using BookController bookMapper = new BookController();
+                    if (bookMapper.DeleteById(id) > 0) {
                         MessageBox.Show("Delete the book successfully");
                         Table();
                     }
@@ -137,8 +137,8 @@ namespace BookMS {
             admin.ShowDialog();
             Table();//update the data
         }
-        private void buttonVerify_Click(object sender,EventArgs e) {
-            if(id=="") {
+        private void buttonVerify_Click(object sender, EventArgs e) {
+            if (id == "") {
                 MessageBox.Show("opps! you did not choose a valid book!");
             }
             else {

@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -24,8 +24,8 @@ namespace BookMS {
 
 
         private void buttonConfirm_Click(object sender, EventArgs e) {
-             if (textBoxISBN.Text != "" && textBoxName.Text != "" && textBoxAuthor.Text != "" && textBoxPublish.Text != "" && textBoxStorage.Text != "")//添加健壮性检查
-            {
+            if (textBoxISBN.Text != "" && textBoxName.Text != "" && textBoxAuthor.Text != "" && textBoxPublish.Text != "" && textBoxStorage.Text != "")//添加健壮性检查
+           {
 
                 Book book = new Book() {
                     Id = textBoxISBN.Text,
@@ -34,9 +34,9 @@ namespace BookMS {
                     Press = textBoxPublish.Text,
                     Number = Convert.ToInt32(textBoxStorage.Text),
                 };
-                using BookMapper bookMapper = new BookMapper();
+                using BookController bookMapper = new BookController();
 
-                if (bookMapper.AddBook(book) != null) {
+                if (bookMapper.AddBook(book) > 0) {
                     MessageBox.Show("you are successful to add new books!");
                 }
                 else {
@@ -114,17 +114,17 @@ namespace BookMS {
             if (match.Groups[0].Value == "xlsx" || match.Groups[0].Value == "xls" || match.Groups[0].Value == "csv") {//健壮性检验
                 try {
                     DataTable dt = getDataTableFromExcel(txtpath);
-                    foreach(DataRow row in dt.Rows) {
+                    foreach (DataRow row in dt.Rows) {
                         //MessageBox.Show(row[0].ToString());  //I find the datatable begins at 0 which does not inclues the headers.                       
                         Book newBook = new Book();
                         newBook.Id = row[0].ToString();
                         newBook.Name = row[1].ToString();
                         newBook.Author = row[2].ToString();
                         newBook.Press = row[3].ToString();
-                        newBook.Number = int.Parse(row[4].ToString());                       
-                        using BookMapper bookMapper = new BookMapper();
-                        if (bookMapper.AddBook(newBook) == null) {
-                            MessageBox.Show("bookID:"+newBook.Id+"is failed to add");
+                        newBook.Number = int.Parse(row[4].ToString());
+                        using BookController bookMapper = new BookController();
+                        if (bookMapper.AddBook(newBook) == 0) {
+                            MessageBox.Show("bookID:" + newBook.Id + "is failed to add");
                         }
                     }
 
@@ -137,7 +137,7 @@ namespace BookMS {
                     MessageBox.Show("we are regret to tell you that there are some items that are same as those in database, so you need to check carefully! ");
                     throw;
                 }
-                catch(Exception ex) {
+                catch (Exception ex) {
                     MessageBox.Show("You have met some errors so you need to contact with the developer! The error information is:" + ex.Message);
                 }
             }
@@ -152,7 +152,7 @@ namespace BookMS {
                 var ws = pck.Workbook.Worksheets.First();
                 DataTable tbl = new DataTable();
 
-                bool hasHeader = true; 
+                bool hasHeader = true;
                 foreach (var firstRowCell in ws.Cells[1, 1, 1, ws.Dimension.End.Column]) {
                     tbl.Columns.Add(hasHeader ? firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
                 }

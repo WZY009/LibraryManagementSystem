@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace BookMS {
         public void Table()//显示表格
         {
             dataGridView1.Rows.Clear();//清空旧数据
-            using BookMapper bookMapper = new BookMapper();
+            using BookController bookMapper = new BookController();
             foreach (Book book in bookMapper.GetAllBooks())
                 dataGridView1.Rows.Add(book.ToStringArray());
             //Dao dao = new Dao();
@@ -58,10 +58,8 @@ namespace BookMS {
             else {
                 //string sql = $"insert into t_lend([uid], bid, [datetime]) values('{Data.Uid}','{id}', getdate()); update t_book set number = number - 1 where id ='{id}'";
                 //Dao dao = new Dao();
-                using LendMapper lendMapper = new LendMapper();
-                lendMapper.Add(Data.Uid, id);
-                using BookMapper bookMapper = new BookMapper();
-                if (bookMapper.LendBook(id) != null)//这里的意思指的是如果执行成功将会返回sql语句成功的数量，大于一才是都执行成功
+                using LendController lendMapper = new LendController();
+                if (lendMapper.LendBook(Data.Uid, id) > 0)//这里的意思指的是如果执行成功将会返回sql语句成功的数量，大于一才是都执行成功
                 {
                     MessageBox.Show($"用户{Data.UName}借出了图书{id}");
                     Table();

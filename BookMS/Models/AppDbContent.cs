@@ -62,6 +62,33 @@ namespace BookMS.Models {
                     Author = "David A. Patterson",
                     Press = "机械工业出版社",
                     Number = 10,
+                },
+                new Book {
+                    Id = "114514",
+                    Name = "真夏夜之淫梦",
+                    Author = "野兽先辈",
+                    Press = "真夏夜之淫梦出版社",
+                    Number = 30
+                },
+                new Book {
+                    Id = "114514514",
+                    Name = "恶臭的传说",
+                    Author = "目力先辈",
+                    Number = 100
+                },
+                new Book {
+                    Id = "70-123456",
+                    Name = "野良与皇女与流浪猫之心",
+                    Author = "HARUKAZE",
+                    Press = "不是柚子社",
+                    Number = 3
+                },
+                new Book {
+                    Id = "96123",
+                    Name = "千恋万花",
+                    Author = "柚子社",
+                    Press = "hikari field",
+                    Number = 12
                 }
                 );
             modelBuilder.Entity<VerifyQuestion>().HasData(

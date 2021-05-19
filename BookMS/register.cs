@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections;
@@ -23,7 +23,7 @@ namespace BookMS {
             comboBox1.Items.AddRange(strQuestionList());
         }
         private string[] strQuestionList() {
-            UserMapper newUser = new UserMapper();
+            UserController newUser = new UserController();
             ArrayList arrQuestionList = new ArrayList();
             foreach (var question in newUser.GetAllQuestions()) {
                 arrQuestionList.Add(question.Question.ToString());
@@ -106,7 +106,7 @@ namespace BookMS {
                 if(isEqual(textBoxPassword,textBoxRepeat)) {
                     //将信息注入到数据库中
                     int question_id = 0;
-                    UserMapper newUser = new UserMapper();
+                    UserController newUser = new UserController();
                     foreach(VerifyQuestion question in newUser.GetAllQuestions()) {
                         if (comboBox1.Text == question.Question)
                             question_id = question.ID;

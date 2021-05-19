@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -65,8 +65,8 @@ namespace BookMS
                 }
             }
         }
-        private Admin Login_Admin(string id, string password) => new AdminMapper().Get(id, password);
-        private User Login_User(string id, string password) => new UserMapper().Get(id, password);
+        private Admin Login_Admin(string id, string password) => new AdminController().Get(id, password);
+        private User Login_User(string id, string password) => new UserController().Get(id, password);
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {

@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace BookMS.Migrations
 {
-    public partial class AddQuestions : Migration
+    public partial class AddBooks : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -111,7 +111,11 @@ namespace BookMS.Migrations
                 values: new object[,]
                 {
                     { "978-7-302-34695-1", "尹为民", "数据库原理与技术", 20, "清华大学出版社" },
-                    { "978-7-111-50482-5", "David A. Patterson", "计算机组成与设计", 10, "机械工业出版社" }
+                    { "978-7-111-50482-5", "David A. Patterson", "计算机组成与设计", 10, "机械工业出版社" },
+                    { "114514", "野兽先辈", "真夏夜之淫梦", 30, "真夏夜之淫梦出版社" },
+                    { "114514514", "目力先辈", "恶臭的传说", 100, null },
+                    { "70-123456", "HARUKAZE", "野良与皇女与流浪猫之心", 3, "不是柚子社" },
+                    { "96123", "柚子社", "千恋万花", 12, "hikari field" }
                 });
 
             migrationBuilder.InsertData(

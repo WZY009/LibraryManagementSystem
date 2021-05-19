@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -23,14 +23,17 @@ namespace BookMS {
         public void Table()//显示表格
         {
             dataGridView1.Rows.Clear();//清空旧数据
-            using LendMapper lendMapper = new LendMapper();
-            foreach (Lend lend in lendMapper.GetLendsByUid(Data.Uid)) {
-                dataGridView1.Rows.Add(new string[] {
-                    lend.No.ToString(),
-                    lend.Bid,
-                    lend.LendTime.ToString("F"),
-                });
-            }
+            using LendController lendMapper = new LendController();
+            /*
+             * 警告！！此处需要修改
+             */
+            //foreach (Lend lend in lendMapper.GetLendsByUid(Data.Uid)) {
+            //    dataGridView1.Rows.Add(new string[] {
+            //        lend.No.ToString(),
+            //        lend.Bid,
+            //        lend.LendTime.ToString("F"),
+            //    });
+            //}
             //Dao dao = new Dao();
             //string sql = $"select [no],[bid],[datetime] from t_lend where [uid] ='{Data.Uid}'";//从
             //IDataReader dc = dao.read(sql);
@@ -54,14 +57,14 @@ namespace BookMS {
             string id = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             //string sql = $"delete from t_lend where [no]={no};update t_book set number = number +1 where id = '{id}'";
             //Dao dao = new Dao();
-            using LendMapper lendMapper = new LendMapper();
-            lendMapper.DeleteLend(Convert.ToInt32(no));
-            using BookMapper bookMapper = new BookMapper();
-            bookMapper.ReturnBook(id);
-            //if (dao.Execute(sql) > 1) {
-            MessageBox.Show("归还成功");
-            Table();
-            //}
+            using LendController lendMapper = new LendController();
+            if (lendMapper.ReturnBook(Convert.ToInt32(no)) > 1) {
+                MessageBox.Show("归还成功");
+                Table();
+            }
+            else {
+                throw new Exception("归还失败");
+            }
         }
     }
 }

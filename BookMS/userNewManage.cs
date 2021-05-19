@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -16,14 +16,14 @@ namespace BookMS {
         public void Table()//显示表格
 {
             uiDataGridView1.Rows.Clear();//清空旧数据
-            using LendMapper lendMapper = new LendMapper();
-            foreach (Lend lend in lendMapper.GetLendsByUid(Data.Uid)) {
-                uiDataGridView1.Rows.Add(new string[] {
-                    lend.No.ToString(),
-                    lend.Bid,
-                    lend.LendTime.ToString("F"),
-                });
-            }
+            using LendController lendMapper = new LendController();
+            //foreach (Lend lend in lendMapper.GetLendsByUid(Data.Uid)) {
+            //    uiDataGridView1.Rows.Add(new string[] {
+            //        lend.No.ToString(),
+            //        lend.Bid,
+            //        lend.LendTime.ToString("F"),
+            //    });
+            //}
 
         }
 

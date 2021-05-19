@@ -1,4 +1,4 @@
-using BookMS.Mappers;
+using BookMS.Controllers;
 using BookMS.Models;
 using System;
 using System.Collections.Generic;
@@ -24,14 +24,14 @@ namespace BookMS {
             textBoxName.Text = name;
             textBoxAuthor.Text = author;
             textBoxPublish.Text = press;
-            textBoxStorage.Text = number;            
+            textBoxStorage.Text = number;
         }
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e) {
-            if(textBoxName.Text != null) {
+            if (textBoxName.Text != null) {
                 Book book = new Book() {
                     Id = ID,
                     Name = textBoxName.Text,
@@ -39,8 +39,8 @@ namespace BookMS {
                     Press = textBoxPublish.Text,
                     Number = Convert.ToInt32(textBoxStorage.Text),
                 };
-                using BookMapper bookMapper = new BookMapper();
-                if (bookMapper.UpdateBook(book) != null) {
+                using BookController bookMapper = new BookController();
+                if (bookMapper.UpdateBook(book) > 0) {
                     MessageBox.Show("Successful!");
                     this.Close();
                 }
@@ -58,7 +58,7 @@ namespace BookMS {
         }
 
         private void textBoxISBN_Click(object sender, EventArgs e) {
-            changeColor(textBoxISBN, textBoxName, textBoxPublish, textBoxStorage, textBoxAuthor, 
+            changeColor(textBoxISBN, textBoxName, textBoxPublish, textBoxStorage, textBoxAuthor,
                          panelISBN, panelName, panelPulish, panelAuthor, panelStorage);
         }
 
@@ -80,8 +80,8 @@ namespace BookMS {
         private void textBoxStorage_Click(object sender, EventArgs e) {
             changeColor(textBoxStorage, textBoxISBN, textBoxAuthor, textBoxPublish, textBoxName,
             panelStorage, panelISBN, panelAuthor, panelName, panelPulish);
-        }    
-        
+        }
+
         //有没有一种更加艺术的方式实现这个功能啊啊啊啊啊！！！！！！！
         private void changeColor(TextBox changeBox, TextBox a0, TextBox a1, TextBox a2,
                          TextBox a3, Panel changePanel, Panel p0, Panel p1, Panel p2, Panel p3) {
@@ -89,7 +89,7 @@ namespace BookMS {
             changePanel.BackColor = Color.White;
             a0.BackColor = a1.BackColor = a2.BackColor = a3.BackColor = Color.FromArgb(235, 243, 255);
 
-            p0.BackColor=p1.BackColor = p2.BackColor = p3.BackColor = Color.FromArgb(235, 243, 255);
+            p0.BackColor = p1.BackColor = p2.BackColor = p3.BackColor = Color.FromArgb(235, 243, 255);
         }
 
     }
