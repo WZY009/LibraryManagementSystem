@@ -144,7 +144,6 @@ namespace BookMS {
         }
         private void pictureBox1_Click(object sender, EventArgs e) {
             string txtpath = null;//这个是用户选择的图片的绝对路径
-
             OpenFileDialog opn = new OpenFileDialog();
             if (opn.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
                 txtpath = opn.FileName;                
