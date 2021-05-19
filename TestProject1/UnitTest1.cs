@@ -12,7 +12,7 @@ namespace TestProject1 {
 
         [Test]
         public void Test1() {
-            Assert.DoesNotThrowAsync(async () => await spider.ReadNext());
+            Assert.DoesNotThrowAsync(async () => await spider.ReadNextAsync());
             Assert.AreEqual(spider.HasNext, true);
         }
     }
