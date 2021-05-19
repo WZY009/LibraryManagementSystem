@@ -21,6 +21,9 @@ namespace BookMS {
             public bool more;
         }
 
+        /// <summary>
+        /// 豆瓣上一本书的信息
+        /// </summary>
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
@@ -32,7 +35,7 @@ namespace BookMS {
 
         private readonly string _url;
         private int _currentNumber = 0;
-        private readonly List<BookHtmlContent> _bookHtmlContents;
+        //private readonly List<BookHtmlContent> _bookHtmlContents;
 
         /// <summary>
         /// 所要查询的书目
@@ -42,10 +45,10 @@ namespace BookMS {
         /// 是否含有更多条目
         /// </summary>
         public bool HasNext { get; private set; }
-        /// <summary>
-        /// 本页所含有的所有书目信息
-        /// </summary>
-        public IEnumerable<BookHtmlContent> BookHtmlContents { get => _bookHtmlContents; }
+        ///// <summary>
+        ///// 本页所含有的所有书目信息
+        ///// </summary>
+        //public IEnumerable<BookHtmlContent> BookHtmlContents { get => _bookHtmlContents; }
 
         /// <summary>
         /// 对于每一本所要查询的书，创建一个Spider类
@@ -56,10 +59,10 @@ namespace BookMS {
             HasNext = true;
             book = HttpUtility.UrlEncode(book);
             _url = $"https://www.douban.com/j/search?q={book}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
-            _bookHtmlContents = new List<BookHtmlContent>();
+            //_bookHtmlContents = new List<BookHtmlContent>();
         }
 
-        private async Task<string> GetResponse() {
+        private async Task<string> GetResponseAsync() {
             using HttpClient client = new HttpClient();
             // 火狐
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
@@ -69,13 +72,13 @@ namespace BookMS {
         }
 
         /// <summary>
-        /// 获取下一页的内容
+        /// 读取下一页
         /// </summary>
-        /// <returns></returns>
-        public async Task ReadNext() {
+        /// <returns>一个包含本页所有书目信息的迭代器</returns>
+        public async Task<IEnumerable<BookHtmlContent>> ReadNextAsync() {
             if (!HasNext) throw new Exception("已读到头");
 
-            string result = await GetResponse();
+            string result = await GetResponseAsync();
             DoubanJson doubanJson = JsonConvert.DeserializeObject<DoubanJson>(result);
             HasNext = doubanJson.more;  // 是否到头
             _currentNumber += doubanJson.limit; // 下一次搜索位置
@@ -84,6 +87,8 @@ namespace BookMS {
             List<string> items = new List<string>();
             foreach (string item in doubanJson.items)
                 items.Add(HttpUtility.HtmlDecode(item));
+
+            List<BookHtmlContent> bookHtmlContents = new List<BookHtmlContent>();
 
             // 获取本页的所有书目
             foreach (string item in items) {
@@ -102,7 +107,7 @@ namespace BookMS {
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
 
-                _bookHtmlContents.Add(new BookHtmlContent() {
+                bookHtmlContents.Add(new BookHtmlContent() {
                     Title = title,
                     Url = url,
                     Rate = rating,
@@ -110,6 +115,8 @@ namespace BookMS {
                     Detail = detail,
                 });
             }
+
+            return bookHtmlContents;
         }
     }
 }
