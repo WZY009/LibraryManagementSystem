@@ -598,6 +598,7 @@ namespace BookMS {
             this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBoxName.Size = new System.Drawing.Size(290, 44);
             this.uiTextBoxName.TabIndex = 2;
+            this.uiTextBoxName.Click += new System.EventHandler(this.uiTextboxID_Click);
             // 
             // uiTextboxID
             // 
@@ -613,6 +614,7 @@ namespace BookMS {
             this.uiTextboxID.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextboxID.Size = new System.Drawing.Size(290, 44);
             this.uiTextboxID.TabIndex = 0;
+            this.uiTextboxID.Click += new System.EventHandler(this.uiTextboxID_Click);
             // 
             // buttonClose
             // 

@@ -120,6 +120,9 @@ namespace BookMS {
             this.Close();
         }
 
+        private void uiTextboxID_Click(object sender, EventArgs e) {
+            uiTextboxID.ForeColor = basicColor;
+        }
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1);
