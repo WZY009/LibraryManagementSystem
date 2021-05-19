@@ -27,6 +27,7 @@ namespace BookMS {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
+            public string ImageUrl { get; set; }
             public string? Rate { get; set; }
             public string Subjects { get; set; }
             public string? Detail { get; set; }
@@ -97,6 +98,8 @@ namespace BookMS {
                 var itemNode = itemDocument.DocumentNode.SelectSingleNode("//div[@class=\"result\"]/div[@class=\"content\"]");
                 if (itemNode == null) throw new Exception("未查询到关键词所对应的书");
 
+                string imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img").Attributes["src"].Value;
+
                 var titleNode = itemNode.SelectSingleNode("div[@class=\"title\"]");
                 string title = titleNode.SelectSingleNode("h3/a").InnerText;
                 string url = titleNode.SelectSingleNode("h3/a").Attributes["href"].Value;
@@ -110,6 +113,7 @@ namespace BookMS {
                 bookHtmlContents.Add(new BookHtmlContent() {
                     Title = title,
                     Url = url,
+                    ImageUrl = imageUrl,
                     Rate = rating,
                     Subjects = subjects,
                     Detail = detail,
