@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace BookMS.Views {
     public partial class forget : Form {
+        bool isClickPicPW = false;
         public forget() {
             InitializeComponent();
         }
@@ -33,7 +34,7 @@ namespace BookMS.Views {
                 UserController userVerify = new UserController();
                 User fogetter = userVerify.GetById(textBoxID.Text);
                 fogetter.Password = textBoxPassword.Text;
-                if (userVerify.ChangePassword(fogetter) > 0)
+                if (userVerify.UpdateUserInfo(fogetter) > 0)
                     MessageBox.Show("Successful!");
             }
             else
@@ -85,7 +86,20 @@ namespace BookMS.Views {
                 MessageBox.Show("Please input your Name and Id before answering question");
         }
 
+        private void textBoxRepeat_TextChanged(object sender, EventArgs e) {
+            if (textBoxPassword.Text != null) {
+                if (isEqual(textBoxPassword, textBoxRepeat))
+                    pictureBoxRepeat.Image = Image.FromFile("../../../icons/same_32.png");
+                else
+                    pictureBoxRepeat.Image = Image.FromFile("../../../icons/inconsistent_32.png");
+            }
+        }
 
+        private void textBoxRepeat_Click(object sender, EventArgs e) {
+            if(isClickPicPW) {
+                textBoxPassword.PasswordChar = '*';
+            }
+        }
     }
 
 }

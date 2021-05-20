@@ -57,7 +57,6 @@ namespace BookMS.Views {
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNVQ = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMajor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVerifyMajor)).BeginInit();
@@ -74,7 +73,6 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNVQ)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -83,7 +81,7 @@ namespace BookMS.Views {
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(79, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 22);
+            this.label8.Size = new System.Drawing.Size(89, 32);
             this.label8.TabIndex = 2;
             this.label8.Text = "Major";
             // 
@@ -128,7 +126,8 @@ namespace BookMS.Views {
             this.textBoxMajor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxMajor.Location = new System.Drawing.Point(188, 24);
             this.textBoxMajor.Name = "textBoxMajor";
-            this.textBoxMajor.Size = new System.Drawing.Size(634, 25);
+            this.textBoxMajor.ReadOnly = true;
+            this.textBoxMajor.Size = new System.Drawing.Size(634, 37);
             this.textBoxMajor.TabIndex = 1;
             // 
             // label7
@@ -137,7 +136,7 @@ namespace BookMS.Views {
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(176, 936);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(365, 23);
+            this.label7.Size = new System.Drawing.Size(538, 37);
             this.label7.TabIndex = 54;
             this.label7.Text = "Select a new verificational question ";
             // 
@@ -176,7 +175,7 @@ namespace BookMS.Views {
             this.comboBoxQuestion.FormattingEnabled = true;
             this.comboBoxQuestion.Location = new System.Drawing.Point(139, 976);
             this.comboBoxQuestion.Name = "comboBoxQuestion";
-            this.comboBoxQuestion.Size = new System.Drawing.Size(628, 29);
+            this.comboBoxQuestion.Size = new System.Drawing.Size(628, 41);
             this.comboBoxQuestion.TabIndex = 51;
             // 
             // label2
@@ -185,7 +184,7 @@ namespace BookMS.Views {
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(79, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 22);
+            this.label2.Size = new System.Drawing.Size(94, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Name";
             // 
@@ -198,7 +197,7 @@ namespace BookMS.Views {
             this.textBoxName.Location = new System.Drawing.Point(188, 32);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(636, 25);
+            this.textBoxName.Size = new System.Drawing.Size(636, 37);
             this.textBoxName.TabIndex = 1;
             // 
             // pictureBox2
@@ -224,6 +223,7 @@ namespace BookMS.Views {
             this.buttonConfirm.TabIndex = 48;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // panelRepeat
             // 
@@ -252,7 +252,7 @@ namespace BookMS.Views {
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(77, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 22);
+            this.label6.Size = new System.Drawing.Size(108, 32);
             this.label6.TabIndex = 6;
             this.label6.Text = "Repeat";
             // 
@@ -265,8 +265,10 @@ namespace BookMS.Views {
             this.textBoxRepeat.Location = new System.Drawing.Point(188, 29);
             this.textBoxRepeat.Name = "textBoxRepeat";
             this.textBoxRepeat.ReadOnly = true;
-            this.textBoxRepeat.Size = new System.Drawing.Size(634, 25);
+            this.textBoxRepeat.Size = new System.Drawing.Size(634, 37);
             this.textBoxRepeat.TabIndex = 1;
+            this.textBoxRepeat.Click += new System.EventHandler(this.textBoxRepeat_Click);
+            this.textBoxRepeat.TextChanged += new System.EventHandler(this.textBoxRepeat_TextChanged);
             // 
             // pictureBox5
             // 
@@ -330,7 +332,7 @@ namespace BookMS.Views {
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(79, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 22);
+            this.label5.Size = new System.Drawing.Size(204, 32);
             this.label5.TabIndex = 5;
             this.label5.Text = "New Password";
             // 
@@ -343,7 +345,7 @@ namespace BookMS.Views {
             this.textBoxPassword.Location = new System.Drawing.Point(286, 33);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.ReadOnly = true;
-            this.textBoxPassword.Size = new System.Drawing.Size(538, 25);
+            this.textBoxPassword.Size = new System.Drawing.Size(538, 37);
             this.textBoxPassword.TabIndex = 1;
             // 
             // pictureBox4
@@ -372,7 +374,7 @@ namespace BookMS.Views {
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(139, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 38);
+            this.label1.Size = new System.Drawing.Size(622, 56);
             this.label1.TabIndex = 42;
             this.label1.Text = "Change Your Information ";
             // 
@@ -409,7 +411,7 @@ namespace BookMS.Views {
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(79, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 22);
+            this.label4.Size = new System.Drawing.Size(87, 32);
             this.label4.TabIndex = 4;
             this.label4.Text = "Stu.ID";
             // 
@@ -422,7 +424,7 @@ namespace BookMS.Views {
             this.textBoxID.Location = new System.Drawing.Point(188, 33);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(636, 25);
+            this.textBoxID.Size = new System.Drawing.Size(636, 37);
             this.textBoxID.TabIndex = 1;
             // 
             // pictureBoxUser
@@ -434,23 +436,12 @@ namespace BookMS.Views {
             this.pictureBoxUser.TabIndex = 50;
             this.pictureBoxUser.TabStop = false;
             // 
-            // pictureBoxNVQ
-            // 
-            this.pictureBoxNVQ.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNVQ.Image")));
-            this.pictureBoxNVQ.Location = new System.Drawing.Point(793, 973);
-            this.pictureBoxNVQ.Name = "pictureBoxNVQ";
-            this.pictureBoxNVQ.Size = new System.Drawing.Size(32, 32);
-            this.pictureBoxNVQ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNVQ.TabIndex = 6;
-            this.pictureBoxNVQ.TabStop = false;
-            // 
             // userInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(902, 1200);
-            this.Controls.Add(this.pictureBoxNVQ);
             this.Controls.Add(this.panelMajor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBoxAltImg);
@@ -490,7 +481,6 @@ namespace BookMS.Views {
             this.panelID.ResumeLayout(false);
             this.panelID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNVQ)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,6 +520,5 @@ namespace BookMS.Views {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.PictureBox pictureBoxUser;
-        private System.Windows.Forms.PictureBox pictureBoxNVQ;
     }
 }
