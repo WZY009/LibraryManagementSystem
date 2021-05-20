@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class adminNewVerify : Form {
         string ID = null;
 

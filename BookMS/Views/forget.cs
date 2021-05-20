@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class forget : Form {
         public forget() {
             InitializeComponent();

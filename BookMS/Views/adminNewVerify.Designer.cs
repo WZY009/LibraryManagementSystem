@@ -1,5 +1,5 @@
 
-namespace BookMS {
+namespace BookMS.Views {
     partial class adminNewVerify {
         /// <summary>
         /// Required designer variable.

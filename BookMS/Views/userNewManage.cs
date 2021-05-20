@@ -10,9 +10,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class userNewManage : Form {
-        public static string borrowNum,bookId, bookName, lendTime, expense;
+        public static string borrowNum, bookId, bookName, lendTime, expense;
         string lenderId;
         public userNewManage(string userId) {
             InitializeComponent();
@@ -24,13 +24,12 @@ namespace BookMS {
         public userNewManage() {
             InitializeComponent();
         }
-        public void Table(string id)
-        {
+        public void Table(string id) {
             uiDataGridView1.Rows.Clear();
             using LendController lendMapper = new LendController();
-            foreach(UserLend item in lendMapper.GetLendsByUid(id)) {//对借过的所有书进行遍历
-                uiDataGridView1.Rows.Add(item.LandNo,item.BookID,item.BookName,item.LendTime,getExpense(item));
-            }           
+            foreach (UserLend item in lendMapper.GetLendsByUid(id)) {//对借过的所有书进行遍历
+                uiDataGridView1.Rows.Add(item.LandNo, item.BookID, item.BookName, item.LendTime, getExpense(item));
+            }
         }
 
         private double getExpense(UserLend lend) {//传入的是借阅的某一本书
@@ -99,8 +98,8 @@ namespace BookMS {
         {
             uiDataGridView1.Rows.Clear();//flush old data
             using LendController bookMapper = new LendController();
-            foreach(var item in bookMapper.GetLendsByUid(lenderId)) {
-                if(item.BookID==uiTextboxID.Text) {
+            foreach (var item in bookMapper.GetLendsByUid(lenderId)) {
+                if (item.BookID == uiTextboxID.Text) {
                     uiDataGridView1.Rows.Add(item.LandNo, item.BookID, item.BookName, item.LendTime, getExpense(item));
                     return;
                 }
@@ -120,9 +119,9 @@ namespace BookMS {
         }
 
         private void uiDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
-            for(int i=0; i< uiDataGridView1.ColumnCount;i++) {
+            for (int i = 0; i < uiDataGridView1.ColumnCount; i++) {
                 if (uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {
-                    MessageBox.Show("you can not select a invalid cell!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("you can not select a invalid cell!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -135,7 +134,7 @@ namespace BookMS {
         }
 
         private void buttonLend_Click(object sender, EventArgs e) {
-            using LendController lendMapper = new LendController();         
+            using LendController lendMapper = new LendController();
             if (lendMapper.ReturnBook(Convert.ToInt32(borrowNum)) > 1) {
                 MessageBox.Show("Successful to lend back");
                 Table(lenderId);

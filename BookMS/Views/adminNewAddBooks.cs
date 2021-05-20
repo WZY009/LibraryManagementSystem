@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 using OfficeOpenXml;
 using System.IO;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class adminNewAddBooks : Form {
         string ID;
         public adminNewAddBooks() {

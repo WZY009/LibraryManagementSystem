@@ -1,5 +1,5 @@
 
-namespace BookMS {
+namespace BookMS.Views {
     partial class adminNewManagecs {
         /// <summary>
         /// Required designer variable.

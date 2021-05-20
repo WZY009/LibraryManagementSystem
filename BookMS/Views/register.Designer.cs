@@ -2,7 +2,7 @@
 using BookMS.Controllers;
 using System.Collections;
 
-namespace BookMS {
+namespace BookMS.Views {
     partial class register {
         /// <summary>
         /// Required designer variable.
@@ -496,7 +496,7 @@ namespace BookMS {
 
         #endregion
 
-        
+
         private System.Windows.Forms.Button buttonFlush;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Panel panelRepeat;

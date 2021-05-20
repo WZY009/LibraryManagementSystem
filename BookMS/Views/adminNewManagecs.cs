@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using Sunny.UI;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class adminNewManagecs : Form {
         public static string id, name, author, press, number;
         System.Drawing.Color azure = Color.FromArgb(40, 140, 195);

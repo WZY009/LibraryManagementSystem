@@ -11,7 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class userInformation : Form {
         string userId = null;
         public userInformation() {
@@ -52,7 +52,7 @@ namespace BookMS {
             }
         }
         private string[] getUserInfo(string id) {
-            string[] userInfo =new string[4];
+            string[] userInfo = new string[4];
             if (id != null) {
                 UserController userMapper = new UserController();
                 User user = userMapper.GetById(id);
@@ -66,7 +66,7 @@ namespace BookMS {
                 else {
                     MessageBox.Show("Sorry,we can not find user according to your id!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
-                }                   
+                }
             }
             else
                 return null;
@@ -92,7 +92,7 @@ namespace BookMS {
                     pictureBoxUser.Image = userImage;
                     pictureBoxAltImg.BackColor = Color.Transparent;
                     UserController usermap = new UserController();
-                    usermap.UploadPhoto(userId, fileStore);                  
+                    usermap.UploadPhoto(userId, fileStore);
                 }
                 catch (Exception) {
                     MessageBox.Show("Error! Please contact with me", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

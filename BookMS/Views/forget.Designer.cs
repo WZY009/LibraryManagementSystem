@@ -1,5 +1,5 @@
 
-namespace BookMS {
+namespace BookMS.Views {
     partial class forget {
         /// <summary>
         /// Required designer variable.
