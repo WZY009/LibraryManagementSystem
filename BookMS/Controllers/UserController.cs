@@ -48,7 +48,7 @@ namespace BookMS.Controllers {
         /// </summary>
         /// <param name="user">需要修改的用户</param>
         /// <returns>成功更改的条数</returns>
-        public int ChangePassword(User user) {
+        public int UpdateUserInfo(User user) {
             var forgetter = _context.Users.Attach(user);
             forgetter.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             return _context.SaveChanges();

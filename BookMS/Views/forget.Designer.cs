@@ -47,6 +47,7 @@ namespace BookMS.Views {
             this.buttonFlush = new System.Windows.Forms.Button();
             this.buttonVerify = new System.Windows.Forms.Button();
             this.panelRepeat = new System.Windows.Forms.Panel();
+            this.pictureBoxRepeat = new System.Windows.Forms.PictureBox();
             this.textBoxRepeat = new System.Windows.Forms.TextBox();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@ namespace BookMS.Views {
             this.panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelRepeat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRepeat)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -243,7 +245,7 @@ namespace BookMS.Views {
             this.textBoxPassword.Location = new System.Drawing.Point(237, 33);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.ReadOnly = true;
-            this.textBoxPassword.Size = new System.Drawing.Size(600, 37);
+            this.textBoxPassword.Size = new System.Drawing.Size(591, 37);
             this.textBoxPassword.TabIndex = 7;
             // 
             // label6
@@ -299,6 +301,7 @@ namespace BookMS.Views {
             // panelRepeat
             // 
             this.panelRepeat.BackColor = System.Drawing.Color.Transparent;
+            this.panelRepeat.Controls.Add(this.pictureBoxRepeat);
             this.panelRepeat.Controls.Add(this.textBoxRepeat);
             this.panelRepeat.Controls.Add(this.label6);
             this.panelRepeat.Controls.Add(this.pictureBox5);
@@ -306,6 +309,15 @@ namespace BookMS.Views {
             this.panelRepeat.Name = "panelRepeat";
             this.panelRepeat.Size = new System.Drawing.Size(900, 90);
             this.panelRepeat.TabIndex = 42;
+            // 
+            // pictureBoxRepeat
+            // 
+            this.pictureBoxRepeat.Location = new System.Drawing.Point(853, 34);
+            this.pictureBoxRepeat.Name = "pictureBoxRepeat";
+            this.pictureBoxRepeat.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRepeat.TabIndex = 56;
+            this.pictureBoxRepeat.TabStop = false;
             // 
             // textBoxRepeat
             // 
@@ -318,6 +330,8 @@ namespace BookMS.Views {
             this.textBoxRepeat.ReadOnly = true;
             this.textBoxRepeat.Size = new System.Drawing.Size(600, 37);
             this.textBoxRepeat.TabIndex = 8;
+            this.textBoxRepeat.Click += new System.EventHandler(this.textBoxRepeat_Click);
+            this.textBoxRepeat.TextChanged += new System.EventHandler(this.textBoxRepeat_TextChanged);
             // 
             // textBoxQuestion
             // 
@@ -400,6 +414,7 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelRepeat.ResumeLayout(false);
             this.panelRepeat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRepeat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,5 +448,6 @@ namespace BookMS.Views {
         private System.Windows.Forms.Button buttonFlush2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxRepeat;
+        private System.Windows.Forms.PictureBox pictureBoxRepeat;
     }
 }

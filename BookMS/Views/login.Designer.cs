@@ -41,6 +41,7 @@ namespace BookMS.Views {
             this.buttonForget = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panelPassword = new System.Windows.Forms.Panel();
+            this.pictureBoxCheck = new System.Windows.Forms.PictureBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
             this.panelUser = new System.Windows.Forms.Panel();
@@ -52,6 +53,7 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -276,6 +278,7 @@ namespace BookMS.Views {
             // panelPassword
             // 
             this.panelPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.panelPassword.Controls.Add(this.pictureBoxCheck);
             this.panelPassword.Controls.Add(this.textBoxPassword);
             this.panelPassword.Controls.Add(this.pictureBoxPassword);
             this.panelPassword.Location = new System.Drawing.Point(0, 503);
@@ -283,18 +286,31 @@ namespace BookMS.Views {
             this.panelPassword.Size = new System.Drawing.Size(900, 90);
             this.panelPassword.TabIndex = 2;
             // 
+            // pictureBoxCheck
+            // 
+            this.pictureBoxCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxCheck.Location = new System.Drawing.Point(833, 30);
+            this.pictureBoxCheck.Name = "pictureBoxCheck";
+            this.pictureBoxCheck.Size = new System.Drawing.Size(44, 37);
+            this.pictureBoxCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxCheck.TabIndex = 42;
+            this.pictureBoxCheck.TabStop = false;
+            this.pictureBoxCheck.Click += new System.EventHandler(this.pictureBoxCheck_Click);
+            // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(112, 28);
+            this.textBoxPassword.Location = new System.Drawing.Point(112, 30);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(740, 37);
+            this.textBoxPassword.ShortcutsEnabled = false;
+            this.textBoxPassword.Size = new System.Drawing.Size(699, 37);
             this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // pictureBoxPassword
             // 
@@ -302,10 +318,8 @@ namespace BookMS.Views {
             this.pictureBoxPassword.Location = new System.Drawing.Point(30, 24);
             this.pictureBoxPassword.Name = "pictureBoxPassword";
             this.pictureBoxPassword.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPassword.TabIndex = 0;
             this.pictureBoxPassword.TabStop = false;
-            this.pictureBoxPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxPassword_MouseDown);
             // 
             // panelUser
             // 
@@ -323,9 +337,9 @@ namespace BookMS.Views {
             this.textBoxUserNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserNum.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxUserNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxUserNum.Location = new System.Drawing.Point(112, 26);
+            this.textBoxUserNum.Location = new System.Drawing.Point(112, 33);
             this.textBoxUserNum.Name = "textBoxUserNum";
-            this.textBoxUserNum.Size = new System.Drawing.Size(740, 37);
+            this.textBoxUserNum.Size = new System.Drawing.Size(726, 37);
             this.textBoxUserNum.TabIndex = 1;
             this.textBoxUserNum.Click += new System.EventHandler(this.textBoxUserNum_Click);
             // 
@@ -384,6 +398,7 @@ namespace BookMS.Views {
             this.panel2.PerformLayout();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
@@ -419,6 +434,7 @@ namespace BookMS.Views {
         private Sunny.UI.UIRadioButton uiRadioButtonAdmin;
         private Sunny.UI.UIRadioButton uiRadioButtonUser;
         private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.PictureBox pictureBoxCheck;
     }
 }
 

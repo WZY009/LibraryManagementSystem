@@ -16,13 +16,14 @@ namespace BookMS.Views {
         string fileStore = null;
         TextBox[] textbox = new TextBox[] { };
         Panel[] panel = new Panel[] { };
+        bool isClickPicPW = false;
         public register() {
             InitializeComponent();
             textbox = new TextBox[] { textBoxName, textBoxID, textBoxPassword, textBoxRepeat, textBoxMajor };//注意，以下这两个数组的顺序绝对不可以颠倒！
             panel = new Panel[] { panelName, panelID, panelPassword, panelRepeat, panelMajor };
             comboBox1.Items.AddRange(strQuestionList());
         }
-        private string[] strQuestionList() {
+        private string[] strQuestionList() {//get all questions
             UserController newUser = new UserController();
             ArrayList arrQuestionList = new ArrayList();
             foreach (var question in newUser.GetAllQuestions()) {
@@ -66,6 +67,10 @@ namespace BookMS.Views {
         }
 
         private void textBoxRepeat_Click(object sender, EventArgs e) {
+            if (isClickPicPW) {
+                textBoxPassword.PasswordChar = '*';
+                pictureBoxRepeat.Image = Image.FromFile("../../../icons/inconsistent_32.png");
+            }
             changeColor_MouseClick(textbox, panel, 3);
         }
 
@@ -122,7 +127,7 @@ namespace BookMS.Views {
                             Sex = uiRadioButtonMale.Checked ? true : false,
                             Question_id = question_id
                         };
-                        if (newUser.AddUser(user) != null) {
+                        if (newUser.AddUser(user) != 0) {
                             MessageBox.Show("Successful to register", "Tips window", MessageBoxButtons.OK);
                             this.Close();
                         }
@@ -179,6 +184,19 @@ namespace BookMS.Views {
             Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
             Bitmap bmp = new Bitmap(newImage);
             return bmp;
+        }
+
+        private void textBoxRepeat_TextChanged(object sender, EventArgs e) {
+            if (textBoxPassword.Text != null) {
+                if (isEqual(textBoxPassword, textBoxRepeat))
+                    pictureBoxRepeat.Image = Image.FromFile("../../../icons/same_32.png");
+                else
+                    pictureBoxRepeat.Image = Image.FromFile("../../../icons/inconsistent_32.png");
+            }            
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e) {
+            isClickPicPW = true;
         }
     }
 }

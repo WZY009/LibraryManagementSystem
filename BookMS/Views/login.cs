@@ -13,9 +13,11 @@ using System.Drawing.Drawing2D;
 
 namespace BookMS.Views {
     public partial class login : Form {
+        bool check = false;//定义不可查看的标志
         public login() {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            pictureBoxCheck.Image = Image.FromFile("../../../icons/Check_32.png");
         }
 
 
@@ -29,7 +31,6 @@ namespace BookMS.Views {
                     MessageBox.Show("you are successful to log in a user account");
                     Data.Uid = usr.Id;
                     Data.UName = usr.Name;
-
                     userBasic user = new userBasic();
                     this.Hide();//隐藏掉登录窗体
                     user.ShowDialog();//对话框模式打开新的user界面
@@ -39,7 +40,6 @@ namespace BookMS.Views {
                     MessageBox.Show("you are failed to log in");
                 }
             }
-
             //管理员
             if (uiRadioButtonAdmin.Checked == true) {
                 if (Login_Admin(id: textBoxUserNum.Text, password: textBoxPassword.Text) != null) {
@@ -86,13 +86,12 @@ namespace BookMS.Views {
             panelPassword.BackColor = Color.White;
             panelUser.BackColor = Color.FromArgb(235, 243, 255);
             textBoxUserNum.BackColor = Color.FromArgb(235, 243, 255);
+            pictureBoxCheck.Image = Image.FromFile("../../../icons/Check_32.png");
+            
         }
 
         private void pictureBoxPassword_MouseDown(object sender, MouseEventArgs e) {
-            if (textBoxPassword.UseSystemPasswordChar)
-                textBoxPassword.UseSystemPasswordChar = false;
-            else
-                textBoxPassword.UseSystemPasswordChar = true;
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e) {
@@ -114,6 +113,23 @@ namespace BookMS.Views {
             forget user = new forget();
             user.ShowDialog();
             this.Hide();
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void pictureBoxCheck_Click(object sender, EventArgs e) {
+            if (!check) {//如果不可查看成立
+                textBoxPassword.UseSystemPasswordChar = true;
+                pictureBoxCheck.Image=Image.FromFile("../../../icons/Check_32.png");
+                check = !check;
+            }
+            else {
+                textBoxPassword.UseSystemPasswordChar = false;
+                pictureBoxCheck.Image = Image.FromFile("../../../icons/Uncheck_32.png");
+                check = !check;
+            }
         }
     }
 }
