@@ -114,20 +114,32 @@ namespace BookMS.Views {
             if (match.Groups[0].Value == "xlsx" || match.Groups[0].Value == "xls" || match.Groups[0].Value == "csv") {//健壮性检验
                 try {
                     DataTable dt = getDataTableFromExcel(txtpath);
+                    
                     foreach (DataRow row in dt.Rows) {
-                        //MessageBox.Show(row[0].ToString());  //I find the datatable begins at 0 which does not inclues the headers.                       
+                        //MessageBox.Show(row[0].ToString());  //I find the datatable begins at 0 which does not inclues the headers.
+                        bool flag = true;
                         Book newBook = new Book();
-                        newBook.Id = row[0].ToString();
-                        newBook.Name = row[1].ToString();
-                        newBook.Author = row[2].ToString();
-                        newBook.Press = row[3].ToString();
-                        newBook.Number = int.Parse(row[4].ToString());
-                        using BookController bookMapper = new BookController();
-                        if (bookMapper.AddBook(newBook) == 0) {
-                            MessageBox.Show("bookID:" + newBook.Id + "is failed to add");
+                        for (int i = 0;i<row.Table.Columns.Count;i++) {
+                            if (row[i] == null) {
+                                MessageBox.Show("bookID:" + newBook.Id + "is failed to add, beacause there is some information empty!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                flag = false;
+                                break;
+                            }                               
+                        }
+                        if (flag) {
+                            newBook.Id = row[0].ToString();
+                            newBook.Name = row[1].ToString();
+                            newBook.Author = row[2].ToString();
+                            newBook.Press = row[3].ToString();
+                            newBook.Number = int.Parse(row[4].ToString());
+                            using BookController bookMapper = new BookController();
+                            if (bookMapper.AddBook(newBook) == 0) {
+                                MessageBox.Show("bookID:" + newBook.Id + "is failed to add", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            MessageBox.Show($"Succeful to add {newBook.Name} to library system!","Successful!");
+                            this.Close();//关闭添加页面
                         }
                     }
-
                 }
                 catch (System.IO.IOException) {
                     MessageBox.Show("you should not occupy the process of Excel and you need to close it before importing data! ");
@@ -138,36 +150,44 @@ namespace BookMS.Views {
                     throw;
                 }
                 catch (Exception ex) {
-                    MessageBox.Show("You have met some errors so you need to contact with the developer! The error information is:" + ex.Message);
+                    MessageBox.Show("You have met some errors so you need to contact with the developer! The error information is: " + ex.Message);
                 }
             }
             else
                 MessageBox.Show("opps! you have chosen a wrong document! we only support .xlsx, .xls and csv");
         }
-        public static DataTable getDataTableFromExcel(string path) {
+        public static DataTable getDataTableFromExcel(string path) {//添加了健壮性检验
             using (var pck = new OfficeOpenXml.ExcelPackage()) {
                 using (var stream = File.OpenRead(path)) {
                     pck.Load(stream);
                 }
                 var ws = pck.Workbook.Worksheets.First();
                 DataTable tbl = new DataTable();
-
-                bool hasHeader = true;
-                foreach (var firstRowCell in ws.Cells[1, 1, 1, ws.Dimension.End.Column]) {
-                    tbl.Columns.Add(hasHeader ? firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
-                }
-                var startRow = hasHeader ? 2 : 1;
-                for (var rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++) {
-                    var wsRow = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
-                    var row = tbl.NewRow();
-                    foreach (var cell in wsRow) {
-                        row[cell.Start.Column - 1] = cell.Text;
+                if (ws.Cells[1, 1].Value.ToString().Equals("ISBN")
+                   && ws.Cells[1, 2].Value.ToString().Equals("Book Name")
+                   && ws.Cells[1, 3].Value.ToString().Equals("Author")
+                   && ws.Cells[1, 4].Value.ToString().Equals("Publish")
+                   && ws.Cells[1, 5].Value.ToString().Equals("Store")) {
+                    bool hasHeader = true;
+                    foreach (var firstRowCell in ws.Cells[1, 1, 1, ws.Dimension.End.Column]) {
+                        tbl.Columns.Add(hasHeader ? firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
                     }
-                    tbl.Rows.Add(row);
+                    var startRow = hasHeader ? 2 : 1;
+                    for (var rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++) {
+                        var wsRow = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
+                        var row = tbl.NewRow();
+                        foreach (var cell in wsRow) {
+                            row[cell.Start.Column - 1] = cell.Text;
+                        }
+                        tbl.Rows.Add(row);
+                    }
+                    return tbl;
                 }
-                return tbl;
+                else {
+                    MessageBox.Show("Sorry you have to check your excel's header and obey our naming conventions");
+                    return null;
+                }
             }
         }
-
     }
 }

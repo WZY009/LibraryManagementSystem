@@ -52,6 +52,8 @@ namespace BookMS.Views {
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonFlush2 = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.textBoxWelcome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -61,13 +63,14 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelRepeat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRepeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(134, 448);
+            this.label7.Location = new System.Drawing.Point(135, 384);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(622, 37);
             this.label7.TabIndex = 52;
@@ -77,7 +80,7 @@ namespace BookMS.Views {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(366, 532);
+            this.label3.Location = new System.Drawing.Point(367, 468);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 37);
             this.label3.TabIndex = 50;
@@ -88,7 +91,7 @@ namespace BookMS.Views {
             this.textBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxAnswer.Location = new System.Drawing.Point(55, 572);
+            this.textBoxAnswer.Location = new System.Drawing.Point(56, 508);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(772, 41);
@@ -99,7 +102,7 @@ namespace BookMS.Views {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(199, 89);
+            this.label1.Location = new System.Drawing.Point(197, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(471, 56);
             this.label1.TabIndex = 40;
@@ -158,7 +161,7 @@ namespace BookMS.Views {
             this.panelName.Controls.Add(this.label2);
             this.panelName.Controls.Add(this.textBoxName);
             this.panelName.Controls.Add(this.pictureBox2);
-            this.panelName.Location = new System.Drawing.Point(-2, 210);
+            this.panelName.Location = new System.Drawing.Point(-1, 146);
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(900, 90);
             this.panelName.TabIndex = 41;
@@ -200,7 +203,7 @@ namespace BookMS.Views {
             this.panelID.Controls.Add(this.label4);
             this.panelID.Controls.Add(this.textBoxID);
             this.panelID.Controls.Add(this.pictureBox3);
-            this.panelID.Location = new System.Drawing.Point(-2, 330);
+            this.panelID.Location = new System.Drawing.Point(-1, 266);
             this.panelID.Name = "panelID";
             this.panelID.Size = new System.Drawing.Size(900, 90);
             this.panelID.TabIndex = 44;
@@ -231,7 +234,7 @@ namespace BookMS.Views {
             this.panelPassword.Controls.Add(this.textBoxPassword);
             this.panelPassword.Controls.Add(this.label5);
             this.panelPassword.Controls.Add(this.pictureBox4);
-            this.panelPassword.Location = new System.Drawing.Point(-1, 783);
+            this.panelPassword.Location = new System.Drawing.Point(-1, 877);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(900, 90);
             this.panelPassword.TabIndex = 43;
@@ -275,7 +278,7 @@ namespace BookMS.Views {
             this.buttonFlush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFlush.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFlush.ForeColor = System.Drawing.Color.White;
-            this.buttonFlush.Location = new System.Drawing.Point(451, 640);
+            this.buttonFlush.Location = new System.Drawing.Point(452, 576);
             this.buttonFlush.Name = "buttonFlush";
             this.buttonFlush.Size = new System.Drawing.Size(187, 70);
             this.buttonFlush.TabIndex = 46;
@@ -290,7 +293,7 @@ namespace BookMS.Views {
             this.buttonVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVerify.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonVerify.ForeColor = System.Drawing.Color.White;
-            this.buttonVerify.Location = new System.Drawing.Point(199, 640);
+            this.buttonVerify.Location = new System.Drawing.Point(200, 576);
             this.buttonVerify.Name = "buttonVerify";
             this.buttonVerify.Size = new System.Drawing.Size(187, 70);
             this.buttonVerify.TabIndex = 45;
@@ -305,7 +308,7 @@ namespace BookMS.Views {
             this.panelRepeat.Controls.Add(this.textBoxRepeat);
             this.panelRepeat.Controls.Add(this.label6);
             this.panelRepeat.Controls.Add(this.pictureBox5);
-            this.panelRepeat.Location = new System.Drawing.Point(1, 915);
+            this.panelRepeat.Location = new System.Drawing.Point(-1, 973);
             this.panelRepeat.Name = "panelRepeat";
             this.panelRepeat.Size = new System.Drawing.Size(900, 90);
             this.panelRepeat.TabIndex = 42;
@@ -339,7 +342,7 @@ namespace BookMS.Views {
             this.textBoxQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxQuestion.Location = new System.Drawing.Point(55, 500);
+            this.textBoxQuestion.Location = new System.Drawing.Point(56, 436);
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(772, 41);
             this.textBoxQuestion.TabIndex = 53;
@@ -353,7 +356,7 @@ namespace BookMS.Views {
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirm.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonConfirm.ForeColor = System.Drawing.Color.White;
-            this.buttonConfirm.Location = new System.Drawing.Point(199, 1038);
+            this.buttonConfirm.Location = new System.Drawing.Point(197, 1096);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(187, 70);
             this.buttonConfirm.TabIndex = 54;
@@ -369,7 +372,7 @@ namespace BookMS.Views {
             this.buttonFlush2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFlush2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFlush2.ForeColor = System.Drawing.Color.White;
-            this.buttonFlush2.Location = new System.Drawing.Point(451, 1038);
+            this.buttonFlush2.Location = new System.Drawing.Point(449, 1096);
             this.buttonFlush2.Name = "buttonFlush2";
             this.buttonFlush2.Size = new System.Drawing.Size(187, 70);
             this.buttonFlush2.TabIndex = 55;
@@ -377,12 +380,35 @@ namespace BookMS.Views {
             this.buttonFlush2.UseVisualStyleBackColor = false;
             this.buttonFlush2.Click += new System.EventHandler(this.buttonFlush2_Click);
             // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.Location = new System.Drawing.Point(346, 678);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(128, 128);
+            this.pictureBoxUser.TabIndex = 57;
+            this.pictureBoxUser.TabStop = false;
+            // 
+            // textBoxWelcome
+            // 
+            this.textBoxWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxWelcome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxWelcome.Location = new System.Drawing.Point(-1, 812);
+            this.textBoxWelcome.Name = "textBoxWelcome";
+            this.textBoxWelcome.ReadOnly = true;
+            this.textBoxWelcome.Size = new System.Drawing.Size(898, 34);
+            this.textBoxWelcome.TabIndex = 58;
+            this.textBoxWelcome.Text = "Verify your account information before change your password!";
+            this.textBoxWelcome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // forget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(900, 1200);
+            this.Controls.Add(this.textBoxWelcome);
+            this.Controls.Add(this.pictureBoxUser);
             this.Controls.Add(this.buttonFlush2);
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.textBoxQuestion);
@@ -401,6 +427,7 @@ namespace BookMS.Views {
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "forget";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "forget";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelName.ResumeLayout(false);
@@ -415,6 +442,7 @@ namespace BookMS.Views {
             this.panelRepeat.ResumeLayout(false);
             this.panelRepeat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRepeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +477,7 @@ namespace BookMS.Views {
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxRepeat;
         private System.Windows.Forms.PictureBox pictureBoxRepeat;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.TextBox textBoxWelcome;
     }
 }

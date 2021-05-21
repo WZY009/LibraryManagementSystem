@@ -108,7 +108,13 @@ namespace BookMS.Views {
             }
         }
 
-        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {//我也很绝望啊，为啥会出现这样的bug！
+        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+            for (int i = 0; i < 4; i++) {
+                if(uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {
+                    MessageBox.Show("Sorry, please select a valid record!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
             id = uiDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             name = uiDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             author = uiDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
