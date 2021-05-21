@@ -27,8 +27,8 @@ namespace BookMS.Views {
         public void Table(string id) {
             uiDataGridView1.Rows.Clear();
             using LendController lendMapper = new LendController();
-            foreach (UserLend item in lendMapper.GetLendsByUid(id)) {//对借过的所有书进行遍历
-                uiDataGridView1.Rows.Add(item.LandNo, item.BookID, item.BookName, item.LendTime, getExpense(item));
+            foreach (UserLend item in lendMapper.GetLendsByUid(id)) {//对借过的所有书进行遍历,这里要小心啊，一定要将所有传入参数转化成string，否则无法export的！
+                uiDataGridView1.Rows.Add(item.LandNo.ToString(), item.BookID, item.BookName, item.LendTime.ToString(), getExpense(item).ToString());
             }
         }
 
@@ -125,10 +125,18 @@ namespace BookMS.Views {
             this.Show();
         }
 
+        private void buttonBorrow_Click(object sender, EventArgs e) {
+            userBorrow borrow = new userBorrow(lenderId);
+            this.Hide();
+            borrow.ShowDialog();
+            this.Show();
+            Table(lenderId);
+        }
+
         private void uiDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
             for (int i = 0; i < uiDataGridView1.ColumnCount; i++) {
                 if (uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {
-                    MessageBox.Show("you can not select a invalid cell!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("you can not select an invalid cell!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

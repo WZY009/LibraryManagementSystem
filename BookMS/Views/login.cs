@@ -61,7 +61,9 @@ namespace BookMS.Views {
 
         private void buttonLogin_Click(object sender, EventArgs e) {
             if (textBoxUserNum.Text != "" && textBoxPassword.Text != "") {
+                this.Hide();
                 Login();
+                this.Show();
             }
             else {
                 MessageBox.Show("some information has not been completed yet!", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
@@ -90,10 +92,6 @@ namespace BookMS.Views {
             
         }
 
-        private void pictureBoxPassword_MouseDown(object sender, MouseEventArgs e) {
-
-        }
-
         private void buttonRegister_Click(object sender, EventArgs e) {
             register newUser = new register();
             this.Hide();
@@ -110,13 +108,10 @@ namespace BookMS.Views {
         }
 
         private void buttonForget_Click(object sender, EventArgs e) {
-            forget user = new forget();
-            user.ShowDialog();
+            forget forgetter = new forget();
             this.Hide();
-        }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e) {
-
+            forgetter.ShowDialog();
+            this.Show();
         }
 
         private void pictureBoxCheck_Click(object sender, EventArgs e) {
@@ -131,6 +126,8 @@ namespace BookMS.Views {
                 check = !check;
             }
         }
+
+
     }
 }
 

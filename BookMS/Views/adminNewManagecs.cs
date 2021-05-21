@@ -82,7 +82,7 @@ namespace BookMS.Views {
                     uiTextBoxName.Text = null;
                     break;
                 default:
-                    MessageBox.Show("what you have done is illegal ");
+                    MessageBox.Show("Please select a condition before starting searching ");
                     uiTextboxID.Text = null;
                     uiTextBoxName.Text = null;
                     break;
