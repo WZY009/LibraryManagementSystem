@@ -310,7 +310,6 @@ namespace BookMS.Views {
             this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // pictureBoxPassword
             // 

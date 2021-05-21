@@ -45,9 +45,13 @@ namespace BookMS.Views {
                 textBoxPassword.ReadOnly = textBoxRepeat.ReadOnly = false;
                 buttonConfirm.Enabled = buttonFlush2.Enabled = true;
                 buttonFlush.Enabled = false;//禁用掉之前的flush
+                textBoxID.ReadOnly = true;
+                textBoxName.ReadOnly = true;
+                buttonVerify.Enabled = false;
                 pictureBoxUser.Image = getImage(textBoxID.Text);
                 textBoxWelcome.Text = $"Welcome! {textBoxName.Text}";
-
+                MessageBox.Show("User Authentication Passed","Successful");
+                this.Close();
             }
             else
                 MessageBox.Show("Sorry, the verification does not pass! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

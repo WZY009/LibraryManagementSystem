@@ -41,14 +41,14 @@ namespace BookMS.Views {
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonMore = new System.Windows.Forms.Button();
             this.buttonInfo = new System.Windows.Forms.Button();
-            this.buttonOther = new System.Windows.Forms.Button();
+            this.buttonBorrow = new System.Windows.Forms.Button();
             this.buttonRecord = new System.Windows.Forms.Button();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiImageButtonExport = new Sunny.UI.UIImageButton();
             this.buttonRefresh = new Sunny.UI.UIImageButton();
             this.buttonLend = new Sunny.UI.UIImageButton();
@@ -85,7 +85,7 @@ namespace BookMS.Views {
             this.panel1.Controls.Add(this.pictureBoxUser);
             this.panel1.Controls.Add(this.buttonMore);
             this.panel1.Controls.Add(this.buttonInfo);
-            this.panel1.Controls.Add(this.buttonOther);
+            this.panel1.Controls.Add(this.buttonBorrow);
             this.panel1.Controls.Add(this.buttonRecord);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -218,21 +218,22 @@ namespace BookMS.Views {
             this.buttonInfo.UseVisualStyleBackColor = false;
             this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
-            // buttonOther
+            // buttonBorrow
             // 
-            this.buttonOther.BackColor = System.Drawing.Color.Transparent;
-            this.buttonOther.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOther.FlatAppearance.BorderSize = 0;
-            this.buttonOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOther.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonOther.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonOther.Location = new System.Drawing.Point(0, 606);
-            this.buttonOther.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonOther.Name = "buttonOther";
-            this.buttonOther.Size = new System.Drawing.Size(350, 70);
-            this.buttonOther.TabIndex = 6;
-            this.buttonOther.Text = "Borrow more";
-            this.buttonOther.UseVisualStyleBackColor = false;
+            this.buttonBorrow.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBorrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBorrow.FlatAppearance.BorderSize = 0;
+            this.buttonBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrow.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonBorrow.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonBorrow.Location = new System.Drawing.Point(0, 606);
+            this.buttonBorrow.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBorrow.Name = "buttonBorrow";
+            this.buttonBorrow.Size = new System.Drawing.Size(350, 70);
+            this.buttonBorrow.TabIndex = 6;
+            this.buttonBorrow.Text = "Borrow more";
+            this.buttonBorrow.UseVisualStyleBackColor = false;
+            this.buttonBorrow.Click += new System.EventHandler(this.buttonBorrow_Click);
             // 
             // buttonRecord
             // 
@@ -271,11 +272,11 @@ namespace BookMS.Views {
             this.uiDataGridView1.ColumnHeadersHeight = 40;
             this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
+            this.Column0,
+            this.Column1,
             this.Column2,
-            this.Column4,
             this.Column3,
-            this.Column1});
+            this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -311,28 +312,28 @@ namespace BookMS.Views {
             this.uiDataGridView1.TabIndex = 7;
             this.uiDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellClick);
             // 
-            // Column5
+            // Column0
             // 
-            this.Column5.HeaderText = "No.";
-            this.Column5.MinimumWidth = 11;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 225;
+            this.Column0.HeaderText = "No.";
+            this.Column0.MinimumWidth = 11;
+            this.Column0.Name = "Column0";
+            this.Column0.Width = 225;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Book Id";
+            this.Column1.MinimumWidth = 11;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 225;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Book Id";
+            this.Column2.HeaderText = "Book Name";
             this.Column2.MinimumWidth = 11;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 225;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Book Name";
-            this.Column4.MinimumWidth = 11;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 225;
             // 
             // Column3
             // 
@@ -342,13 +343,13 @@ namespace BookMS.Views {
             this.Column3.ReadOnly = true;
             this.Column3.Width = 225;
             // 
-            // Column1
+            // Column4
             // 
-            this.Column1.HeaderText = "Expenses already incurred";
-            this.Column1.MinimumWidth = 11;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 225;
+            this.Column4.HeaderText = "Expenses already incurred";
+            this.Column4.MinimumWidth = 11;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 225;
             // 
             // uiImageButtonExport
             // 
@@ -432,9 +433,9 @@ namespace BookMS.Views {
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label3.Location = new System.Drawing.Point(432, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 37);
+            this.label3.Size = new System.Drawing.Size(106, 37);
             this.label3.TabIndex = 22;
-            this.label3.Text = "NAME";
+            this.label3.Text = "Name";
             // 
             // label2
             // 
@@ -609,7 +610,7 @@ namespace BookMS.Views {
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Button buttonMore;
         private System.Windows.Forms.Button buttonInfo;
-        private System.Windows.Forms.Button buttonOther;
+        private System.Windows.Forms.Button buttonBorrow;
         private System.Windows.Forms.Button buttonRecord;
         private Sunny.UI.UIDataGridView uiDataGridView1;
         private Sunny.UI.UIImageButton uiImageButtonExport;
@@ -624,13 +625,13 @@ namespace BookMS.Views {
         private Sunny.UI.UITextBox uiTextBoxName;
         private Sunny.UI.UITextBox uiTextboxID;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label7;
         private Sunny.UI.UITextBox uiTextBoxSelect;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column0;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

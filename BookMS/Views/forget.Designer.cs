@@ -70,7 +70,7 @@ namespace BookMS.Views {
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(135, 384);
+            this.label7.Location = new System.Drawing.Point(139, 384);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(622, 37);
             this.label7.TabIndex = 52;
@@ -102,7 +102,7 @@ namespace BookMS.Views {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(197, 64);
+            this.label1.Location = new System.Drawing.Point(215, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(471, 56);
             this.label1.TabIndex = 40;
@@ -278,7 +278,7 @@ namespace BookMS.Views {
             this.buttonFlush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFlush.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFlush.ForeColor = System.Drawing.Color.White;
-            this.buttonFlush.Location = new System.Drawing.Point(452, 576);
+            this.buttonFlush.Location = new System.Drawing.Point(483, 576);
             this.buttonFlush.Name = "buttonFlush";
             this.buttonFlush.Size = new System.Drawing.Size(187, 70);
             this.buttonFlush.TabIndex = 46;
@@ -293,7 +293,7 @@ namespace BookMS.Views {
             this.buttonVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVerify.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonVerify.ForeColor = System.Drawing.Color.White;
-            this.buttonVerify.Location = new System.Drawing.Point(200, 576);
+            this.buttonVerify.Location = new System.Drawing.Point(231, 576);
             this.buttonVerify.Name = "buttonVerify";
             this.buttonVerify.Size = new System.Drawing.Size(187, 70);
             this.buttonVerify.TabIndex = 45;
@@ -344,6 +344,7 @@ namespace BookMS.Views {
             this.textBoxQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.textBoxQuestion.Location = new System.Drawing.Point(56, 436);
             this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.ReadOnly = true;
             this.textBoxQuestion.Size = new System.Drawing.Size(772, 41);
             this.textBoxQuestion.TabIndex = 53;
             this.textBoxQuestion.Text = "Please complete Name and Stu.ID before click below";
@@ -356,7 +357,7 @@ namespace BookMS.Views {
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirm.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonConfirm.ForeColor = System.Drawing.Color.White;
-            this.buttonConfirm.Location = new System.Drawing.Point(197, 1096);
+            this.buttonConfirm.Location = new System.Drawing.Point(231, 1096);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(187, 70);
             this.buttonConfirm.TabIndex = 54;
@@ -372,7 +373,7 @@ namespace BookMS.Views {
             this.buttonFlush2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFlush2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFlush2.ForeColor = System.Drawing.Color.White;
-            this.buttonFlush2.Location = new System.Drawing.Point(449, 1096);
+            this.buttonFlush2.Location = new System.Drawing.Point(483, 1096);
             this.buttonFlush2.Name = "buttonFlush2";
             this.buttonFlush2.Size = new System.Drawing.Size(187, 70);
             this.buttonFlush2.TabIndex = 55;
@@ -382,7 +383,7 @@ namespace BookMS.Views {
             // 
             // pictureBoxUser
             // 
-            this.pictureBoxUser.Location = new System.Drawing.Point(346, 678);
+            this.pictureBoxUser.Location = new System.Drawing.Point(386, 678);
             this.pictureBoxUser.Name = "pictureBoxUser";
             this.pictureBoxUser.Size = new System.Drawing.Size(128, 128);
             this.pictureBoxUser.TabIndex = 57;
