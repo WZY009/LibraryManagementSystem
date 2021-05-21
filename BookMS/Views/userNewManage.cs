@@ -118,6 +118,13 @@ namespace BookMS.Views {
             }
         }
 
+        private void buttonInfo_Click(object sender, EventArgs e) {
+            userInformation user = new userInformation(lenderId);
+            this.Hide();
+            user.ShowDialog();
+            this.Show();
+        }
+
         private void uiDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
             for (int i = 0; i < uiDataGridView1.ColumnCount; i++) {
                 if (uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {

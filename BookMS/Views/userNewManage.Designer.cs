@@ -102,7 +102,7 @@ namespace BookMS.Views {
             this.label6.Location = new System.Drawing.Point(276, 922);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 21);
+            this.label6.Size = new System.Drawing.Size(52, 33);
             this.label6.TabIndex = 11;
             this.label6.Text = "2.0";
             // 
@@ -114,7 +114,7 @@ namespace BookMS.Views {
             this.label5.Location = new System.Drawing.Point(240, 889);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 21);
+            this.label5.Size = new System.Drawing.Size(110, 33);
             this.label5.TabIndex = 10;
             this.label5.Text = "Version";
             // 
@@ -216,6 +216,7 @@ namespace BookMS.Views {
             this.buttonInfo.TabIndex = 7;
             this.buttonInfo.Text = "Information";
             this.buttonInfo.UseVisualStyleBackColor = false;
+            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
             // buttonOther
             // 
@@ -403,7 +404,7 @@ namespace BookMS.Views {
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label4.Location = new System.Drawing.Point(375, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 23);
+            this.label4.Size = new System.Drawing.Size(162, 37);
             this.label4.TabIndex = 24;
             this.label4.Text = "Condition";
             // 
@@ -420,7 +421,7 @@ namespace BookMS.Views {
             "Check Name"});
             this.comboBoxCheckCond.Location = new System.Drawing.Point(553, 247);
             this.comboBoxCheckCond.Name = "comboBoxCheckCond";
-            this.comboBoxCheckCond.Size = new System.Drawing.Size(290, 31);
+            this.comboBoxCheckCond.Size = new System.Drawing.Size(290, 45);
             this.comboBoxCheckCond.TabIndex = 23;
             // 
             // label3
@@ -431,7 +432,7 @@ namespace BookMS.Views {
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label3.Location = new System.Drawing.Point(432, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 23);
+            this.label3.Size = new System.Drawing.Size(105, 37);
             this.label3.TabIndex = 22;
             this.label3.Text = "NAME";
             // 
@@ -443,7 +444,7 @@ namespace BookMS.Views {
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label2.Location = new System.Drawing.Point(490, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 23);
+            this.label2.Size = new System.Drawing.Size(47, 37);
             this.label2.TabIndex = 21;
             this.label2.Text = "ID";
             // 
@@ -455,7 +456,7 @@ namespace BookMS.Views {
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label1.Location = new System.Drawing.Point(361, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 30);
+            this.label1.Size = new System.Drawing.Size(245, 43);
             this.label1.TabIndex = 20;
             this.label1.Text = "Check Books";
             // 
@@ -484,7 +485,7 @@ namespace BookMS.Views {
             this.uiTextBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextBoxName.Name = "uiTextBoxName";
             this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBoxName.Size = new System.Drawing.Size(290, 32);
+            this.uiTextBoxName.Size = new System.Drawing.Size(290, 44);
             this.uiTextBoxName.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBoxName.TabIndex = 18;
             // 
@@ -500,7 +501,7 @@ namespace BookMS.Views {
             this.uiTextboxID.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextboxID.Name = "uiTextboxID";
             this.uiTextboxID.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextboxID.Size = new System.Drawing.Size(290, 32);
+            this.uiTextboxID.Size = new System.Drawing.Size(290, 44);
             this.uiTextboxID.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextboxID.TabIndex = 17;
             // 
@@ -528,7 +529,7 @@ namespace BookMS.Views {
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label7.Location = new System.Drawing.Point(949, 134);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 23);
+            this.label7.Size = new System.Drawing.Size(284, 37);
             this.label7.TabIndex = 26;
             this.label7.Text = "What you select is:";
             // 
@@ -558,7 +559,7 @@ namespace BookMS.Views {
             // 
             // userNewManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1502, 1060);

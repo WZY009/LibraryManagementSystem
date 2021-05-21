@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
+
 
 namespace BookMS.Views {
     public partial class login : Form {
@@ -31,7 +31,7 @@ namespace BookMS.Views {
                     MessageBox.Show("you are successful to log in a user account");
                     Data.Uid = usr.Id;
                     Data.UName = usr.Name;
-                    userBasic user = new userBasic();
+                    userNewManage user = new userNewManage(textBoxUserNum.Text);
                     this.Hide();//隐藏掉登录窗体
                     user.ShowDialog();//对话框模式打开新的user界面
                     this.Show();//结束掉user界面的进程后重新打开登录窗体

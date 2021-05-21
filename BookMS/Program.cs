@@ -12,8 +12,7 @@ namespace BookMS {
         /// </summary>
         [STAThread]
         static void Main() {
-            //OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-
+            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;//这一句话不能删，删掉的话到时候导入文件的时候会有问题
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             //System.Windows.Forms.Application.Run(new adminNewManagecs());
