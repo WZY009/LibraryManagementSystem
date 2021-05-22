@@ -29,8 +29,6 @@ namespace BookMS.Views {
                 if (usr != null)//读取数据,返回的是一个布尔型变量，如果读到了匹配的就返回一个真
                 {
                     MessageBox.Show("you are successful to log in a user account");
-                    Data.Uid = usr.Id;
-                    Data.UName = usr.Name;
                     userNewManage user = new userNewManage(textBoxUserNum.Text);
                     this.Hide();//隐藏掉登录窗体
                     user.ShowDialog();//对话框模式打开新的user界面

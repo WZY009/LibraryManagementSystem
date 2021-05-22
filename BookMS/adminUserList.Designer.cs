@@ -46,6 +46,13 @@ namespace BookMS {
             this.buttonRefresh = new Sunny.UI.UIImageButton();
             this.buttonLend = new Sunny.UI.UIImageButton();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.panelID = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,13 +82,6 @@ namespace BookMS {
             this.label12 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButtonExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -349,6 +349,62 @@ namespace BookMS {
             this.uiDataGridView1.ShowRect = false;
             this.uiDataGridView1.Size = new System.Drawing.Size(1127, 975);
             this.uiDataGridView1.TabIndex = 28;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Stu.Id";
+            this.Column1.MinimumWidth = 11;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 225;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 11;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 225;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Sex";
+            this.Column3.MinimumWidth = 11;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 225;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Password";
+            this.Column4.MinimumWidth = 11;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 225;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Major";
+            this.Column5.MinimumWidth = 11;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 225;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Question_id";
+            this.Column6.MinimumWidth = 11;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 225;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Question_Answer";
+            this.Column7.MinimumWidth = 11;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 225;
             // 
             // pictureBoxUser
             // 
@@ -659,62 +715,6 @@ namespace BookMS {
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Stu.Id";
-            this.Column1.MinimumWidth = 11;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 225;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 11;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 225;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Sex";
-            this.Column3.MinimumWidth = 11;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 225;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Password";
-            this.Column4.MinimumWidth = 11;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 225;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Major";
-            this.Column5.MinimumWidth = 11;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 225;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Question_id";
-            this.Column6.MinimumWidth = 11;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 225;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Question_Answer";
-            this.Column7.MinimumWidth = 11;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 225;
             // 
             // adminUserList
             // 
