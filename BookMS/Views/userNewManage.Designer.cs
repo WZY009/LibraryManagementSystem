@@ -290,6 +290,7 @@ namespace BookMS.Views {
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.Location = new System.Drawing.Point(363, 298);
             this.uiDataGridView1.Name = "uiDataGridView1";
+            this.uiDataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -317,6 +318,7 @@ namespace BookMS.Views {
             this.Column0.HeaderText = "No.";
             this.Column0.MinimumWidth = 11;
             this.Column0.Name = "Column0";
+            this.Column0.ReadOnly = true;
             this.Column0.Width = 225;
             // 
             // Column1

@@ -18,8 +18,8 @@ namespace BookMS {
             //System.Windows.Forms.Application.Run(new adminNewManagecs());
             //Application.Run(new userNewManage("8000"));
             //Application.Run(new userNewManage("8000"));
-            Application.Run(new userBorrow("8000"));
-            //Application.Run(new forget());
+            //Application.Run(new userBorrow("8000"));
+            Application.Run(new login());
 
         }
     }
