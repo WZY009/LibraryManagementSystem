@@ -18,8 +18,6 @@ namespace BookMS {
         }
         public void MainView() {
             InitializeComponent();
-
-
         }
         public void Table()//显示表格
         {
