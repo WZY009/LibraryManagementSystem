@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -14,7 +15,7 @@ using System.Web;
 namespace BookMS.Controllers {
 
 
-    public class SpiderController : IDisposable {
+    public class SpiderController {
         #region 辅助类
         private struct DoubanJson {
             public string[] items;
@@ -29,7 +30,7 @@ namespace BookMS.Controllers {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
-            public string ImageUrl { get; set; }
+            public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
             public string Subjects { get; set; }
             public string? Detail { get; set; }
@@ -39,12 +40,17 @@ namespace BookMS.Controllers {
         private readonly string _url;
         private int _currentNumber = 0;
         //private List<BookHtmlContent> _bookHtmlContents = new List<BookHtmlContent>();
-        private readonly HttpClient _client = new HttpClient();
+        private readonly static HttpClient _client;
+
+        static SpiderController() {
+            _client = new HttpClient();
+            _client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+        }
 
         /// <summary>
         /// 所要查询的书目
         /// </summary>
-        public string Book { get; private set; }
+        public string BookName { get; private set; }
         /// <summary>
         /// 是否含有更多条目
         /// </summary>
@@ -57,12 +63,11 @@ namespace BookMS.Controllers {
         /// <summary>
         /// 对于每一本所要查询的书，创建一个Spider类
         /// </summary>
-        /// <param name="book"></param>
-        public SpiderController(string book) {
-            Book = book;
-            book = HttpUtility.UrlEncode(book);
-            _url = $"https://www.douban.com/j/search?q={book}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
-            _client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+        /// <param name="bookName"></param>
+        public SpiderController(string bookName) {
+            BookName = bookName;
+            bookName = HttpUtility.UrlEncode(bookName);
+            _url = $"https://www.douban.com/j/search?q={bookName}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
         }
 
         private async Task<string> GetResponseAsync(string url) {
@@ -96,7 +101,7 @@ namespace BookMS.Controllers {
                 var itemNode = itemDocument.DocumentNode.SelectSingleNode("//div[@class=\"result\"]/div[@class=\"content\"]");
                 //if (itemNode == null) throw new Exception("未查询到关键词所对应的书");
 
-                string imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img").Attributes["src"].Value;
+                string? imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img")?.Attributes["src"].Value;
 
                 var titleNode = itemNode.SelectSingleNode("div[@class=\"title\"]");
                 string title = titleNode.SelectSingleNode("h3/a").InnerText;
@@ -121,44 +126,11 @@ namespace BookMS.Controllers {
             return bookHtmlContents;
         }
 
-        /*
-         * 已被砍掉的功能——将网络上的信息直接导入数据库
-         * 下面的代码永远不会用到，可以删掉
-         */
-        //public async Task<IEnumerable<Book>> GetBooksAsync() {
-        //    List<Book> books = new List<Book>();
-        //    foreach (BookHtmlContent bookHtmlContent in _bookHtmlContents) {
-        //        string bookDetailHtml = await GetResponseAsync(bookHtmlContent.Url);
-
-        //        HtmlDocument bookDetailDocument = new HtmlDocument();
-        //        bookDetailDocument.LoadHtml(bookDetailHtml);
-        //        StringBuilder bookInfo = new StringBuilder(bookDetailDocument.DocumentNode.SelectSingleNode("//div[id=\"info\"]").InnerHtml);
-        //        bookInfo.Replace('\n', '\0');
-        //        bookInfo.Replace("<br>", ",");
-        //        string bookInfoString = bookInfo.ToString();
-        //        string[] bookArray = Regex.Replace(bookInfoString, @"<[^>]+>", "").Split(',');
-
-        //        string author = "";
-        //        string press = "";
-        //        string isbn = "";
-        //        foreach(var s in bookArray) {
-        //            Match authorMatch = Regex.Match(s, @"[?<=作者:].*");
-        //            if (authorMatch.Success) author = authorMatch.Value;
-        //            Match pressMatch = Regex.Match(s, @"[?<=出版社:].*");
-        //            if (pressMatch.Success) press = pressMatch.Value;
-        //            Match isbnMatch = Regex.Match(s, @"[?<=ISBN:].*");
-        //            if (isbnMatch.Success) isbn = isbnMatch.Value;
-        //        }
-
-        //        books.Add(new Models.Book {
-        //            Id=isbn,
-        //            Name=bookHtmlContent.Title,
-        //            Press=press,
-
-        //        })
-        //    }
-        //}
-
-        public void Dispose() => _client.Dispose();
+        public static async Task<Stream> GetImageStream(string url) {
+            HttpResponseMessage response = await _client.GetAsync(url);
+            return response.IsSuccessStatusCode
+                ? await response.Content.ReadAsStreamAsync()
+                : throw new Exception($"请求图片不成功，返回{response.StatusCode}");
+        }
     }
 }
