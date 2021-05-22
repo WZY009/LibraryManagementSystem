@@ -29,7 +29,7 @@ namespace BookMS.Controllers {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
-            public string ImageUrl { get; set; }
+            public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
             public string Subjects { get; set; }
             public string? Detail { get; set; }
@@ -44,7 +44,7 @@ namespace BookMS.Controllers {
         /// <summary>
         /// 所要查询的书目
         /// </summary>
-        public string Book { get; private set; }
+        public string BookName { get; private set; }
         /// <summary>
         /// 是否含有更多条目
         /// </summary>
@@ -57,11 +57,11 @@ namespace BookMS.Controllers {
         /// <summary>
         /// 对于每一本所要查询的书，创建一个Spider类
         /// </summary>
-        /// <param name="book"></param>
-        public SpiderController(string book) {
-            Book = book;
-            book = HttpUtility.UrlEncode(book);
-            _url = $"https://www.douban.com/j/search?q={book}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
+        /// <param name="bookName"></param>
+        public SpiderController(string bookName) {
+            BookName = bookName;
+            bookName = HttpUtility.UrlEncode(bookName);
+            _url = $"https://www.douban.com/j/search?q={bookName}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
             _client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
         }
 
@@ -96,7 +96,7 @@ namespace BookMS.Controllers {
                 var itemNode = itemDocument.DocumentNode.SelectSingleNode("//div[@class=\"result\"]/div[@class=\"content\"]");
                 //if (itemNode == null) throw new Exception("未查询到关键词所对应的书");
 
-                string imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img").Attributes["src"].Value;
+                string? imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img")?.Attributes["src"].Value;
 
                 var titleNode = itemNode.SelectSingleNode("div[@class=\"title\"]");
                 string title = titleNode.SelectSingleNode("h3/a").InnerText;
