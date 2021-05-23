@@ -37,7 +37,7 @@ namespace BookMS.Views {
             string bookName = uiTextBoxName.Text;
             spiderController = new SpiderController(bookName);
             if (bookName == "")
-                MessageBox.Show("请输入书名");
+                MessageBox.Show("Please input book name before searching","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             _bookHtmlContents.AddRange(await spiderController.ReadNextAsync());
             foreach(var item in _bookHtmlContents) {
                 uiDataGridViewBookInfo.AddRow(no.ToString(), item.Title, item.Rate, item.Subjects);
@@ -134,6 +134,6 @@ namespace BookMS.Views {
         private void uiTextBoxName_TextChanged(object sender, EventArgs e) {
             pictureBoxFind.Enabled = true;
         }
-        //private 
+        
     }
 }

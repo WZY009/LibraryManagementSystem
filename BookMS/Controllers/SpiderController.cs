@@ -31,7 +31,7 @@ namespace BookMS.Controllers {
             public string Url { get; set; }
             public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
-            public string Subjects { get; set; }
+            public string? Subjects { get; set; }
             public string? Detail { get; set; }
         }
         #endregion
@@ -86,9 +86,7 @@ namespace BookMS.Controllers {
             List<string> items = new List<string>();
             foreach (string item in doubanJson.items)
                 items.Add(HttpUtility.HtmlDecode(item));
-
             List<BookHtmlContent> bookHtmlContents = new List<BookHtmlContent>();
-
             // 获取本页的所有书目
             foreach (string item in items) {
                 HtmlDocument itemDocument = new HtmlDocument();
@@ -104,7 +102,7 @@ namespace BookMS.Controllers {
 
                 var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
                 string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
-                string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
+                string? subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]")?.InnerText;
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
 

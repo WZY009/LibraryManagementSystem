@@ -200,6 +200,7 @@ namespace BookMS.Views {
             this.buttonMore.TabIndex = 5;
             this.buttonMore.Text = "More about book";
             this.buttonMore.UseVisualStyleBackColor = false;
+            this.buttonMore.Click += new System.EventHandler(this.buttonMore_Click);
             // 
             // buttonInfo
             // 

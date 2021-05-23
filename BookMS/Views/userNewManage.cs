@@ -133,6 +133,13 @@ namespace BookMS.Views {
             Table(lenderId);
         }
 
+        private void buttonMore_Click(object sender, EventArgs e) {
+            searchBookInfo search = new searchBookInfo();
+            this.Hide();
+            search.ShowDialog();
+            this.Show();
+        }
+
         private void uiDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
             for (int i = 0; i < uiDataGridView1.ColumnCount; i++) {
                 if (uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {
