@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class userBorrow : Form {
         string userId;
         public userBorrow(string userId) {
@@ -27,18 +27,17 @@ namespace BookMS {
             foreach (Book book in bookMapper.GetAllBooks())
                 uiDataGridView1.Rows.Add(book.ToStringArray());
         }
-         private void button1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e) {
             string BookIsbn = uiDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             int number = int.Parse(uiDataGridView1.SelectedRows[0].Cells[4].Value.ToString());
             if (number < 1) {
-                MessageBox.Show("The book is borrowed by other people so we suggest you to borrow it after someone lend it back","Tips",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("The book is borrowed by other people so we suggest you to borrow it after someone lend it back", "Tips", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
                 using LendController lendMapper = new LendController();
                 UserController usermap = new UserController();
                 string userName = usermap.GetById(userId).Name;
-                if (lendMapper.LendBook(userId, BookIsbn) > 0)
-                {
+                if (lendMapper.LendBook(userId, BookIsbn) > 0) {
                     MessageBox.Show($"{userName} borrows {uiDataGridView1.SelectedRows[0].Cells[1].Value.ToString()} successfully!");
                     Table();
                 }
@@ -63,18 +62,16 @@ namespace BookMS {
                     break;
             }
         }
-        public void TableID()
-        {
+        public void TableID() {
             uiDataGridView1.Rows.Clear();
             using BookController bookMapper = new BookController();
-            if (bookMapper.GetById(uiTextboxID.Text) == null) 
+            if (bookMapper.GetById(uiTextboxID.Text) == null)
                 MessageBox.Show("Sorry, we can not find what you want!");
             else
                 uiDataGridView1.Rows.Add(bookMapper.GetById(uiTextboxID.Text).ToStringArray());
 
         }
-        public void TableName()
-        {
+        public void TableName() {
             uiDataGridView1.Rows.Clear();
             using BookController bookMapper = new BookController();
             foreach (Book book in bookMapper.GetByName(uiTextBoxName.Text))
