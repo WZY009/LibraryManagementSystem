@@ -31,7 +31,7 @@ namespace BookMS.Controllers {
             public string Url { get; set; }
             public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
-            public string Subjects { get; set; }
+            public string? Subjects { get; set; }
             public string? Detail { get; set; }
         }
         #endregion
@@ -75,8 +75,8 @@ namespace BookMS.Controllers {
         /// </summary>
         /// <returns>一个包含本页所有书目信息的迭代器</returns>
         public async Task<IEnumerable<BookHtmlContent>> ReadNextAsync() {
-            if (!HasNext) throw new Exception("已读到头");
-
+            if (!HasNext) 
+                throw new Exception("End");//已经读到头了
             string result = await GetResponseAsync(string.Format(_url, _currentNumber));
             DoubanJson doubanJson = JsonConvert.DeserializeObject<DoubanJson>(result);
             HasNext = doubanJson.more;  // 是否到头
@@ -86,9 +86,7 @@ namespace BookMS.Controllers {
             List<string> items = new List<string>();
             foreach (string item in doubanJson.items)
                 items.Add(HttpUtility.HtmlDecode(item));
-
             List<BookHtmlContent> bookHtmlContents = new List<BookHtmlContent>();
-
             // 获取本页的所有书目
             foreach (string item in items) {
                 HtmlDocument itemDocument = new HtmlDocument();
@@ -104,7 +102,7 @@ namespace BookMS.Controllers {
 
                 var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
                 string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
-                string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
+                string? subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]")?.InnerText;
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
 
@@ -117,47 +115,8 @@ namespace BookMS.Controllers {
                     Detail = detail,
                 });
             }
-
             return bookHtmlContents;
         }
-
-        /*
-         * 已被砍掉的功能——将网络上的信息直接导入数据库
-         * 下面的代码永远不会用到，可以删掉
-         */
-        //public async Task<IEnumerable<Book>> GetBooksAsync() {
-        //    List<Book> books = new List<Book>();
-        //    foreach (BookHtmlContent bookHtmlContent in _bookHtmlContents) {
-        //        string bookDetailHtml = await GetResponseAsync(bookHtmlContent.Url);
-
-        //        HtmlDocument bookDetailDocument = new HtmlDocument();
-        //        bookDetailDocument.LoadHtml(bookDetailHtml);
-        //        StringBuilder bookInfo = new StringBuilder(bookDetailDocument.DocumentNode.SelectSingleNode("//div[id=\"info\"]").InnerHtml);
-        //        bookInfo.Replace('\n', '\0');
-        //        bookInfo.Replace("<br>", ",");
-        //        string bookInfoString = bookInfo.ToString();
-        //        string[] bookArray = Regex.Replace(bookInfoString, @"<[^>]+>", "").Split(',');
-
-        //        string author = "";
-        //        string press = "";
-        //        string isbn = "";
-        //        foreach(var s in bookArray) {
-        //            Match authorMatch = Regex.Match(s, @"[?<=作者:].*");
-        //            if (authorMatch.Success) author = authorMatch.Value;
-        //            Match pressMatch = Regex.Match(s, @"[?<=出版社:].*");
-        //            if (pressMatch.Success) press = pressMatch.Value;
-        //            Match isbnMatch = Regex.Match(s, @"[?<=ISBN:].*");
-        //            if (isbnMatch.Success) isbn = isbnMatch.Value;
-        //        }
-
-        //        books.Add(new Models.Book {
-        //            Id=isbn,
-        //            Name=bookHtmlContent.Title,
-        //            Press=press,
-
-        //        })
-        //    }
-        //}
 
         public void Dispose() => _client.Dispose();
     }

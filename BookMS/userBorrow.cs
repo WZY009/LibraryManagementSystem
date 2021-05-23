@@ -1,5 +1,6 @@
 using BookMS.Controllers;
 using BookMS.Models;
+using BookMS.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,6 +91,23 @@ namespace BookMS {
 
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void uiImageButton1_Click(object sender, EventArgs e) {
+            string BookName = uiDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            if (BookName != null) {
+                searchBookInfo search = new searchBookInfo(BookName);
+                this.Hide();
+                search.ShowDialog();
+                this.Show();
+            }
+
+            else {
+                searchBookInfo search = new searchBookInfo();
+                this.Hide();
+                search.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
