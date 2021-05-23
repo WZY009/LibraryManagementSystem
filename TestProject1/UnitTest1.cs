@@ -1,13 +1,14 @@
 using NUnit.Framework;
 using BookMS;
+using BookMS.Controllers;
 
 namespace TestProject1 {
     public class Tests {
-        Spider spider;
+        SpiderController spider;
 
         [SetUp]
         public void Setup() {
-            spider = new Spider("高等数学");
+            spider = new SpiderController("高等数学");
         }
 
         [Test]

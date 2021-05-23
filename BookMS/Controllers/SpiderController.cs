@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -14,7 +15,7 @@ using System.Web;
 namespace BookMS.Controllers {
 
 
-    public class SpiderController : IDisposable {
+    public class SpiderController {
         #region 辅助类
         private struct DoubanJson {
             public string[] items;
@@ -31,7 +32,7 @@ namespace BookMS.Controllers {
             public string Url { get; set; }
             public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
-            public string? Subjects { get; set; }
+            public string Subjects { get; set; }
             public string? Detail { get; set; }
         }
         #endregion
@@ -39,7 +40,12 @@ namespace BookMS.Controllers {
         private readonly string _url;
         private int _currentNumber = 0;
         //private List<BookHtmlContent> _bookHtmlContents = new List<BookHtmlContent>();
-        private readonly HttpClient _client = new HttpClient();
+        private readonly static HttpClient _client;
+
+        static SpiderController() {
+            _client = new HttpClient();
+            _client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+        }
 
         /// <summary>
         /// 所要查询的书目
@@ -62,7 +68,6 @@ namespace BookMS.Controllers {
             BookName = bookName;
             bookName = HttpUtility.UrlEncode(bookName);
             _url = $"https://www.douban.com/j/search?q={bookName}&start={{0}}&cat=1001"; // 两个大括号表示字符串包含大括号
-            _client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
         }
 
         private async Task<string> GetResponseAsync(string url) {
@@ -75,8 +80,8 @@ namespace BookMS.Controllers {
         /// </summary>
         /// <returns>一个包含本页所有书目信息的迭代器</returns>
         public async Task<IEnumerable<BookHtmlContent>> ReadNextAsync() {
-            if (!HasNext) 
-                throw new Exception("End");//已经读到头了
+            if (!HasNext) throw new Exception("已读到头");
+
             string result = await GetResponseAsync(string.Format(_url, _currentNumber));
             DoubanJson doubanJson = JsonConvert.DeserializeObject<DoubanJson>(result);
             HasNext = doubanJson.more;  // 是否到头
@@ -86,7 +91,9 @@ namespace BookMS.Controllers {
             List<string> items = new List<string>();
             foreach (string item in doubanJson.items)
                 items.Add(HttpUtility.HtmlDecode(item));
+
             List<BookHtmlContent> bookHtmlContents = new List<BookHtmlContent>();
+
             // 获取本页的所有书目
             foreach (string item in items) {
                 HtmlDocument itemDocument = new HtmlDocument();
@@ -102,7 +109,7 @@ namespace BookMS.Controllers {
 
                 var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
                 string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
-                string? subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]")?.InnerText;
+                string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
 
@@ -115,9 +122,15 @@ namespace BookMS.Controllers {
                     Detail = detail,
                 });
             }
+
             return bookHtmlContents;
         }
 
-        public void Dispose() => _client.Dispose();
+        public static async Task<Stream> GetImageStream(string url) {
+            HttpResponseMessage response = await _client.GetAsync(url);
+            return response.IsSuccessStatusCode
+                ? await response.Content.ReadAsStreamAsync()
+                : throw new Exception($"请求图片不成功，返回{response.StatusCode}");
+        }
     }
 }
