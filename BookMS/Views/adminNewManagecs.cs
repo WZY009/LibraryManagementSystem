@@ -60,7 +60,6 @@ namespace BookMS.Views {
                 MessageBox.Show("Sorry, we can not find what you want!");
             else
                 uiDataGridView1.Rows.Add(bookMapper.GetById(uiTextboxID.Text).ToStringArray());
-
         }
         public void TableName()//check the books according to the name
         {
