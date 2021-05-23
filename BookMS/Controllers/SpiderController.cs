@@ -30,10 +30,12 @@ namespace BookMS.Controllers {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
+            public string Subjects { get; set; }
+#nullable enable
             public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
-            public string Subjects { get; set; }
             public string? Detail { get; set; }
+#nullable disable
         }
         #endregion
 
@@ -101,7 +103,8 @@ namespace BookMS.Controllers {
                 var itemNode = itemDocument.DocumentNode.SelectSingleNode("//div[@class=\"result\"]/div[@class=\"content\"]");
                 //if (itemNode == null) throw new Exception("未查询到关键词所对应的书");
 
-                string? imageUrl = itemNode.SelectSingleNode("div[@class=\"pic\"]/a[@class=\"nbg\"]/img")?.Attributes["src"].Value;
+#nullable enable
+                string? imageUrl = itemDocument.DocumentNode.SelectSingleNode("//div[@class=\"pic\"]/a[@class=\"nbg\"]/img")?.Attributes["src"].Value;
 
                 var titleNode = itemNode.SelectSingleNode("div[@class=\"title\"]");
                 string title = titleNode.SelectSingleNode("h3/a").InnerText;
@@ -112,6 +115,7 @@ namespace BookMS.Controllers {
                 string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
+#nullable disable
 
                 bookHtmlContents.Add(new BookHtmlContent() {
                     Title = title,

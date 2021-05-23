@@ -60,6 +60,7 @@ namespace BookMS.Views {
                 getStar(double.Parse(textBoxRate.Text));
             // 添加图片
             string imageUrl = _bookHtmlContents[number - 1].ImageUrl;
+            if (imageUrl == "") return;
             Stream image = await SpiderController.GetImageStreamAsync(imageUrl);
             Image img = null;
             try {
