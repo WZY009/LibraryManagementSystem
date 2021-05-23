@@ -126,7 +126,7 @@ namespace BookMS.Controllers {
             return bookHtmlContents;
         }
 
-        public static async Task<Stream> GetImageStream(string url) {
+        public static async Task<Stream> GetImageStreamAsync(string url) {
             HttpResponseMessage response = await _client.GetAsync(url);
             return response.IsSuccessStatusCode
                 ? await response.Content.ReadAsStreamAsync()

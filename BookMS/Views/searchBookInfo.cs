@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,9 +38,9 @@ namespace BookMS.Views {
             string bookName = uiTextBoxName.Text;
             spiderController = new SpiderController(bookName);
             if (bookName == "")
-                MessageBox.Show("Please input book name before searching","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Please input book name before searching", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             _bookHtmlContents.AddRange(await spiderController.ReadNextAsync());
-            foreach(var item in _bookHtmlContents) {
+            foreach (var item in _bookHtmlContents) {
                 uiDataGridViewBookInfo.AddRow(no.ToString(), item.Title, item.Rate, item.Subjects);
                 no++;
             }
@@ -55,8 +56,32 @@ namespace BookMS.Views {
             textBoxRate.Text = _bookHtmlContents[number - 1].Rate;
             textBoxDetail.Text = _bookHtmlContents[number - 1].Detail;
             starClear();
-            if(textBoxRate.Text!="")
+            if (textBoxRate.Text != "")
                 getStar(double.Parse(textBoxRate.Text));
+            // 添加图片
+            string imageUrl = _bookHtmlContents[number - 1].ImageUrl;
+            Stream image = await SpiderController.GetImageStreamAsync(imageUrl);
+            Image img = null;
+            try {
+                img = Image.FromStream(image);
+            }
+            catch (ArgumentException) {
+                // 加载图片失败，不处理
+                return;
+            }
+            Bitmap bmp = ScaleImage(img, pictureBoxBook.Width, pictureBoxBook.Height);
+            pictureBoxBook.Image = bmp;
+        }
+        private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+            var ratioX = (double)maxWidth / image.Width;
+            var ratioY = (double)maxHeight / image.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+            var newWidth = (int)(image.Width * ratio);
+            var newHeight = (int)(image.Height * ratio);
+            var newImage = new Bitmap(newWidth, newHeight);
+            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+            Bitmap bmp = new Bitmap(newImage);
+            return bmp;
         }
 
         private void buttonClose_Click(object sender, EventArgs e) {
@@ -67,24 +92,30 @@ namespace BookMS.Views {
             System.Diagnostics.Process.Start("cmd.exe", $"/c start {linkLabelUrl.Text}");
         }
         private void getStar(double rate) {
-            string starSolid = "../../../icons/RateSolid_32.png";
-            string starHalf = "../../../icons/RateHalf_32.png";
-            string starEmpty = "../../../icons/Rate_32.png";
+            // 更换为资源文件下的星星
+            //string starSolid = "../../../icons/RateSolid_32.png";
+            //string starHalf = "../../../icons/RateHalf_32.png";
+            //string starEmpty = "../../../icons/Rate_32.png";
             int solidCount = (int)Math.Floor(rate / 2);
             int halfCount = (int)Math.Ceiling(rate / 2 - solidCount);
             //MessageBox.Show($"{pictureBoxes.Count}");
-            for(int i = 0; i < solidCount; i++) 
-                pictureBoxes[i].Image = Image.FromFile(starSolid);
+            for (int i = 0; i < solidCount; i++)
+                //pictureBoxes[i].Image = Image.FromFile(starSolid);
+                pictureBoxes[i].Image = BookMS.Properties.Resources.RateSolid_32;
             for (int i = 0; i < halfCount; i++)
-                pictureBoxes[i + solidCount].Image = Image.FromFile(starHalf);
-            for (int i = 0; i < 5-solidCount-halfCount; i++)
-                pictureBoxes[i + solidCount + halfCount].Image = Image.FromFile(starEmpty);
+                //pictureBoxes[i + solidCount].Image = Image.FromFile(starHalf);
+                pictureBoxes[i + solidCount].Image = BookMS.Properties.Resources.RateHalf_32;
+            for (int i = 0; i < 5 - solidCount - halfCount; i++)
+                //pictureBoxes[i + solidCount + halfCount].Image = Image.FromFile(starEmpty);
+                pictureBoxes[i + solidCount + halfCount].Image = BookMS.Properties.Resources.Rate_32;
         }
         private void starClear() {
-            string starEmpty = "../../../icons/Rate_32.png";
-            for (int i = 0; i < 5; i++) {
-                pictureBoxes[i].Image = Image.FromFile(starEmpty);
-            }
+            // 更换为资源文件下的星星
+            //string starEmpty = "../../../icons/Rate_32.png";
+            for (int i = 0; i < 5; i++)
+                //pictureBoxes[i + solidCount + halfCount].Image = Image.FromFile(starEmpty);
+                pictureBoxes[i].Image = BookMS.Properties.Resources.Rate_32;
+
         }
 
         private async void pictureBoxNext_Click(object sender, EventArgs e) {
@@ -108,7 +139,7 @@ namespace BookMS.Views {
         }
         private void pictureBoxBefore_Click(object sender, EventArgs e) {
             //MessageBox.Show(dtStack.Pop().Rows[0].ItemArray[1].ToString());//不知道为啥，从栈弹出来的datatable就非常正常，然后绑定以后就没法继续显示了，里面全是空值
-            if (!pictureBoxFind.Enabled){
+            if (!pictureBoxFind.Enabled) {
                 uiDataGridViewBookInfo.DataSource = dtStack.Pop();
             }
 
@@ -134,6 +165,6 @@ namespace BookMS.Views {
         private void uiTextBoxName_TextChanged(object sender, EventArgs e) {
             pictureBoxFind.Enabled = true;
         }
-        
+
     }
 }
