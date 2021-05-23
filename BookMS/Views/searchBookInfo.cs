@@ -15,9 +15,9 @@ namespace BookMS.Views {
         private List<List<SpiderController.BookHtmlContent>> _bookHtmlContents;
         //private Stack<DataTable> dtStack = new Stack<DataTable>();
         private SpiderController _spiderController;
-        private List<PictureBox> _pictureBoxes = new List<PictureBox>();
-        private int _pageCount = 0;
-        private int _pageCurrentNo = 0;
+        private readonly List<PictureBox> _pictureBoxes = new List<PictureBox>();
+        private int _pageCount = 0;// 一共有多少页
+        private int _pageCurrentNo = 0;// 当前显示的页数
 
         public searchBookInfo() {
             InitializeComponent();
