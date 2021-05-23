@@ -30,8 +30,8 @@ namespace BookMS.Controllers {
         public struct BookHtmlContent {
             public string Title { get; set; }
             public string Url { get; set; }
-            public string Subjects { get; set; }
 #nullable enable
+            public string? Subjects { get; set; }
             public string? ImageUrl { get; set; }
             public string? Rate { get; set; }
             public string? Detail { get; set; }
@@ -112,7 +112,7 @@ namespace BookMS.Controllers {
 
                 var ratingNode = titleNode.SelectSingleNode("div[@class=\"rating-info\"]");
                 string? rating = ratingNode.SelectSingleNode("span[@class=\"rating_nums\"]")?.InnerText;
-                string subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]").InnerText;
+                string? subjects = ratingNode.SelectSingleNode("span[@class=\"subject-cast\"]")?.InnerText;
 
                 string? detail = itemNode.SelectSingleNode("p")?.InnerText;
 #nullable disable
