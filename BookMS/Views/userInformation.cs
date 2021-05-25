@@ -26,38 +26,38 @@ namespace BookMS.Views {
             textBoxName.Text = getUserInfo(userId)[1];
             textBoxPassword.Text = getUserInfo(userId)[2];
             textBoxRepeat.Text = getUserInfo(userId)[2];
-            textBoxMajor.Text = getUserInfo(userId)[3];         
-            textBoxAnswer.Text = getUserInfo(userId)[5];            
+            textBoxMajor.Text = getUserInfo(userId)[3];
+            textBoxAnswer.Text = getUserInfo(userId)[5];
             comboBoxQuestion.Items.AddRange(strQuestionList());
             UserController usermap = new UserController();
             comboBoxQuestion.SelectedItem = getQuestion(usermap.GetById(userId).Question_id);
         }
-        private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
-            var ratioX = (double)maxWidth / image.Width;
-            var ratioY = (double)maxHeight / image.Height;
-            var ratio = Math.Min(ratioX, ratioY);
-            var newWidth = (int)(image.Width * ratio);
-            var newHeight = (int)(image.Height * ratio);
-            var newImage = new Bitmap(newWidth, newHeight);
-            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
-            Bitmap bmp = new Bitmap(newImage);
-            return bmp;
-        }
+        //private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+        //    var ratioX = (double)maxWidth / image.Width;
+        //    var ratioY = (double)maxHeight / image.Height;
+        //    var ratio = Math.Min(ratioX, ratioY);
+        //    var newWidth = (int)(image.Width * ratio);
+        //    var newHeight = (int)(image.Height * ratio);
+        //    var newImage = new Bitmap(newWidth, newHeight);
+        //    Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+        //    Bitmap bmp = new Bitmap(newImage);
+        //    return bmp;
+        //}
         private Bitmap getImage(string id) {
             try {
                 UserController userMapper = new UserController();
                 User user = userMapper.GetById(id);
                 try {
                     Bitmap userImage = new Bitmap(user.PhotoPath);
-                    userImage = ScaleImage(userImage, 128, 128);
-                    return userImage;
+                    //userImage = ScaleImage(userImage, 128, 128);
+                    return userImage.ScaleImage(128, 128);
                 }
-                catch(Exception mistake) {
+                catch (Exception mistake) {
                     MessageBox.Show("Sorry your id is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw new Exception(mistake.Message);
                 }
             }
-            catch(Exception error) {
+            catch (Exception error) {
                 throw new Exception(error.Message);
             }
 
@@ -73,7 +73,7 @@ namespace BookMS.Views {
         }
         private string getQuestion(int question_id) {
             UserController usermap = new UserController();
-            foreach(var item in usermap.GetAllQuestions()) {
+            foreach (var item in usermap.GetAllQuestions()) {
                 if (question_id == item.ID)
                     return item.Question;
             }
@@ -154,7 +154,7 @@ namespace BookMS.Views {
             isClickPicPW = true;
         }
 
-        private void textBoxRepeat_TextChanged(object sender, EventArgs e) {           
+        private void textBoxRepeat_TextChanged(object sender, EventArgs e) {
             if (textBoxRepeat.Text.Equals(textBoxPassword.Text))
                 pictureBoxRepeat.Image = Image.FromFile("../../../icons/same_32.png");
             else
@@ -174,7 +174,7 @@ namespace BookMS.Views {
                 userChange.Major = textBoxMajor.Text;
                 userChange.Question_id = question_id;
                 userChange.Question_answer = textBoxAnswer.Text;
-                if(textBoxPassword.Text.Equals(textBoxRepeat.Text)) {
+                if (textBoxPassword.Text.Equals(textBoxRepeat.Text)) {
                     userChange.Password = textBoxPassword.Text;
                     if (usermap.UpdateUserInfo(userChange) > 0) {
                         MessageBox.Show("Successful!");
@@ -185,7 +185,7 @@ namespace BookMS.Views {
                 else
                     MessageBox.Show("Two inputs are inconsistent", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch(Exception error) {
+            catch (Exception error) {
                 throw new Exception(error.Message);
             }
 
