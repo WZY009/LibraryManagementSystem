@@ -31,6 +31,7 @@ namespace BookMS.Views {
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxPortrait = new System.Windows.Forms.PictureBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.uiRadioButtonUser = new Sunny.UI.UIRadioButton();
             this.uiRadioButtonAdmin = new Sunny.UI.UIRadioButton();
@@ -52,6 +53,7 @@ namespace BookMS.Views {
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortrait)).BeginInit();
             this.panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
@@ -132,6 +134,7 @@ namespace BookMS.Views {
             // 
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.pictureBoxPortrait);
             this.panel2.Controls.Add(this.buttonRegister);
             this.panel2.Controls.Add(this.uiRadioButtonUser);
             this.panel2.Controls.Add(this.uiRadioButtonAdmin);
@@ -151,6 +154,14 @@ namespace BookMS.Views {
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 1060);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBoxPortrait
+            // 
+            this.pictureBoxPortrait.Location = new System.Drawing.Point(360, 176);
+            this.pictureBoxPortrait.Name = "pictureBoxPortrait";
+            this.pictureBoxPortrait.Size = new System.Drawing.Size(180, 180);
+            this.pictureBoxPortrait.TabIndex = 8;
+            this.pictureBoxPortrait.TabStop = false;
             // 
             // buttonRegister
             // 
@@ -183,6 +194,7 @@ namespace BookMS.Views {
             this.uiRadioButtonUser.Style = Sunny.UI.UIStyle.Custom;
             this.uiRadioButtonUser.TabIndex = 6;
             this.uiRadioButtonUser.Text = "User Login";
+            this.uiRadioButtonUser.Click += new System.EventHandler(this.uiRadioButtonUser_Click);
             // 
             // uiRadioButtonAdmin
             // 
@@ -198,6 +210,7 @@ namespace BookMS.Views {
             this.uiRadioButtonAdmin.Style = Sunny.UI.UIStyle.Custom;
             this.uiRadioButtonAdmin.TabIndex = 6;
             this.uiRadioButtonAdmin.Text = "Administrator Login";
+            this.uiRadioButtonAdmin.Click += new System.EventHandler(this.uiRadioButtonAdmin_Click);
             // 
             // linkLabel1
             // 
@@ -341,6 +354,7 @@ namespace BookMS.Views {
             this.textBoxUserNum.Size = new System.Drawing.Size(726, 37);
             this.textBoxUserNum.TabIndex = 1;
             this.textBoxUserNum.Click += new System.EventHandler(this.textBoxUserNum_Click);
+            this.textBoxUserNum.TextChanged += new System.EventHandler(this.textBoxUserNum_TextChanged);
             // 
             // pictureBox2
             // 
@@ -357,7 +371,7 @@ namespace BookMS.Views {
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label5.Location = new System.Drawing.Point(72, 270);
+            this.label5.Location = new System.Drawing.Point(15, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(531, 58);
             this.label5.TabIndex = 1;
@@ -395,6 +409,7 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortrait)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheck)).EndInit();
@@ -434,6 +449,7 @@ namespace BookMS.Views {
         private Sunny.UI.UIRadioButton uiRadioButtonUser;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.PictureBox pictureBoxCheck;
+        private System.Windows.Forms.PictureBox pictureBoxPortrait;
     }
 }
 

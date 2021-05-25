@@ -18,6 +18,9 @@ namespace BookMS.Views {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             pictureBoxCheck.Image = Image.FromFile("../../../icons/Check_32.png");
+            Bitmap userImage = new Bitmap("../../../icons/User_128.png");
+            userImage = ScaleImage(userImage, 180, 180);
+            pictureBoxPortrait.Image = userImage;
         }
 
 
@@ -39,7 +42,7 @@ namespace BookMS.Views {
                 }
             }
             //管理员
-            if (uiRadioButtonAdmin.Checked == true) {
+            else if (uiRadioButtonAdmin.Checked == true) {
                 if (Login_Admin(id: textBoxUserNum.Text, password: textBoxPassword.Text) != null) {
                     MessageBox.Show("you are successful to log in an administrator account");
                     adminNewManagecs administrator = new adminNewManagecs();
@@ -125,7 +128,68 @@ namespace BookMS.Views {
             }
         }
 
+        private void textBoxUserNum_TextChanged(object sender, EventArgs e) {
+            if (uiRadioButtonUser.Checked == true) {
+                UserController usermap = new UserController();
+                User user = usermap.GetById(textBoxUserNum.Text);
+                pictureBoxPortrait.Image = getImage(textBoxUserNum.Text);
+            }
+            else if(uiRadioButtonAdmin.Checked == true) {
+                Bitmap userImage = new Bitmap("../../../icons/Admin_128.png");
+                userImage = ScaleImage(userImage, 180, 180);               
+                pictureBoxPortrait.Image = userImage;
+            }
+        }
+        private Bitmap getImage(string id) {
+            UserController userMapper = new UserController();
+            User user = userMapper.GetById(id);
+            if (user != null) {
+                try {
+                    Bitmap userImage = new Bitmap(user.PhotoPath);
+                    userImage = ScaleImage(userImage, 180, 180);
+                    return userImage;
+                }
+                catch {
+                    MessageBox.Show("Sorry your id is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+            else {
+                Bitmap userImage = new Bitmap("../../../icons/User_128.png");
+                userImage = ScaleImage(userImage, 180, 180);
+                return userImage;
+            }
+                
+        }
+        private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+            var ratioX = (double)maxWidth / image.Width;
+            var ratioY = (double)maxHeight / image.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+            var newWidth = (int)(image.Width * ratio);
+            var newHeight = (int)(image.Height * ratio);
+            var newImage = new Bitmap(newWidth, newHeight);
+            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+            Bitmap bmp = new Bitmap(newImage);
+            return bmp;
+        }
 
+        private void uiRadioButtonAdmin_Click(object sender, EventArgs e) {
+            Bitmap userImage = new Bitmap("../../../icons/Admin_128.png");
+            userImage = ScaleImage(userImage, 180, 180);
+            pictureBoxPortrait.Image = userImage;
+        }
+
+        private void uiRadioButtonUser_Click(object sender, EventArgs e) {
+            UserController usermap = new UserController();
+            if (usermap.GetById(textBoxUserNum.Text) != null){
+                pictureBoxPortrait.Image = getImage(textBoxUserNum.Text);
+            }
+            else {
+                Bitmap userImage = new Bitmap("../../../icons/User_128.png");
+                userImage = ScaleImage(userImage, 180, 180);
+                pictureBoxPortrait.Image = userImage;
+            }
+        }
     }
 }
 

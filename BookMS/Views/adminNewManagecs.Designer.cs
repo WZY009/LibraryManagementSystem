@@ -215,6 +215,7 @@ namespace BookMS.Views {
             this.buttonACSecurity.TabIndex = 5;
             this.buttonACSecurity.Text = "Account Security";
             this.buttonACSecurity.UseVisualStyleBackColor = false;
+            this.buttonACSecurity.Click += new System.EventHandler(this.buttonACSecurity_Click);
             this.buttonACSecurity.MouseEnter += new System.EventHandler(this.changeButtonColor_MouseEnter);
             this.buttonACSecurity.MouseLeave += new System.EventHandler(this.changeOddButtonColor_MouseLeave);
             // 

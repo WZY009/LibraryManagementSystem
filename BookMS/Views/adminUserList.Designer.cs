@@ -118,7 +118,7 @@ namespace BookMS.Views {
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label7.Location = new System.Drawing.Point(1143, 354);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 23);
+            this.label7.Size = new System.Drawing.Size(302, 37);
             this.label7.TabIndex = 42;
             this.label7.Text = "Whom you select is:";
             // 
@@ -145,7 +145,7 @@ namespace BookMS.Views {
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label4.Location = new System.Drawing.Point(1141, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 23);
+            this.label4.Size = new System.Drawing.Size(162, 37);
             this.label4.TabIndex = 40;
             this.label4.Text = "Condition";
             // 
@@ -158,11 +158,11 @@ namespace BookMS.Views {
             this.comboBoxCheckCond.FormattingEnabled = true;
             this.comboBoxCheckCond.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBoxCheckCond.Items.AddRange(new object[] {
-            "Check ID",
+            "Check Stu.ID",
             "Check Name"});
             this.comboBoxCheckCond.Location = new System.Drawing.Point(1305, 237);
             this.comboBoxCheckCond.Name = "comboBoxCheckCond";
-            this.comboBoxCheckCond.Size = new System.Drawing.Size(290, 31);
+            this.comboBoxCheckCond.Size = new System.Drawing.Size(290, 45);
             this.comboBoxCheckCond.TabIndex = 39;
             // 
             // label3
@@ -173,7 +173,7 @@ namespace BookMS.Views {
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label3.Location = new System.Drawing.Point(1141, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 23);
+            this.label3.Size = new System.Drawing.Size(106, 37);
             this.label3.TabIndex = 38;
             this.label3.Text = "Name";
             // 
@@ -185,7 +185,7 @@ namespace BookMS.Views {
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label2.Location = new System.Drawing.Point(1141, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 23);
+            this.label2.Size = new System.Drawing.Size(47, 37);
             this.label2.TabIndex = 37;
             this.label2.Text = "ID";
             // 
@@ -197,9 +197,9 @@ namespace BookMS.Views {
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label1.Location = new System.Drawing.Point(1141, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 30);
+            this.label1.Size = new System.Drawing.Size(230, 43);
             this.label1.TabIndex = 36;
-            this.label1.Text = "Check Books";
+            this.label1.Text = "Check Users";
             // 
             // pictureBoxFind
             // 
@@ -225,7 +225,7 @@ namespace BookMS.Views {
             this.uiTextBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextBoxName.Name = "uiTextBoxName";
             this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBoxName.Size = new System.Drawing.Size(290, 32);
+            this.uiTextBoxName.Size = new System.Drawing.Size(290, 44);
             this.uiTextBoxName.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBoxName.TabIndex = 33;
             // 
@@ -241,7 +241,7 @@ namespace BookMS.Views {
             this.uiTextboxID.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextboxID.Name = "uiTextboxID";
             this.uiTextboxID.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextboxID.Size = new System.Drawing.Size(290, 32);
+            this.uiTextboxID.Size = new System.Drawing.Size(290, 44);
             this.uiTextboxID.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextboxID.TabIndex = 32;
             // 
@@ -430,11 +430,11 @@ namespace BookMS.Views {
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(67, 24);
+            this.label11.Location = new System.Drawing.Point(57, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 16);
+            this.label11.Size = new System.Drawing.Size(64, 22);
             this.label11.TabIndex = 4;
-            this.label11.Text = "Stu.ID";
+            this.label11.Text = "Name";
             // 
             // textBoxID
             // 
@@ -445,7 +445,7 @@ namespace BookMS.Views {
             this.textBoxID.Location = new System.Drawing.Point(143, 22);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(368, 18);
+            this.textBoxID.Size = new System.Drawing.Size(368, 26);
             this.textBoxID.TabIndex = 1;
             // 
             // pictureBox3
@@ -473,11 +473,11 @@ namespace BookMS.Views {
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(67, 24);
+            this.label5.Location = new System.Drawing.Point(57, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.Size = new System.Drawing.Size(41, 22);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Stu.ID";
+            this.label5.Text = "Sex";
             // 
             // textBox1
             // 
@@ -488,7 +488,7 @@ namespace BookMS.Views {
             this.textBox1.Location = new System.Drawing.Point(131, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(380, 18);
+            this.textBox1.Size = new System.Drawing.Size(380, 26);
             this.textBox1.TabIndex = 1;
             // 
             // pictureBox1
@@ -516,11 +516,11 @@ namespace BookMS.Views {
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(67, 24);
+            this.label6.Location = new System.Drawing.Point(57, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 16);
+            this.label6.Size = new System.Drawing.Size(61, 22);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Stu.ID";
+            this.label6.Text = "Major";
             // 
             // textBox2
             // 
@@ -531,7 +531,7 @@ namespace BookMS.Views {
             this.textBox2.Location = new System.Drawing.Point(131, 22);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(380, 18);
+            this.textBox2.Size = new System.Drawing.Size(380, 26);
             this.textBox2.TabIndex = 1;
             // 
             // pictureBox2
@@ -559,11 +559,11 @@ namespace BookMS.Views {
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(67, 24);
+            this.label8.Location = new System.Drawing.Point(57, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 16);
+            this.label8.Size = new System.Drawing.Size(92, 22);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Stu.ID";
+            this.label8.Text = "Password";
             // 
             // textBox3
             // 
@@ -574,7 +574,7 @@ namespace BookMS.Views {
             this.textBox3.Location = new System.Drawing.Point(143, 22);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(368, 18);
+            this.textBox3.Size = new System.Drawing.Size(368, 26);
             this.textBox3.TabIndex = 1;
             // 
             // pictureBox4
@@ -602,11 +602,11 @@ namespace BookMS.Views {
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(67, 24);
+            this.label9.Location = new System.Drawing.Point(57, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 16);
+            this.label9.Size = new System.Drawing.Size(74, 22);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Stu.ID";
+            this.label9.Text = "Answer";
             // 
             // textBox4
             // 
@@ -617,7 +617,7 @@ namespace BookMS.Views {
             this.textBox4.Location = new System.Drawing.Point(131, 22);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(380, 18);
+            this.textBox4.Size = new System.Drawing.Size(380, 26);
             this.textBox4.TabIndex = 1;
             // 
             // pictureBox5
@@ -645,11 +645,11 @@ namespace BookMS.Views {
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(67, 24);
+            this.label10.Location = new System.Drawing.Point(57, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 16);
+            this.label10.Size = new System.Drawing.Size(111, 22);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Stu.ID";
+            this.label10.Text = "Question ID";
             // 
             // textBox5
             // 
@@ -660,7 +660,7 @@ namespace BookMS.Views {
             this.textBox5.Location = new System.Drawing.Point(143, 22);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(368, 18);
+            this.textBox5.Size = new System.Drawing.Size(368, 26);
             this.textBox5.TabIndex = 1;
             // 
             // pictureBox6
@@ -688,9 +688,9 @@ namespace BookMS.Views {
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(67, 24);
+            this.label12.Location = new System.Drawing.Point(55, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 16);
+            this.label12.Size = new System.Drawing.Size(58, 22);
             this.label12.TabIndex = 4;
             this.label12.Text = "Stu.ID";
             // 
@@ -703,7 +703,7 @@ namespace BookMS.Views {
             this.textBox6.Location = new System.Drawing.Point(143, 22);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(368, 18);
+            this.textBox6.Size = new System.Drawing.Size(368, 26);
             this.textBox6.TabIndex = 1;
             // 
             // pictureBox7
@@ -718,7 +718,7 @@ namespace BookMS.Views {
             // 
             // adminUserList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1679, 1049);

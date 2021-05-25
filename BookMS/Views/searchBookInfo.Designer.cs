@@ -25,12 +25,12 @@ namespace BookMS.Views {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchBookInfo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@ namespace BookMS.Views {
             this.textBoxTitle.Location = new System.Drawing.Point(146, 23);
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(370, 20);
+            this.textBoxTitle.Size = new System.Drawing.Size(370, 30);
             this.textBoxTitle.TabIndex = 1;
             // 
             // panel6
@@ -112,9 +112,9 @@ namespace BookMS.Views {
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.textBoxTitle);
             this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Location = new System.Drawing.Point(265, 51);
+            this.panel6.Location = new System.Drawing.Point(236, 51);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(528, 67);
+            this.panel6.Size = new System.Drawing.Size(557, 67);
             this.panel6.TabIndex = 81;
             // 
             // label12
@@ -123,7 +123,7 @@ namespace BookMS.Views {
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(43, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 19);
+            this.label12.Size = new System.Drawing.Size(56, 28);
             this.label12.TabIndex = 4;
             this.label12.Text = "Title";
             // 
@@ -143,7 +143,7 @@ namespace BookMS.Views {
             this.pictureBoxBook.Location = new System.Drawing.Point(11, 68);
             this.pictureBoxBook.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxBook.Name = "pictureBoxBook";
-            this.pictureBoxBook.Size = new System.Drawing.Size(247, 289);
+            this.pictureBoxBook.Size = new System.Drawing.Size(218, 289);
             this.pictureBoxBook.TabIndex = 79;
             this.pictureBoxBook.TabStop = false;
             // 
@@ -155,7 +155,7 @@ namespace BookMS.Views {
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label7.Location = new System.Drawing.Point(1, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 23);
+            this.label7.Size = new System.Drawing.Size(284, 37);
             this.label7.TabIndex = 78;
             this.label7.Text = "What you select is:";
             // 
@@ -183,7 +183,7 @@ namespace BookMS.Views {
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label3.Location = new System.Drawing.Point(139, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 23);
+            this.label3.Size = new System.Drawing.Size(106, 37);
             this.label3.TabIndex = 74;
             this.label3.Text = "Name";
             // 
@@ -195,7 +195,7 @@ namespace BookMS.Views {
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label1.Location = new System.Drawing.Point(139, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 30);
+            this.label1.Size = new System.Drawing.Size(401, 43);
             this.label1.TabIndex = 72;
             this.label1.Text = "Find more information";
             // 
@@ -225,7 +225,7 @@ namespace BookMS.Views {
             this.uiTextBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTextBoxName.Name = "uiTextBoxName";
             this.uiTextBoxName.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBoxName.Size = new System.Drawing.Size(290, 32);
+            this.uiTextBoxName.Size = new System.Drawing.Size(290, 44);
             this.uiTextBoxName.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBoxName.TabIndex = 70;
             // 
@@ -233,23 +233,23 @@ namespace BookMS.Views {
             // 
             this.uiDataGridViewBookInfo.AllowUserToAddRows = false;
             this.uiDataGridViewBookInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Red;
-            this.uiDataGridViewBookInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
+            this.uiDataGridViewBookInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.uiDataGridViewBookInfo.BackgroundColor = System.Drawing.Color.White;
             this.uiDataGridViewBookInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.uiDataGridViewBookInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.uiDataGridViewBookInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridViewBookInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridViewBookInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.uiDataGridViewBookInfo.ColumnHeadersHeight = 40;
             this.uiDataGridViewBookInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridViewBookInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -257,33 +257,33 @@ namespace BookMS.Views {
             this.Column2,
             this.Column3,
             this.Column4});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.uiDataGridViewBookInfo.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.uiDataGridViewBookInfo.DefaultCellStyle = dataGridViewCellStyle4;
             this.uiDataGridViewBookInfo.EnableHeadersVisualStyles = false;
             this.uiDataGridViewBookInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiDataGridViewBookInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDataGridViewBookInfo.Location = new System.Drawing.Point(5, 64);
             this.uiDataGridViewBookInfo.Name = "uiDataGridViewBookInfo";
             this.uiDataGridViewBookInfo.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridViewBookInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridViewBookInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.uiDataGridViewBookInfo.RowHeadersVisible = false;
             this.uiDataGridViewBookInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.uiDataGridViewBookInfo.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.uiDataGridViewBookInfo.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.uiDataGridViewBookInfo.RowTemplate.Height = 29;
             this.uiDataGridViewBookInfo.SelectedIndex = -1;
             this.uiDataGridViewBookInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -297,9 +297,9 @@ namespace BookMS.Views {
             // 
             // Column1
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Red;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 11;
             this.Column1.Name = "Column1";
@@ -362,9 +362,9 @@ namespace BookMS.Views {
             this.panel4.Controls.Add(this.linkLabelUrl);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(265, 323);
+            this.panel4.Location = new System.Drawing.Point(236, 323);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(528, 93);
+            this.panel4.Size = new System.Drawing.Size(557, 93);
             this.panel4.TabIndex = 82;
             // 
             // linkLabelUrl
@@ -372,9 +372,9 @@ namespace BookMS.Views {
             this.linkLabelUrl.AutoEllipsis = true;
             this.linkLabelUrl.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabelUrl.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.linkLabelUrl.Location = new System.Drawing.Point(146, 7);
+            this.linkLabelUrl.Location = new System.Drawing.Point(127, 0);
             this.linkLabelUrl.Name = "linkLabelUrl";
-            this.linkLabelUrl.Size = new System.Drawing.Size(370, 79);
+            this.linkLabelUrl.Size = new System.Drawing.Size(399, 79);
             this.linkLabelUrl.TabIndex = 5;
             this.linkLabelUrl.TabStop = true;
             this.linkLabelUrl.Text = "default";
@@ -387,7 +387,7 @@ namespace BookMS.Views {
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(38, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 19);
+            this.label6.Size = new System.Drawing.Size(52, 28);
             this.label6.TabIndex = 4;
             this.label6.Text = "URL";
             // 
@@ -407,9 +407,9 @@ namespace BookMS.Views {
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.textBoxSubjects);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(265, 214);
+            this.panel2.Location = new System.Drawing.Point(236, 214);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(528, 103);
+            this.panel2.Size = new System.Drawing.Size(557, 103);
             this.panel2.TabIndex = 83;
             // 
             // label5
@@ -418,7 +418,7 @@ namespace BookMS.Views {
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(43, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 19);
+            this.label5.Size = new System.Drawing.Size(97, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Subject";
             // 
@@ -428,11 +428,11 @@ namespace BookMS.Views {
             this.textBoxSubjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxSubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.textBoxSubjects.Location = new System.Drawing.Point(146, 16);
+            this.textBoxSubjects.Location = new System.Drawing.Point(146, 19);
             this.textBoxSubjects.Multiline = true;
             this.textBoxSubjects.Name = "textBoxSubjects";
             this.textBoxSubjects.ReadOnly = true;
-            this.textBoxSubjects.Size = new System.Drawing.Size(373, 77);
+            this.textBoxSubjects.Size = new System.Drawing.Size(380, 64);
             this.textBoxSubjects.TabIndex = 1;
             // 
             // pictureBox2
@@ -456,9 +456,9 @@ namespace BookMS.Views {
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxRate);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(265, 133);
+            this.panel1.Location = new System.Drawing.Point(236, 133);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 67);
+            this.panel1.Size = new System.Drawing.Size(557, 67);
             this.panel1.TabIndex = 82;
             // 
             // pictureBoxStar5
@@ -512,7 +512,7 @@ namespace BookMS.Views {
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(43, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
+            this.label4.Size = new System.Drawing.Size(64, 28);
             this.label4.TabIndex = 4;
             this.label4.Text = "Rate";
             // 
@@ -525,7 +525,7 @@ namespace BookMS.Views {
             this.textBoxRate.Location = new System.Drawing.Point(146, 18);
             this.textBoxRate.Name = "textBoxRate";
             this.textBoxRate.ReadOnly = true;
-            this.textBoxRate.Size = new System.Drawing.Size(103, 20);
+            this.textBoxRate.Size = new System.Drawing.Size(103, 30);
             this.textBoxRate.TabIndex = 1;
             // 
             // pictureBox1
@@ -546,7 +546,7 @@ namespace BookMS.Views {
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label2.Location = new System.Drawing.Point(717, 673);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 23);
+            this.label2.Size = new System.Drawing.Size(113, 37);
             this.label2.TabIndex = 83;
             this.label2.Text = "Details";
             // 
@@ -594,7 +594,7 @@ namespace BookMS.Views {
             // 
             // searchBookInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1500, 969);

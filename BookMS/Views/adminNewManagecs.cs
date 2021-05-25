@@ -129,6 +129,13 @@ namespace BookMS.Views {
             uiTextboxID.ForeColor = basicColor;
         }
 
+        private void buttonACSecurity_Click(object sender, EventArgs e) {
+            adminUserList list = new adminUserList();
+            this.Hide();
+            list.ShowDialog();
+            this.Show();
+        }
+
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1);
         }

@@ -160,10 +160,6 @@ namespace BookMS.Views {
 
         }
         private void pictureBoxBefore_Click(object sender, EventArgs e) {
-            //MessageBox.Show(dtStack.Pop().Rows[0].ItemArray[1].ToString());//不知道为啥，从栈弹出来的datatable就非常正常，然后绑定以后就没法继续显示了，里面全是空值
-            //if (!pictureBoxFind.Enabled) {
-            //    //uiDataGridViewBookInfo.DataSource = dtStack.Pop();
-            //}
             uiDataGridViewBookInfo.Rows.Clear();
             --_pageCurrentNo;
             for (int i = 0; i < _bookHtmlContents[_pageCurrentNo].Count; ++i) {
@@ -173,23 +169,6 @@ namespace BookMS.Views {
             // 已经在第一页了
             if (_pageCurrentNo == 0) pictureBoxBefore.Enabled = false;
         }
-        //private DataTable GetDgvToTable(DataGridView dgv) {
-        //    DataTable dt = new DataTable();
-        //    // 列强制转换
-        //    for (int count = 0; count < dgv.Columns.Count; count++) {
-        //        DataColumn dc = new DataColumn(dgv.Columns[count].Name);
-        //        dt.Columns.Add(dc);
-        //    }
-        //    // 循环行
-        //    for (int count = 0; count < dgv.Rows.Count; count++) {
-        //        DataRow dr = dt.NewRow();
-        //        for (int countsub = 0; countsub < dgv.Columns.Count; countsub++) {
-        //            dr[countsub] = dgv.Rows[count].Cells[countsub].Value;
-        //        }
-        //        dt.Rows.Add(dr);
-        //    }
-        //    return dt;
-        //}
 
     }
 }
