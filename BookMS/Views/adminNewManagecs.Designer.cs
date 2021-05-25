@@ -37,7 +37,7 @@ namespace BookMS.Views {
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.buttonLogOut = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAdmin = new System.Windows.Forms.PictureBox();
             this.buttonACSecurity = new System.Windows.Forms.Button();
             this.buttonOverview = new System.Windows.Forms.Button();
             this.buttonCommunication = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@ namespace BookMS.Views {
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveExcelDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).BeginInit();
             this.panel2.SuspendLayout();
             this.uiPanelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButtonExport)).BeginInit();
@@ -94,7 +94,7 @@ namespace BookMS.Views {
             this.panel1.Controls.Add(this.uiLabel2);
             this.panel1.Controls.Add(this.uiLabel1);
             this.panel1.Controls.Add(this.buttonLogOut);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBoxAdmin);
             this.panel1.Controls.Add(this.buttonACSecurity);
             this.panel1.Controls.Add(this.buttonOverview);
             this.panel1.Controls.Add(this.buttonCommunication);
@@ -157,7 +157,7 @@ namespace BookMS.Views {
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(325, 52);
             this.uiLabel2.TabIndex = 2;
-            this.uiLabel2.Text = "Administrator name";
+            this.uiLabel2.Text = "Administrator";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiLabel1
@@ -191,14 +191,14 @@ namespace BookMS.Views {
             this.buttonLogOut.MouseEnter += new System.EventHandler(this.changeButtonColor_MouseEnter);
             this.buttonLogOut.MouseLeave += new System.EventHandler(this.changeEvenButtonColor_MouseLeave);
             // 
-            // pictureBox1
+            // pictureBoxAdmin
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(75, 65);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 177);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxAdmin.Location = new System.Drawing.Point(85, 65);
+            this.pictureBoxAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxAdmin.Name = "pictureBoxAdmin";
+            this.pictureBoxAdmin.Size = new System.Drawing.Size(180, 180);
+            this.pictureBoxAdmin.TabIndex = 0;
+            this.pictureBoxAdmin.TabStop = false;
             // 
             // buttonACSecurity
             // 
@@ -689,7 +689,7 @@ namespace BookMS.Views {
             this.Text = "adminNewManagecs";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).EndInit();
             this.panel2.ResumeLayout(false);
             this.uiPanelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButtonExport)).EndInit();
@@ -717,7 +717,7 @@ namespace BookMS.Views {
         private System.Windows.Forms.Button buttonClose;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxAdmin;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonACSecurity;

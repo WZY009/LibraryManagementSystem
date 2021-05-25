@@ -35,7 +35,7 @@ namespace BookMS.Views {
             this.buttonRegister = new System.Windows.Forms.Button();
             this.uiRadioButtonUser = new Sunny.UI.UIRadioButton();
             this.uiRadioButtonAdmin = new Sunny.UI.UIRadioButton();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelIssue = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -138,7 +138,7 @@ namespace BookMS.Views {
             this.panel2.Controls.Add(this.buttonRegister);
             this.panel2.Controls.Add(this.uiRadioButtonUser);
             this.panel2.Controls.Add(this.uiRadioButtonAdmin);
-            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.linkLabelIssue);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -212,35 +212,36 @@ namespace BookMS.Views {
             this.uiRadioButtonAdmin.Text = "Administrator Login";
             this.uiRadioButtonAdmin.Click += new System.EventHandler(this.uiRadioButtonAdmin_Click);
             // 
-            // linkLabel1
+            // linkLabelIssue
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.linkLabel1.Location = new System.Drawing.Point(437, 969);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(344, 30);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "wanzhaoyi2647@gmail.com";
+            this.linkLabelIssue.AutoSize = true;
+            this.linkLabelIssue.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelIssue.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.linkLabelIssue.Location = new System.Drawing.Point(55, 999);
+            this.linkLabelIssue.Name = "linkLabelIssue";
+            this.linkLabelIssue.Size = new System.Drawing.Size(516, 30);
+            this.linkLabelIssue.TabIndex = 5;
+            this.linkLabelIssue.TabStop = true;
+            this.linkLabelIssue.Text = "https://github.com/WZY009/BookMS/issues";
+            this.linkLabelIssue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(88, 969);
+            this.label8.Location = new System.Drawing.Point(55, 969);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(354, 30);
+            this.label8.Size = new System.Drawing.Size(343, 30);
             this.label8.TabIndex = 1;
-            this.label8.Text = "submit an email meaage to ";
+            this.label8.Text = "submit an issue meaage to ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(88, 936);
+            this.label7.Location = new System.Drawing.Point(55, 939);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(525, 30);
             this.label7.TabIndex = 1;
@@ -251,7 +252,7 @@ namespace BookMS.Views {
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(88, 903);
+            this.label6.Location = new System.Drawing.Point(55, 907);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 29);
             this.label6.TabIndex = 1;
@@ -440,7 +441,7 @@ namespace BookMS.Views {
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelIssue;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

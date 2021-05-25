@@ -190,6 +190,10 @@ namespace BookMS.Views {
                 pictureBoxPortrait.Image = userImage;
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            System.Diagnostics.Process.Start("cmd.exe", $"/c start {linkLabelIssue.Text}");
+        }
     }
 }
 
