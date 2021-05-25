@@ -83,7 +83,7 @@ namespace BookMS.Views {
         }
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
-            ExportToExcel.Export(uiDataGridView1);
+            ExportToExcel.Export(uiDataGridView1,"Lend Book");
         }
 
         private void buttonClose_Click(object sender, EventArgs e) {

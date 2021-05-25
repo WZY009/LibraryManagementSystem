@@ -72,7 +72,7 @@ namespace BookMS.Views {
         }
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
-            ExportToExcel.Export(uiDataGridView1);
+            ExportToExcel.Export(uiDataGridView1,"Borrowed Book");
         }
 
         private void pictureBoxFind_Click(object sender, EventArgs e) {

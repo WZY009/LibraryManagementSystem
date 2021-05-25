@@ -157,7 +157,7 @@ namespace BookMS.Views {
             // 
             // pictureBoxPortrait
             // 
-            this.pictureBoxPortrait.Location = new System.Drawing.Point(360, 176);
+            this.pictureBoxPortrait.Location = new System.Drawing.Point(360, 108);
             this.pictureBoxPortrait.Name = "pictureBoxPortrait";
             this.pictureBoxPortrait.Size = new System.Drawing.Size(180, 180);
             this.pictureBoxPortrait.TabIndex = 8;
@@ -372,7 +372,7 @@ namespace BookMS.Views {
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label5.Location = new System.Drawing.Point(15, 88);
+            this.label5.Location = new System.Drawing.Point(185, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(531, 58);
             this.label5.TabIndex = 1;

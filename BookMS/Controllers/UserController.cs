@@ -16,6 +16,8 @@ namespace BookMS.Controllers {
             user.PhotoPath = path;
             return _context.SaveChanges();
         }
+        public IEnumerable<User> GetAllUsers() => _context.Users.AsEnumerable();
+
         /// <summary>
         /// 添加用户
         /// </summary>
@@ -25,7 +27,11 @@ namespace BookMS.Controllers {
             _context.Add(user);
             return _context.SaveChanges();
         }
-
+        public int DeleteById(string id) {
+            var user = _context.Users.Find(id);
+            _context.Users.Remove(user);
+            return _context.SaveChanges();
+        }
         public User GetById(string id) => _context.Users.FirstOrDefault(a => a.Id == id);
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace BookMS {
             //Application.Run(new userNewManage("8000"));
             //Application.Run(new userNewManage("8000"));
             Application.Run(new login());
-            //Application.Run(new searchBookInfo());
+            //Application.Run(new adminUserList());
 
         }
     }

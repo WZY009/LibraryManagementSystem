@@ -116,7 +116,7 @@ namespace BookMS.Views {
                 }
             }
             catch {
-                MessageBox.Show("请现在表格中选择要删除的图书记录", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a book to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,7 +150,7 @@ namespace BookMS.Views {
         }
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
-            ExportToExcel.Export(uiDataGridView1);
+            ExportToExcel.Export(uiDataGridView1,"All Books");
         }
         private void buttonRefresh_Click(object sender, EventArgs e) {
             Table();

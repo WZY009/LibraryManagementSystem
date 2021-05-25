@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace BookMS {
     static class ExportToExcel {
         public static FileInfo file = new FileInfo(@"Output.xlsx");
-        public static void Export(DataGridView chart) {
+        public static void Export(DataGridView chart, string catalog) {
             using (ExcelPackage package = new ExcelPackage(file)) {
                 ExcelWorksheet sheet;
                 try {
@@ -28,7 +28,7 @@ namespace BookMS {
                 using (SaveFileDialog saveFileDialog1 = new SaveFileDialog()) {
                     package.Save();
                     saveFileDialog1.Title = "Save";
-                    saveFileDialog1.FileName = "Book sheet.xls"; //设置默认另存为的名字，可选
+                    saveFileDialog1.FileName = $"{catalog} sheet.xls"; //设置默认另存为的名字，可选
                     saveFileDialog1.Filter = "Excel 文件(*.xls)|*.xls|Excel 文件(*.xlsx)|*.xlsx|所有文件(*.*)|*.*";
                     saveFileDialog1.AddExtension = true;
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
