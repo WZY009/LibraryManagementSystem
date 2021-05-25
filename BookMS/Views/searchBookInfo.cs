@@ -52,7 +52,7 @@ namespace BookMS.Views {
                 uiDataGridViewBookInfo.AddRow(bookNo++.ToString(), item.Title, item.Rate, item.Subjects);
 
             pictureBoxFind.Enabled = true;// 恢复再次查询按钮
-            pictureBoxNext.Enabled = true;// 可以点击下一页
+            pictureBoxNext.Enabled = _spiderController.HasNext;// 可以点击下一页如果有下一页
         }
         private async void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {//选择函数
 
@@ -152,6 +152,7 @@ namespace BookMS.Views {
                 }
             }
             pictureBoxBefore.Enabled = true;// 允许点击前一页
+            pictureBoxNext.Enabled = _spiderController.HasNext;// 是否还有下一页
 
             //}
             //catch (Exception error) {
