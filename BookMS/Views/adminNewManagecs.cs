@@ -76,7 +76,7 @@ namespace BookMS.Views {
         }
         public void TableName()//check the books according to the name
         {
-            uiDataGridView1.Rows.Clear();//清空旧数据
+            uiDataGridView1.Rows.Clear();
             using BookController bookMapper = new BookController();
             foreach (Book book in bookMapper.GetByName(uiTextBoxName.Text))
                 uiDataGridView1.Rows.Add(book.ToStringArray());
@@ -105,14 +105,19 @@ namespace BookMS.Views {
             try {
                 DialogResult dr = MessageBox.Show("Confirm to delete?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK) {
+                    int n = uiDataGridView1.SelectedRows.Count;
                     using BookController bookMapper = new BookController();
-                    if (bookMapper.DeleteById(id) > 0) {
-                        MessageBox.Show("Delete the book successfully");
-                        Table();
-                    }
-                    else {
-                        MessageBox.Show("Error");
-                    }
+                    int deleteNum = 0;
+                    for (int i = 0; i < n; ++i)
+                        if (bookMapper.DeleteById(uiDataGridView1.SelectedRows[i].Cells[0].Value.ToString()) != 0) {
+                            ++deleteNum;
+                            MessageBox.Show($"Successful to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}");
+                        }
+                        else {
+                            MessageBox.Show($"Failed to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        }
+                    MessageBox.Show($"成功删除{deleteNum}条图书信息");
+                    Table();
                 }
             }
             catch {
@@ -132,6 +137,7 @@ namespace BookMS.Views {
             author = uiDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             press = uiDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             number = uiDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            textBoxSelection.Text = $"{name}";
         }
 
         private void buttonLogOut_Click(object sender, EventArgs e) {
@@ -141,7 +147,6 @@ namespace BookMS.Views {
         private void uiTextboxID_Click(object sender, EventArgs e) {
             uiTextboxID.ForeColor = basicColor;
         }
-
         private void buttonACSecurity_Click(object sender, EventArgs e) {
             adminUserList list = new adminUserList();
             this.Hide();

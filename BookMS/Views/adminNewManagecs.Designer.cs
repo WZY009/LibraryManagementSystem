@@ -44,6 +44,8 @@ namespace BookMS.Views {
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uiPanelGrid = new Sunny.UI.UIPanel();
+            this.textBoxSelection = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.uiImageButtonExport = new Sunny.UI.UIImageButton();
             this.buttonRefresh = new Sunny.UI.UIImageButton();
             this.buttonAdd = new Sunny.UI.UIImageButton();
@@ -289,6 +291,8 @@ namespace BookMS.Views {
             // uiPanelGrid
             // 
             this.uiPanelGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(195)))));
+            this.uiPanelGrid.Controls.Add(this.textBoxSelection);
+            this.uiPanelGrid.Controls.Add(this.label7);
             this.uiPanelGrid.Controls.Add(this.uiImageButtonExport);
             this.uiPanelGrid.Controls.Add(this.buttonRefresh);
             this.uiPanelGrid.Controls.Add(this.buttonAdd);
@@ -304,6 +308,30 @@ namespace BookMS.Views {
             this.uiPanelGrid.Size = new System.Drawing.Size(1150, 822);
             this.uiPanelGrid.TabIndex = 3;
             this.uiPanelGrid.Text = " ";
+            // 
+            // textBoxSelection
+            // 
+            this.textBoxSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.textBoxSelection.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSelection.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSelection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.textBoxSelection.Location = new System.Drawing.Point(360, 62);
+            this.textBoxSelection.Name = "textBoxSelection";
+            this.textBoxSelection.ReadOnly = true;
+            this.textBoxSelection.Size = new System.Drawing.Size(749, 37);
+            this.textBoxSelection.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label7.Location = new System.Drawing.Point(14, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(340, 43);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "What you select is:";
             // 
             // uiImageButtonExport
             // 
@@ -426,7 +454,7 @@ namespace BookMS.Views {
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(14, 50);
+            this.uiDataGridView1.Location = new System.Drawing.Point(14, 102);
             this.uiDataGridView1.Name = "uiDataGridView1";
             this.uiDataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -438,7 +466,7 @@ namespace BookMS.Views {
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.uiDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.uiDataGridView1.RowHeadersVisible = false;
-            this.uiDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.uiDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -447,7 +475,7 @@ namespace BookMS.Views {
             this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
             this.uiDataGridView1.ShowRect = false;
-            this.uiDataGridView1.Size = new System.Drawing.Size(1122, 759);
+            this.uiDataGridView1.Size = new System.Drawing.Size(1122, 707);
             this.uiDataGridView1.TabIndex = 6;
             this.uiDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellContentClick);
             this.uiDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellContentClick);
@@ -593,6 +621,7 @@ namespace BookMS.Views {
             // 
             // uiTextBoxName
             // 
+            this.uiTextBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiTextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBoxName.FillColor = System.Drawing.Color.White;
             this.uiTextBoxName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -692,6 +721,7 @@ namespace BookMS.Views {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).EndInit();
             this.panel2.ResumeLayout(false);
             this.uiPanelGrid.ResumeLayout(false);
+            this.uiPanelGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButtonExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonAdd)).EndInit();
@@ -748,5 +778,7 @@ namespace BookMS.Views {
         private Sunny.UI.UIImageButton buttonAdd;
         private Sunny.UI.UIImageButton buttonVerify;
         private Sunny.UI.UIImageButton buttonDelete;
+        private System.Windows.Forms.TextBox textBoxSelection;
+        private System.Windows.Forms.Label label7;
     }
 }
