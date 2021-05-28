@@ -163,8 +163,8 @@ namespace BookMS.Views {
                     FileInfo saveFile = new FileInfo(fileStore);
                     System.IO.File.Copy(txtpath, saveFile.FullName, true);
                     Bitmap userImage = new Bitmap(saveFile.FullName);
-                    userImage = ScaleImage(userImage, 128, 128);
-                    pictureBoxAdmin.Image = userImage;
+                    //userImage = ScaleImage(userImage, 128, 128);
+                    pictureBoxAdmin.Image = userImage.ScaleImage(128, 128);
                     pictureBoxAltImg.BackColor = Color.Transparent;
                 }
                 catch (Exception) {
@@ -174,17 +174,17 @@ namespace BookMS.Views {
             else
                 MessageBox.Show("You have chosen a wrong document! we only support .png and .jpg", "Error tips", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-        static public Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
-            var ratioX = (double)maxWidth / image.Width;
-            var ratioY = (double)maxHeight / image.Height;
-            var ratio = Math.Min(ratioX, ratioY);
-            var newWidth = (int)(image.Width * ratio);
-            var newHeight = (int)(image.Height * ratio);
-            var newImage = new Bitmap(newWidth, newHeight);
-            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
-            Bitmap bmp = new Bitmap(newImage);
-            return bmp;
-        }
+        //static public Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+        //    var ratioX = (double)maxWidth / image.Width;
+        //    var ratioY = (double)maxHeight / image.Height;
+        //    var ratio = Math.Min(ratioX, ratioY);
+        //    var newWidth = (int)(image.Width * ratio);
+        //    var newHeight = (int)(image.Height * ratio);
+        //    var newImage = new Bitmap(newWidth, newHeight);
+        //    Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+        //    Bitmap bmp = new Bitmap(newImage);
+        //    return bmp;
+        //}
 
         private void textBoxRepeat_TextChanged(object sender, EventArgs e) {
             if (textBoxPassword.Text != null) {
@@ -192,7 +192,7 @@ namespace BookMS.Views {
                     pictureBoxRepeat.Image = Image.FromFile("../../../icons/same_32.png");
                 else
                     pictureBoxRepeat.Image = Image.FromFile("../../../icons/inconsistent_32.png");
-            }            
+            }
         }
 
         private void textBoxPassword_TextChanged(object sender, EventArgs e) {

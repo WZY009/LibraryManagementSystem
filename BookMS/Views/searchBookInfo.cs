@@ -52,7 +52,7 @@ namespace BookMS.Views {
                 uiDataGridViewBookInfo.AddRow(bookNo++.ToString(), item.Title, item.Rate, item.Subjects);
 
             pictureBoxFind.Enabled = true;// 恢复再次查询按钮
-            pictureBoxNext.Enabled = true;// 可以点击下一页
+            pictureBoxNext.Enabled = _spiderController.HasNext;// 可以点击下一页如果有下一页
         }
         private async void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {//选择函数
 
@@ -80,20 +80,21 @@ namespace BookMS.Views {
                 // 加载图片失败，不处理
                 return;
             }
-            Bitmap bmp = ScaleImage(img, pictureBoxBook.Width, pictureBoxBook.Height);
-            pictureBoxBook.Image = bmp;
+            //Bitmap bmp = ScaleImage(img, pictureBoxBook.Width, pictureBoxBook.Height);
+            pictureBoxBook.Image = img.ScaleImage(pictureBoxBook.Width, pictureBoxBook.Height);
         }
-        private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
-            var ratioX = (double)maxWidth / image.Width;
-            var ratioY = (double)maxHeight / image.Height;
-            var ratio = Math.Min(ratioX, ratioY);
-            var newWidth = (int)(image.Width * ratio);
-            var newHeight = (int)(image.Height * ratio);
-            var newImage = new Bitmap(newWidth, newHeight);
-            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
-            Bitmap bmp = new Bitmap(newImage);
-            return bmp;
-        }
+        //已移动位置
+        //private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+        //    var ratioX = (double)maxWidth / image.Width;
+        //    var ratioY = (double)maxHeight / image.Height;
+        //    var ratio = Math.Min(ratioX, ratioY);
+        //    var newWidth = (int)(image.Width * ratio);
+        //    var newHeight = (int)(image.Height * ratio);
+        //    var newImage = new Bitmap(newWidth, newHeight);
+        //    Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+        //    Bitmap bmp = new Bitmap(newImage);
+        //    return bmp;
+        //}
 
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
@@ -151,6 +152,7 @@ namespace BookMS.Views {
                 }
             }
             pictureBoxBefore.Enabled = true;// 允许点击前一页
+            pictureBoxNext.Enabled = _spiderController.HasNext;// 是否还有下一页
 
             //}
             //catch (Exception error) {

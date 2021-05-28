@@ -58,8 +58,8 @@ namespace BookMS.Views {
             User user = userMapper.GetById(id);
             try {
                 Bitmap userImage = new Bitmap(user.PhotoPath);
-                userImage = ScaleImage(userImage, 128, 128);
-                return userImage;
+                //userImage = ScaleImage(userImage, 128, 128);
+                return userImage.ScaleImage(128, 128);
             }
             catch {
                 MessageBox.Show("Sorry your id is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -166,17 +166,17 @@ namespace BookMS.Views {
             }
         }
 
-        private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
-            var ratioX = (double)maxWidth / image.Width;
-            var ratioY = (double)maxHeight / image.Height;
-            var ratio = Math.Min(ratioX, ratioY);
-            var newWidth = (int)(image.Width * ratio);
-            var newHeight = (int)(image.Height * ratio);
-            var newImage = new Bitmap(newWidth, newHeight);
-            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
-            Bitmap bmp = new Bitmap(newImage);
-            return bmp;
-        }
+        //private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
+        //    var ratioX = (double)maxWidth / image.Width;
+        //    var ratioY = (double)maxHeight / image.Height;
+        //    var ratio = Math.Min(ratioX, ratioY);
+        //    var newWidth = (int)(image.Width * ratio);
+        //    var newHeight = (int)(image.Height * ratio);
+        //    var newImage = new Bitmap(newWidth, newHeight);
+        //    Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+        //    Bitmap bmp = new Bitmap(newImage);
+        //    return bmp;
+        //}
         private void buttonClose_Click(object sender, EventArgs e) {
             this.Close();
         }
