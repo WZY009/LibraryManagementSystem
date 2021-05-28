@@ -100,7 +100,6 @@ namespace BookMS.Views {
                     break;
             }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e) {
             try {
                 DialogResult dr = MessageBox.Show("Confirm to delete?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -124,7 +123,6 @@ namespace BookMS.Views {
                 MessageBox.Show("Please select a book to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             for (int i = 0; i < 4; i++) {
                 if(uiDataGridView1.SelectedRows[0].Cells[i].Value == null) {
@@ -139,11 +137,9 @@ namespace BookMS.Views {
             number = uiDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             textBoxSelection.Text = $"{name}";
         }
-
         private void buttonLogOut_Click(object sender, EventArgs e) {
             this.Close();
         }
-
         private void uiTextboxID_Click(object sender, EventArgs e) {
             uiTextboxID.ForeColor = basicColor;
         }
@@ -153,7 +149,6 @@ namespace BookMS.Views {
             list.ShowDialog();
             this.Show();
         }
-
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1,"All Books");
         }

@@ -118,8 +118,8 @@ namespace BookMS.Views {
                     FileInfo saveFile = new FileInfo(fileStore);
                     System.IO.File.Copy(txtpath, saveFile.FullName, true);
                     Bitmap userImage = new Bitmap(saveFile.FullName);
-                    userImage = ScaleImage(userImage, 128, 128);
-                    pictureBoxUser.Image = userImage;
+                    
+                    pictureBoxUser.Image = userImage.ScaleImage(128, 128);
                     pictureBoxAltImg.BackColor = Color.Transparent;
                     UserController usermap = new UserController();
                     usermap.UploadPhoto(userId, fileStore);
