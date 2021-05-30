@@ -24,37 +24,61 @@ namespace BookMS.Views {
         private void buttonSubmit_Click(object sender, EventArgs e) {
             UserController usermap = new UserController();
             DialogResult dr = MessageBox.Show($"Confirm to change {textBoxName.Text}'s information?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dr == DialogResult.OK) {
-                try {
-                    User userChange = usermap.GetById(textBoxID.Text);
-                    userChange.Id = textBoxID.Text;
-                    userChange.Name = textBoxName.Text;
-                    if (comboBox1.SelectedIndex == 0)
-                        userChange.Sex = true;
-                    else
-                        userChange.Sex = false;
-                    userChange.Major = textBoxMajor.Text;
-                    userChange.Password = textBoxPassword.Text;
-                    userChange.Question_id = int.Parse(textBoxQID.Text);
-                    userChange.Question_answer = textBoxAnswer.Text;
-                    if (usermap.UpdateUserInfo(userChange) > 0)
-                        MessageBox.Show("Successful!");                    
-                    else
-                        MessageBox.Show("Failed to change your account information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (textBoxID.Text != "" && textBoxMajor.Text != "" && textBoxName.Text != "" && textBoxPassword.Text != "" && textBoxQID.Text != "" && textBoxAnswer.Text != "") {
+                if (dr == DialogResult.OK) {
+                    try {
+                        if (textBoxID.Text.Equals(StuId)) {
+                            User userChange = usermap.GetById(StuId);
+                            userChange.Name = textBoxName.Text;
+                            if (comboBox1.SelectedIndex == 0)
+                                userChange.Sex = true;
+                            else
+                                userChange.Sex = false;
+                            userChange.Major = textBoxMajor.Text;
+                            userChange.Password = textBoxPassword.Text;
+                            userChange.Question_id = int.Parse(textBoxQID.Text);
+                            userChange.Question_answer = textBoxAnswer.Text;
+                            if (usermap.UpdateUserInfo(userChange) > 0)
+                                MessageBox.Show("Successful to change information!");
+                            else
+                                MessageBox.Show("Failed to change your account information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else {
+                            User oldUser = usermap.GetById(StuId);
+                            User userChange = new User();
+                            userChange.Id = textBoxID.Text;
+                            userChange.PhotoPath = oldUser.PhotoPath;
+                            userChange.Name = textBoxName.Text;
+                            if (comboBox1.SelectedIndex == 0)
+                                userChange.Sex = true;
+                            else
+                                userChange.Sex = false;
+                            userChange.Major = textBoxMajor.Text;
+                            userChange.Password = textBoxPassword.Text;
+                            userChange.Question_id = int.Parse(textBoxQID.Text);
+                            userChange.Question_answer = textBoxAnswer.Text;
+                            usermap.DeleteById(StuId);
+                            if (usermap.AddUser(userChange) > 0)
+                                MessageBox.Show("Successful to change iinformation!");
+                            else
+                                MessageBox.Show("Failed to change your account information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                    catch (Exception error) {
+                        throw new Exception(error.Message);
+                    }
                 }
-                catch (Exception error) {
-                    throw new Exception(error.Message);
-                }
+                Table();
             }
-            Table();
+            else
+                MessageBox.Show("Please fulfill all the information!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
                
 
         private void buttonRefresh_Click(object sender, EventArgs e) {
             Table();
         }
-
-
 
         private void uiImageButtonExport_Click(object sender, EventArgs e) {
             ExportToExcel.Export(uiDataGridView1,"User");
