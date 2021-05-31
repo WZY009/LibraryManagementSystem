@@ -19,7 +19,8 @@ namespace BookMS.Controllers {
         /// </summary>
         /// <param name="uid"></param>
         /// <returns></returns>
-        public IEnumerable<UserLend> GetLendsByUid(string uid) {
+       
+        public IEnumerable<UserLend> GetLendsByUid(string uid) {//根据用户名得到他借到的书
             return
                 _context.Lends
                 .Where(lend => lend.Uid == uid)
@@ -31,6 +32,17 @@ namespace BookMS.Controllers {
                     LendTime = lend.LendTime,
                 });
         }
+        public int VerifyBook(IEnumerable<Lend> verifyList,string oldId,string NewId) {
+            foreach(var item in verifyList) {
+                if(oldId.Equals(item.Uid)) {
+                    item.Uid = NewId;
+                }
+            }
+            _context.Lends.UpdateRange(verifyList);
+            return _context.SaveChanges();            
+        }
+
+        public IEnumerable<Lend> GetAllLends() => _context.Lends.AsEnumerable();
         /// <summary>
         /// 删除借阅记录
         /// </summary>

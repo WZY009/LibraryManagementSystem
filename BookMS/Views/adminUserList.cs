@@ -45,6 +45,8 @@ namespace BookMS.Views {
                         }
                         else {
                             User oldUser = usermap.GetById(StuId);
+                            LendController lendmap = new LendController();                          
+                            // Lend lendList = lendmap.GetLendsByUid(StuId);
                             User userChange = new User();
                             userChange.Id = textBoxID.Text;
                             userChange.PhotoPath = oldUser.PhotoPath;
@@ -56,10 +58,12 @@ namespace BookMS.Views {
                             userChange.Major = textBoxMajor.Text;
                             userChange.Password = textBoxPassword.Text;
                             userChange.Question_id = int.Parse(textBoxQID.Text);
-                            userChange.Question_answer = textBoxAnswer.Text;
-                            usermap.DeleteById(StuId);
-                            if (usermap.AddUser(userChange) > 0)
+                            userChange.Question_answer = textBoxAnswer.Text;                           
+                            if (usermap.AddUser(userChange) > 0 && lendmap.VerifyBook(lendmap.GetAllLends(),StuId,textBoxID.Text) != 0) {
                                 MessageBox.Show("Successful to change iinformation!");
+                                usermap.DeleteById(StuId);
+                            }
+                                
                             else
                                 MessageBox.Show("Failed to change your account information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

@@ -123,6 +123,9 @@ namespace BookMS.Views {
             this.Hide();
             user.ShowDialog();
             this.Show();
+            pictureBoxUser.Image = getImage(lenderId);
+            uiLabelUserName.Text = getUserName(lenderId);
+
         }
 
         private void buttonBorrow_Click(object sender, EventArgs e) {
