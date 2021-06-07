@@ -102,22 +102,43 @@ namespace BookMS.Views {
         }
         private void buttonDelete_Click(object sender, EventArgs e) {
             try {
-                DialogResult dr = MessageBox.Show("Confirm to delete?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dr == DialogResult.OK) {
-                    int n = uiDataGridView1.SelectedRows.Count;
-                    using BookController bookMapper = new BookController();
-                    int deleteNum = 0;
-                    for (int i = 0; i < n; ++i)
-                        if (bookMapper.DeleteById(uiDataGridView1.SelectedRows[i].Cells[0].Value.ToString()) != 0) {
-                            ++deleteNum;
-                            MessageBox.Show($"Successful to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}");
-                        }
-                        else {
-                            MessageBox.Show($"Failed to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                        }
-                    MessageBox.Show($"成功删除{deleteNum}条图书信息");
-                    Table();
+                if (int.Parse(number) != 0) {
+                    DialogResult dr = MessageBox.Show("Confirm to delete?", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK) {
+                        int n = uiDataGridView1.SelectedRows.Count;
+                        using BookController bookMapper = new BookController();
+                        int deleteNum = 0;
+                        for (int i = 0; i < n; ++i)
+                            if (bookMapper.DeleteById(uiDataGridView1.SelectedRows[i].Cells[0].Value.ToString()) != 0) {
+                                ++deleteNum;
+                                MessageBox.Show($"Successful to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}");
+                            }
+                            else {
+                                MessageBox.Show($"Failed to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                            }
+                        MessageBox.Show($"Successful to delete {deleteNum} pieces of infomation");
+                        Table();
+                    }
                 }
+                else {
+                    DialogResult dr = MessageBox.Show("Confirm to delete? The book has been borrowed and its owner has not lend it back!", "Tips", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK) {
+                        int n = uiDataGridView1.SelectedRows.Count;
+                        using BookController bookMapper = new BookController();
+                        int deleteNum = 0;
+                        for (int i = 0; i < n; ++i)
+                            if (bookMapper.DeleteById(uiDataGridView1.SelectedRows[i].Cells[0].Value.ToString()) != 0) {
+                                ++deleteNum;
+                                MessageBox.Show($"Successful to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}");
+                            }
+                            else {
+                                MessageBox.Show($"Failed to delete: {uiDataGridView1.SelectedRows[i].Cells[1].Value.ToString()}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        MessageBox.Show($"Successful to delete {deleteNum} pieces of infomation");
+                        Table();
+                    }
+                }
+
             }
             catch {
                 MessageBox.Show("Please select a book to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
