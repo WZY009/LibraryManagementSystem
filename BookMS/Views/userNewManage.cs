@@ -136,6 +136,10 @@ namespace BookMS.Views {
             Table(lenderId);
         }
 
+        private void buttonGame_Click(object sender, EventArgs e) {
+
+        }
+
         private void buttonMore_Click(object sender, EventArgs e) {
             searchBookInfo search = new searchBookInfo();
             this.Hide();
