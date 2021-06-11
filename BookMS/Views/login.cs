@@ -90,7 +90,7 @@ namespace BookMS.Views {
             panelUser.BackColor = Color.FromArgb(235, 243, 255);
             textBoxUserNum.BackColor = Color.FromArgb(235, 243, 255);
             pictureBoxCheck.Image = Image.FromFile("../../../icons/Check_32.png");
-            
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e) {
@@ -118,7 +118,7 @@ namespace BookMS.Views {
         private void pictureBoxCheck_Click(object sender, EventArgs e) {
             if (!check) {//如果不可查看成立
                 textBoxPassword.UseSystemPasswordChar = true;
-                pictureBoxCheck.Image=Image.FromFile("../../../icons/Check_32.png");
+                pictureBoxCheck.Image = Image.FromFile("../../../icons/Check_32.png");
                 check = !check;
             }
             else {
@@ -134,9 +134,9 @@ namespace BookMS.Views {
                 User user = usermap.GetById(textBoxUserNum.Text);
                 pictureBoxPortrait.Image = getImage(textBoxUserNum.Text);
             }
-            else if(uiRadioButtonAdmin.Checked == true) {
+            else if (uiRadioButtonAdmin.Checked == true) {
                 Bitmap userImage = new Bitmap("../../../icons/Admin_128.png");
-                userImage = ScaleImage(userImage, 180, 180);               
+                userImage = ScaleImage(userImage, 180, 180);
                 pictureBoxPortrait.Image = userImage;
             }
         }
@@ -158,7 +158,7 @@ namespace BookMS.Views {
                 Bitmap userImage = new Bitmap("../../../icons/User_128.png");
                 userImage = ScaleImage(userImage, 180, 180);
                 return userImage;
-            }               
+            }
         }
         private Bitmap ScaleImage(Image image, int maxWidth, int maxHeight) {//提供了自动缩放功能，不论什么分辨率都可以插入，但是要注意一点，就是尽量采用128*128的图片这样不至于损失
             var ratioX = (double)maxWidth / image.Width;
@@ -180,7 +180,7 @@ namespace BookMS.Views {
 
         private void uiRadioButtonUser_Click(object sender, EventArgs e) {
             UserController usermap = new UserController();
-            if (usermap.GetById(textBoxUserNum.Text) != null){
+            if (usermap.GetById(textBoxUserNum.Text) != null) {
                 pictureBoxPortrait.Image = getImage(textBoxUserNum.Text);
             }
             else {
@@ -195,9 +195,3 @@ namespace BookMS.Views {
         }
     }
 }
-
-
-
-
-
-
