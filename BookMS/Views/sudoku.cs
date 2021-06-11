@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BookMS {
+namespace BookMS.Views {
     public partial class sudoku : Form {
         int[,] map1 = new int[9, 9]  {  { 0,6,1,0,3,0,0,2,0 },
                                              { 0,5,0,0,0,8,1,0,7 },
@@ -40,7 +40,7 @@ namespace BookMS {
                                         {0,0,0,0,0,9,7,0,0 }
 
         };
-        
+
         //int size = 50;
         int num = 0;                                    //用来标识选中的数字
         bool isEraser = false;                          //标识是否为橡皮擦
@@ -71,7 +71,7 @@ namespace BookMS {
             gradebtns[2] = this.buttonHard;
         }
         public void createMap(int[,] map) {
-            
+
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     Button btn = new Button();
@@ -83,7 +83,7 @@ namespace BookMS {
                         btn.Text = map[i, j].ToString();
                     }
                     btn.Size = new Size(50, 50);
-                    btn.Location = new Point(80 + j * 50,  i * 50);
+                    btn.Location = new Point(80 + j * 50, i * 50);
                     btn.Font = new Font("宋体", 13, FontStyle.Bold);
                     btn.ForeColor = Color.Black;
                     if ((i < 3 && j < 3) || (i < 3 && j > 5) || (i >= 3 && j >= 3 && i <= 5 && j <= 5) || (i > 5 && j < 3) || (i > 5 && j > 5)) {
@@ -103,7 +103,7 @@ namespace BookMS {
             Button btn = sender as Button;
             //MessageBox.Show(num.ToString());
             //MessageBox.Show(btn.Text);
-            if (btn.Text =="" || btn.ForeColor == Color.FromArgb(255,41,128,185) ) {
+            if (btn.Text == "" || btn.ForeColor == Color.FromArgb(255, 41, 128, 185)) {
                 if (num != 0 && !isEraser) {
                     btn.Text = num.ToString();
                     btn.ForeColor = Color.FromArgb(255, 41, 128, 185);
@@ -140,12 +140,12 @@ namespace BookMS {
                     this.panel3.Controls.Clear();
                     createMap(map3);
                     break;
-                default:break;
+                default: break;
             }
 
         }
 
-        
+
         private void button1_MouseClick(object sender, MouseEventArgs e) {
             Button btn = sender as Button;
             if (btn.Text != "") {
@@ -174,13 +174,13 @@ namespace BookMS {
             }
 
             for (int i = 0; i < 9; i++) {
-                for(int j = 0; j < 9; j++) {
+                for (int j = 0; j < 9; j++) {
                     if (buttons[i, j].Text != "") {
                         int number = Int32.Parse(buttons[i, j].Text);
                         if (number == num) {
                             buttons[i, j].BackColor = Color.Yellow;
                         }
-                        else if(number!=num&& (i < 3 && j < 3) || (i < 3 && j > 5) || (i >= 3 && j >= 3 && i <= 5 && j <= 5) || (i > 5 && j < 3) || (i > 5 && j > 5)) {
+                        else if (number != num && (i < 3 && j < 3) || (i < 3 && j > 5) || (i >= 3 && j >= 3 && i <= 5 && j <= 5) || (i > 5 && j < 3) || (i > 5 && j > 5)) {
                             buttons[i, j].BackColor = Color.FromArgb(255, 230, 230, 230);
                         }
                         else {
@@ -194,35 +194,35 @@ namespace BookMS {
         private void buttonSubmit_MouseClick(object sender, MouseEventArgs e) {
             //bool flag = true ;                                                          //判断答案是否正确
             //判断每行是否有重复
-            int[,] rows = new int[9,9];                                 //记录每行是否有重复
+            int[,] rows = new int[9, 9];                                 //记录每行是否有重复
             int[,] columns = new int[9, 9];                             //记录每列是否有重复
             int[,] blocks = new int[9, 9];                              //记录每个九宫格是否有重复
 
-            for(int i = 0; i < 9; i++) {
-                for(int j = 0; j < 9; j++) {
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
                     rows[i, j] = 0;
                     columns[i, j] = 0;
                     blocks[i, j] = 0;
                 }
             }
 
-            for(int row = 0; row < 9; row++) {
-                for(int col = 0; col < 9; col++) {
-                    if(buttons[row, col].Text == "") {
+            for (int row = 0; row < 9; row++) {
+                for (int col = 0; col < 9; col++) {
+                    if (buttons[row, col].Text == "") {
                         MessageBox.Show("请先填完所有空格！");
                         return;
                     }
-                    int number = Int32.Parse(buttons[row, col].Text)-1;
+                    int number = Int32.Parse(buttons[row, col].Text) - 1;
                     int blocknum = row - row % 3 + col / 3;                 //记录每个数字属于第几个九宫格
                     rows[row, number] = 1;
                     columns[number, col] = 1;
                     blocks[blocknum, number] = 1;
                 }
             }
-            
-            for(int i = 0; i < 9; i++) {
-                for(int j = 0; j < 9; j++) {
-                    if (rows[i, j]==0) {
+
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (rows[i, j] == 0) {
                         MessageBox.Show("回答错误！");
                         return;
                     }
@@ -254,6 +254,6 @@ namespace BookMS {
             buttonEraser.BackColor = Color.White;
         }
 
-        
+
     }
 }
