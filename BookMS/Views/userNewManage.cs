@@ -137,7 +137,18 @@ namespace BookMS.Views {
         }
 
         private void buttonGame_Click(object sender, EventArgs e) {
+            sudoku game = new sudoku();
+            this.Hide();
+            game.ShowDialog();
+            this.Show();
+        }
 
+        private void userNewManage_Load(object sender, EventArgs e) {
+                       
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e) {
+            this.Close();
         }
 
         private void buttonMore_Click(object sender, EventArgs e) {
